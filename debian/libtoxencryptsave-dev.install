@@ -1,0 +1,3 @@
+usr/include/tox/toxencryptsave.h
+usr/lib/*/libtoxencryptsave.so
+usr/lib/*/libtoxencryptsave.la
