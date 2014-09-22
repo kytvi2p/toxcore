@@ -1,0 +1,4 @@
+usr/include/tox/toxdns.h
+usr/lib/*/libtoxdns.so
+usr/lib/*/libtoxdns.la
+usr/lib/*/libtoxdns.a

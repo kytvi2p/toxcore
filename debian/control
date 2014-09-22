@@ -1,0 +1,127 @@
+Source: toxcore
+Section: net
+Priority: extra
+Maintainer: Kill Your TV <killyourtv@i2pmail.org>
+Standards-Version: 3.9.5
+Build-Depends: debhelper (>= 9), dh-autoreconf, libsodium-dev, libvpx-dev, libopus-dev, autotools-dev,
+               libconfig-dev, libncurses5-dev
+Homepage: http://tox.im
+
+Package: libtox-dev
+Section: libdevel
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends},
+ libtoxcore-dev (= ${binary:Version}),
+ libtoxav-dev (= ${binary:Version}),
+ libtoxencryptsave-dev (= ${binary:Version}),
+ libtoxdns-dev (= ${binary:Version})
+Description: distributed, secure messenger with a/v support - development headers
+ Tox provides an encrypted, distributed, and extensible peer-to-peer platform
+ that can be used for various forms of communication. Tox is intended to be used
+ as a multimedia messenger, but many people have shown us that Tox can be used
+ for a lot more than just instant messaging.
+
+Package: tox-daemon
+Section: net
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: toxic, venom
+Description: distributed, secure messenger with a/v support - daemon
+ Tox provides an encrypted, distributed, and extensible peer-to-peer platform
+ that can be used for various forms of communication. Tox is intended to be used
+ as a multimedia messenger, but many people have shown us that Tox can be used
+ for a lot more than just instant messaging.
+ .
+ This package contains the bootstrap daemon.
+
+Package: libtoxcore0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: distributed, secure messenger with a/v support - runtime library
+ Tox provides an encrypted, distributed, and extensible peer-to-peer platform
+ that can be used for various forms of communication. Tox is intended to be used
+ as a multimedia messenger, but many people have shown us that Tox can be used
+ for a lot more than just instant messaging.
+ .
+ Thie package contains the runtime library.
+
+Package: libtoxcore-dev
+Architecture: any
+Section: libdevel
+Depends: ${shlibs:Depends}, ${misc:Depends}, libtoxcore0 (= ${binary:Version}), libsodium-dev
+Description: distributed, secure messenger w/ a/v support - development headers
+ Tox provides an encrypted, distributed, and extensible peer-to-peer platform
+ that can be used for various forms of communication. Tox is intended to be used
+ as a multimedia messenger, but many people have shown us that Tox can be used
+ for a lot more than just instant messaging.
+ .
+ This package contains the development headers.
+
+Package: libtoxav0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: distributed, secure messenger w/ a/v support - runtime files
+ Tox provides an encrypted, distributed, and extensible peer-to-peer platform
+ that can be used for various forms of communication. Tox is intended to be used
+ as a multimedia messenger, but many people have shown us that Tox can be used
+ for a lot more than just instant messaging.
+ .
+ Thie package contains the runtime library.
+
+Package: libtoxav-dev
+Architecture: any
+Section: libdevel
+Depends: ${shlibs:Depends}, ${misc:Depends}, libtoxav0 (= ${binary:Version}), libtoxcore-dev (= ${binary:Version}), libvpx-dev, libopus-dev
+Description: distributed, secure messenger w/ a/v support - development headers
+ Tox provides an encrypted, distributed, and extensible peer-to-peer platform
+ that can be used for various forms of communication. Tox is intended to be used
+ as a multimedia messenger, but many people have shown us that Tox can be used
+ for a lot more than just instant messaging.
+ .
+ This package contains the development headers.
+
+Package: libtoxdns0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: distributed, secure messenger w/ a/v support - runtime files
+ Tox provides an encrypted, distributed, and extensible peer-to-peer platform
+ that can be used for various forms of communication. Tox is intended to be used
+ as a multimedia messenger, but many people have shown us that Tox can be used
+ for a lot more than just instant messaging.
+ .
+ Thie package contains the runtime library.
+
+Package: libtoxdns-dev
+Architecture: any
+Section: libdevel
+Depends: ${shlibs:Depends}, ${misc:Depends}, libtoxdns0 (= ${binary:Version}), libtoxcore-dev
+Description: distributed, secure messenger w/ a/v support - development headers
+ Tox provides an encrypted, distributed, and extensible peer-to-peer platform
+ that can be used for various forms of communication. Tox is intended to be used
+ as a multimedia messenger, but many people have shown us that Tox can be used
+ for a lot more than just instant messaging.
+ .
+ This package contains the development headers.
+
+Package: libtoxencryptsave0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: distributed, secure messenger w/ a/v support - runtime files
+ Tox provides an encrypted, distributed, and extensible peer-to-peer platform
+ that can be used for various forms of communication. Tox is intended to be used
+ as a multimedia messenger, but many people have shown us that Tox can be used
+ for a lot more than just instant messaging.
+ .
+ Thie package contains the runtime library.
+
+Package: libtoxencryptsave-dev
+Architecture: any
+Section: libdevel
+Depends: ${shlibs:Depends}, ${misc:Depends}, libtoxencryptsave0 (= ${binary:Version}), libtoxcore-dev (= ${binary:Version})
+Description: distributed, secure messenger w/ a/v support - development headers
+ Tox provides an encrypted, distributed, and extensible peer-to-peer platform
+ that can be used for various forms of communication. Tox is intended to be used
+ as a multimedia messenger, but many people have shown us that Tox can be used
+ for a lot more than just instant messaging.
+ .
+ This package contains the development headers.

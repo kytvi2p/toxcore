@@ -1,0 +1,5 @@
+libtoxdns.so.0 libtoxdns0 #MINVER#
+ tox_decrypt_dns3_TXT@Base 0.0.0+20140922.1
+ tox_dns3_kill@Base 0.0.0+20140922.1
+ tox_dns3_new@Base 0.0.0+20140922.1
+ tox_generate_dns3_string@Base 0.0.0+20140922.1

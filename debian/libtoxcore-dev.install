@@ -1,0 +1,5 @@
+usr/include/tox/tox.h
+usr/lib/*/libtoxcore.so
+usr/lib/*/libtoxcore.la
+usr/lib/*/libtoxcore.a
+usr/lib/*/pkgconfig/libtoxcore.pc
