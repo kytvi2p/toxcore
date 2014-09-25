@@ -190,6 +190,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  m_get_statusmessage_size@Base 0.0.0+20140922.1
  m_get_userstatus@Base 0.0.0+20140922.1
  m_group_peername@Base 0.0.0+20140922.1
+ m_hash@Base 0.0.0+20140925.1
  m_msi_packet@Base 0.0.0+20140922.1
  m_request_avatar_data@Base 0.0.0+20140923.1
  m_request_avatar_info@Base 0.0.0+20140923.1
@@ -304,7 +305,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  tox_add_friend_norequest@Base 0.0.0+20140922.1
  tox_add_groupchat@Base 0.0.0+20140922.1
  tox_add_tcp_relay@Base 0.0.0+20140922.1
- tox_avatar_hash@Base 0.0.0+20140923.1
+#MISSING: 0.0.0+20140925.1-1# tox_avatar_hash@Base 0.0.0+20140923.1
  tox_bootstrap_from_address@Base 0.0.0+20140922.1
  tox_callback_avatar_data@Base 0.0.0+20140923.1
  tox_callback_avatar_info@Base 0.0.0+20140923.1
@@ -362,6 +363,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  tox_group_message_send@Base 0.0.0+20140922.1
  tox_group_number_peers@Base 0.0.0+20140922.1
  tox_group_peername@Base 0.0.0+20140922.1
+ tox_hash@Base 0.0.0+20140925.1
  tox_invite_friend@Base 0.0.0+20140922.1
  tox_isconnected@Base 0.0.0+20140922.1
  tox_join_groupchat@Base 0.0.0+20140922.1
