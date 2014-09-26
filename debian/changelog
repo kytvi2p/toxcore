@@ -1,11 +1,9 @@
-toxcore (0.0.0+20140925.1-2~1.gbp29b027) UNRELEASED; urgency=medium
+toxcore (0.0.0+20140925.1-2) unstable; urgency=medium
 
-  ** SNAPSHOT build @29b02791a574843312d00ccfdb9e54355be022a1 **
+  * Add debug packages
+  * Fix typo in package description
 
-  * UNRELEASED
-  * Debug packages
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 26 Sep 2014 03:05:54 +0000
+ -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 26 Sep 2014 10:55:09 +0000
 
 toxcore (0.0.0+20140925.1-1) unstable; urgency=medium
 
