@@ -1,4 +1,6 @@
 #!/usr/bin/make -f
+
+CFLAGS += -g
 %:
 	dh $@ --with autoreconf --parallel
 
@@ -8,3 +10,10 @@ override_dh_auto_configure:
 override_dh_gencontrol:
 	sed -i "/dependency_libs/ s/'.*'/''/" `find $(CURDIR)/debian -name '*.la'`
 	dh_gencontrol
+
+override_dh_strip:
+	dh_strip -plibtoxcore0 --dbg-package=libtoxcore-dbg
+	dh_strip -plibtoxav0 --dbg-package=libtoxav-dbg
+	dh_strip -plibtoxdns0 --dbg-package=libtoxdns-dbg
+	dh_strip -plibtoxencryptsave0 --dbg-package=libtoxencryptsave-dbg
+	dh_strip -ptox-daemon
