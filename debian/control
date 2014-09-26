@@ -3,8 +3,14 @@ Section: net
 Priority: extra
 Maintainer: Kill Your TV <killyourtv@i2pmail.org>
 Standards-Version: 3.9.5
-Build-Depends: debhelper (>= 9), dh-autoreconf, libsodium-dev, libvpx-dev, libopus-dev, autotools-dev,
-               libconfig-dev, libncurses5-dev
+Build-Depends: debhelper (>= 9),
+ autotools-dev,
+ dh-autoreconf,
+ libconfig-dev,
+ libncurses5-dev,
+ libopus-dev,
+ libsodium-dev,
+ libvpx-dev
 Homepage: http://tox.im
 
 Package: libtox-dev
@@ -43,7 +49,20 @@ Description: distributed, secure messenger with a/v support - runtime library
  as a multimedia messenger, but many people have shown us that Tox can be used
  for a lot more than just instant messaging.
  .
- Thie package contains the runtime library.
+ This package contains the runtime library.
+
+Package: libtoxcore-dbg
+Architecture: any
+Section: debug
+Depends: libtoxcore0 (= ${binary:Version}), ${misc:Depends}
+Description: distributed, secure messenger with a/v support - debugging symbols
+ Tox provides an encrypted, distributed, and extensible peer-to-peer platform
+ that can be used for various forms of communication. Tox is intended to be used
+ as a multimedia messenger, but many people have shown us that Tox can be used
+ for a lot more than just instant messaging.
+ .
+ This package contains the debugging symbols.
+
 
 Package: libtoxcore-dev
 Architecture: any
@@ -66,7 +85,20 @@ Description: distributed, secure messenger w/ a/v support - runtime files
  as a multimedia messenger, but many people have shown us that Tox can be used
  for a lot more than just instant messaging.
  .
- Thie package contains the runtime library.
+ This package contains the runtime library.
+
+Package: libtoxav-dbg
+Section: debug
+Architecture: any
+Depends: libtoxav0 (= ${binary:Version}), ${misc:Depends}
+Description: distributed, secure messenger w/ a/v support - debugging symbols
+ Tox provides an encrypted, distributed, and extensible peer-to-peer platform
+ that can be used for various forms of communication. Tox is intended to be used
+ as a multimedia messenger, but many people have shown us that Tox can be used
+ for a lot more than just instant messaging.
+ .
+ This package contains the debugging symbols.
+
 
 Package: libtoxav-dev
 Architecture: any
@@ -89,7 +121,19 @@ Description: distributed, secure messenger w/ a/v support - runtime files
  as a multimedia messenger, but many people have shown us that Tox can be used
  for a lot more than just instant messaging.
  .
- Thie package contains the runtime library.
+ This package contains the runtime library.
+
+Package: libtoxdns-dbg
+Section: debug
+Architecture: any
+Depends: libtoxdns0 (= ${binary:Version}), ${misc:Depends}
+Description: distributed, secure messenger w/ a/v support - debugging symbols
+ Tox provides an encrypted, distributed, and extensible peer-to-peer platform
+ that can be used for various forms of communication. Tox is intended to be used
+ as a multimedia messenger, but many people have shown us that Tox can be used
+ for a lot more than just instant messaging.
+ .
+ This package contains the debugging symbols.
 
 Package: libtoxdns-dev
 Architecture: any
@@ -112,7 +156,20 @@ Description: distributed, secure messenger w/ a/v support - runtime files
  as a multimedia messenger, but many people have shown us that Tox can be used
  for a lot more than just instant messaging.
  .
- Thie package contains the runtime library.
+ This package contains the runtime library.
+
+Package: libtoxencryptsave-dbg
+Section: debug
+Architecture: any
+Depends: libtoxencryptsave0 (= ${binary:Version}), ${misc:Depends}
+Description: distributed, secure messenger w/ a/v support - debugging symbols
+ Tox provides an encrypted, distributed, and extensible peer-to-peer platform
+ that can be used for various forms of communication. Tox is intended to be used
+ as a multimedia messenger, but many people have shown us that Tox can be used
+ for a lot more than just instant messaging.
+ .
+ This package contains the debugging symbols.
+
 
 Package: libtoxencryptsave-dev
 Architecture: any
