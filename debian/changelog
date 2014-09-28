@@ -1,3 +1,39 @@
+toxcore (0.0.0+20140928.1-1) unstable; urgency=medium
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+  * Update debian/libtoxcore0.symbols
+
+  [ irungentoo ]
+  * Some code written for new group chats.
+  * Removed groupchats from core.
+  * Removed now useless atributes from structs.
+  * More groupchats code written.
+  * Group chats are starting to work.
+  * DHT can now be used for group chat cons and friend cons at the same time.
+  * Wrote more new groupchats code.
+  * Added callbacks to DHT called when the ip of a peer is discovered.
+  * Removed now useless network sturct size tests.
+  * Added callbacks to onion_client and net_crypto for the temp dht key.
+  * Removed useless code from onion_client.
+  * Moved cleaup_friend functionality to Messenger.
+  * Only set dht public key and direct ip when first creating connection.
+  * Remove timestamp from set_connection_dht_public_key().
+  * Make the ip port from DHT timeout after a while.
+  * Moved all the connection stuff from messenger to friend_connection.
+  * Increasing max number of onion paths might increase initial connection
+    speed.
+  * Removed useless code from groupchats.
+  * Removed send_group_message_packet and its callback function from Messenger.
+
+  [ Alexandre Erwin Ittner ]
+  * Update avatar documentation
+
+  [ Jfreegman ]
+  * add API function to unset avatar
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 28 Sep 2014 13:13:25 +0000
+
 toxcore (0.0.0+20140925.1-2ubuntu1) trusty; urgency=medium
 
   * Upload to PPA
