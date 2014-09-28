@@ -21,7 +21,8 @@ toxcore (0.0.0+20140928.1-1) unstable; urgency=medium
   * Remove timestamp from set_connection_dht_public_key().
   * Make the ip port from DHT timeout after a while.
   * Moved all the connection stuff from messenger to friend_connection.
-  * Increasing max number of onion paths might increase initial connection speed.
+  * Increasing max number of onion paths might increase initial connection
+    speed.
   * Removed useless code from groupchats.
   * Removed send_group_message_packet and its callback function from Messenger.
 
