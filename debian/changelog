@@ -1,4 +1,4 @@
-toxcore (0.0.0+20140927.1-1) unstable; urgency=medium
+toxcore (0.0.0+20140928.1-1) unstable; urgency=medium
 
   [ Kill Your TV ]
   * New upstream git snapshot
@@ -27,6 +27,9 @@ toxcore (0.0.0+20140927.1-1) unstable; urgency=medium
 
   [ Alexandre Erwin Ittner ]
   * Update avatar documentation
+
+  [ Jfreegman ]
+  * add API function to unset avatar
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 28 Sep 2014 13:13:25 +0000
 

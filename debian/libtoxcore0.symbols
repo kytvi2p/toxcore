@@ -42,19 +42,19 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  callback_file_data@Base 0.0.0+20140922.1
  callback_file_sendrequest@Base 0.0.0+20140922.1
  callback_friendrequest@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140927.1-1# callback_groupaction@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140927.1-1# callback_groupmessage@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140927.1-1# callback_namelistchange@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140927.1-1# chat_bootstrap@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140927.1-1# chat_bootstrap_nonlazy@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20140928.1# callback_groupaction@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20140928.1# callback_groupmessage@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20140928.1# callback_namelistchange@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20140928.1# chat_bootstrap@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20140928.1# chat_bootstrap_nonlazy@Base 0.0.0+20140922.1
  closelist_nodes@Base 0.0.0+20140922.1
  connection_data_handler@Base 0.0.0+20140922.1
  connection_lossy_data_handler@Base 0.0.0+20140922.1
  connection_status_handler@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140927.1-1# copy_chatlist@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20140928.1# copy_chatlist@Base 0.0.0+20140922.1
  copy_connected_tcp_relays@Base 0.0.0+20140922.1
  copy_friendlist@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140927.1-1# count_chatlist@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20140928.1# count_chatlist@Base 0.0.0+20140922.1
  count_friendlist@Base 0.0.0+20140922.1
  create_announce_request@Base 0.0.0+20140922.1
  create_data_request@Base 0.0.0+20140922.1
@@ -79,10 +79,10 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  do_DHT@Base 0.0.0+20140922.1
  do_TCP_connection@Base 0.0.0+20140922.1
  do_TCP_server@Base 0.0.0+20140922.1
- do_friend_connections@Base 0.0.0+20140927.1
+ do_friend_connections@Base 0.0.0+20140928.1
  do_friends@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140927.1-1# do_groupchat@Base 0.0.0+20140922.1
- do_groupchats@Base 0.0.0+20140927.1
+#MISSING: 0.0.0+20140928.1# do_groupchat@Base 0.0.0+20140922.1
+ do_groupchats@Base 0.0.0+20140928.1
  do_hardening@Base 0.0.0+20140922.1
  do_messenger@Base 0.0.0+20140922.1
  do_net_crypto@Base 0.0.0+20140922.1
@@ -95,36 +95,36 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  file_data@Base 0.0.0+20140922.1
  file_dataremaining@Base 0.0.0+20140922.1
  file_sendrequest@Base 0.0.0+20140922.1
- friend_connection_callbacks@Base 0.0.0+20140927.1
- friend_connection_crypt_connection_id@Base 0.0.0+20140927.1
+ friend_connection_callbacks@Base 0.0.0+20140928.1
+ friend_connection_crypt_connection_id@Base 0.0.0+20140928.1
  friend_ips@Base 0.0.0+20140922.1
  friendreq_init@Base 0.0.0+20140922.1
- g_callback_group_invite@Base 0.0.0+20140927.1
- g_callback_group_message@Base 0.0.0+20140927.1
+ g_callback_group_invite@Base 0.0.0+20140928.1
+ g_callback_group_message@Base 0.0.0+20140928.1
  get_close_nodes@Base 0.0.0+20140922.1
  get_connection_dht_key@Base 0.0.0+20140922.1
  get_friendlist@Base 0.0.0+20140922.1
  get_nospam@Base 0.0.0+20140922.1
  get_num_online_friends@Base 0.0.0+20140922.1
- get_peer_index@Base 0.0.0+20140927.1
+ get_peer_index@Base 0.0.0+20140928.1
  get_shared_key@Base 0.0.0+20140922.1
  getaddress@Base 0.0.0+20140922.1
  getclient_id@Base 0.0.0+20140922.1
- getfriend_conn_id_pk@Base 0.0.0+20140927.1
+ getfriend_conn_id_pk@Base 0.0.0+20140928.1
  getfriend_id@Base 0.0.0+20140922.1
  getname@Base 0.0.0+20140922.1
  getself_name@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140927.1-1# group_action_send@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140927.1-1# group_client_names@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20140928.1# group_action_send@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20140928.1# group_client_names@Base 0.0.0+20140922.1
  group_message_send@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140927.1-1# group_names@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140927.1-1# group_newpeer@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140927.1-1# group_number_peers@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140927.1-1# group_numpeers@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140927.1-1# group_peername@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140927.1-1# group_sendaction@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140927.1-1# group_sendmessage@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140927.1-1# handle_groupchatpacket@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20140928.1# group_names@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20140928.1# group_newpeer@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20140928.1# group_number_peers@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20140928.1# group_numpeers@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20140928.1# group_peername@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20140928.1# group_sendaction@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20140928.1# group_sendmessage@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20140928.1# handle_groupchatpacket@Base 0.0.0+20140922.1
  handle_request@Base 0.0.0+20140922.1
  host_to_net@Base 0.0.0+20140922.1
  id_closest@Base 0.0.0+20140922.1
@@ -152,10 +152,10 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  kill_DHT@Base 0.0.0+20140922.1
  kill_TCP_connection@Base 0.0.0+20140922.1
  kill_TCP_server@Base 0.0.0+20140922.1
- kill_friend_connection@Base 0.0.0+20140927.1
- kill_friend_connections@Base 0.0.0+20140927.1
-#MISSING: 0.0.0+20140927.1-1# kill_groupchat@Base 0.0.0+20140922.1
- kill_groupchats@Base 0.0.0+20140927.1
+ kill_friend_connection@Base 0.0.0+20140928.1
+ kill_friend_connections@Base 0.0.0+20140928.1
+#MISSING: 0.0.0+20140928.1# kill_groupchat@Base 0.0.0+20140922.1
+ kill_groupchats@Base 0.0.0+20140928.1
  kill_messenger@Base 0.0.0+20140922.1
  kill_net_crypto@Base 0.0.0+20140922.1
  kill_networking@Base 0.0.0+20140922.1
@@ -176,10 +176,10 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  m_callback_connectionstatus_internal_av@Base 0.0.0+20140922.1
  m_callback_friendmessage@Base 0.0.0+20140922.1
  m_callback_friendrequest@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140927.1-1# m_callback_group_action@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20140928.1# m_callback_group_action@Base 0.0.0+20140922.1
  m_callback_group_invite@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140927.1-1# m_callback_group_message@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140927.1-1# m_callback_group_namelistchange@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20140928.1# m_callback_group_message@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20140928.1# m_callback_group_namelistchange@Base 0.0.0+20140922.1
  m_callback_msi_packet@Base 0.0.0+20140922.1
  m_callback_namechange@Base 0.0.0+20140922.1
  m_callback_read_receipt@Base 0.0.0+20140922.1
@@ -200,7 +200,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  m_get_self_userstatus@Base 0.0.0+20140922.1
  m_get_statusmessage_size@Base 0.0.0+20140922.1
  m_get_userstatus@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140927.1-1# m_group_peername@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20140928.1# m_group_peername@Base 0.0.0+20140922.1
  m_hash@Base 0.0.0+20140925.1
  m_msi_packet@Base 0.0.0+20140922.1
  m_request_avatar_data@Base 0.0.0+20140923.1
@@ -215,11 +215,12 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  m_set_statusmessage@Base 0.0.0+20140922.1
  m_set_userstatus@Base 0.0.0+20140922.1
  m_set_usertyping@Base 0.0.0+20140922.1
+ m_unset_avatar@Base 0.0.0+20140928.1
  messenger_load@Base 0.0.0+20140922.1
  messenger_run_interval@Base 0.0.0+20140922.1
  messenger_save@Base 0.0.0+20140922.1
  messenger_size@Base 0.0.0+20140922.1
- nc_dht_pk_callback@Base 0.0.0+20140927.1
+ nc_dht_pk_callback@Base 0.0.0+20140928.1
  networking_at_startup@Base 0.0.0+20140922.1
  networking_poll@Base 0.0.0+20140922.1
  networking_registerhandler@Base 0.0.0+20140922.1
@@ -231,10 +232,10 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  new_connection_handler@Base 0.0.0+20140922.1
  new_crypto_connection@Base 0.0.0+20140922.1
  new_filesender@Base 0.0.0+20140922.1
- new_friend_connection@Base 0.0.0+20140927.1
- new_friend_connections@Base 0.0.0+20140927.1
-#MISSING: 0.0.0+20140927.1-1# new_groupchat@Base 0.0.0+20140922.1
- new_groupchats@Base 0.0.0+20140927.1
+ new_friend_connection@Base 0.0.0+20140928.1
+ new_friend_connections@Base 0.0.0+20140928.1
+#MISSING: 0.0.0+20140928.1# new_groupchat@Base 0.0.0+20140922.1
+ new_groupchats@Base 0.0.0+20140928.1
  new_keys@Base 0.0.0+20140922.1
  new_messenger@Base 0.0.0+20140922.1
  new_net_crypto@Base 0.0.0+20140922.1
@@ -249,7 +250,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  onion_addfriend@Base 0.0.0+20140922.1
  onion_backup_nodes@Base 0.0.0+20140922.1
  onion_delfriend@Base 0.0.0+20140922.1
- onion_dht_pk_callback@Base 0.0.0+20140927.1
+ onion_dht_pk_callback@Base 0.0.0+20140928.1
  onion_friend_num@Base 0.0.0+20140922.1
  onion_getfriend_DHT_pubkey@Base 0.0.0+20140922.1
  onion_getfriendip@Base 0.0.0+20140922.1
@@ -291,8 +292,8 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  send_data_request@Base 0.0.0+20140922.1
  send_disconnect_request@Base 0.0.0+20140922.1
  send_friendrequest@Base 0.0.0+20140922.1
- send_group_invite_packet@Base 0.0.0+20140927.1
- send_group_message_packet@Base 0.0.0+20140927.1
+ send_group_invite_packet@Base 0.0.0+20140928.1
+ send_group_message_packet@Base 0.0.0+20140928.1
  send_lossy_cryptpacket@Base 0.0.0+20140922.1
  send_onion_data@Base 0.0.0+20140922.1
  send_onion_packet@Base 0.0.0+20140922.1
@@ -307,7 +308,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  set_connection_dht_public_key@Base 0.0.0+20140922.1
  set_direct_ip_port@Base 0.0.0+20140922.1
  set_filter_function@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140927.1-1# set_nick@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20140928.1# set_nick@Base 0.0.0+20140922.1
  set_nospam@Base 0.0.0+20140922.1
  set_socket_dualstack@Base 0.0.0+20140922.1
  set_socket_nonblock@Base 0.0.0+20140922.1
@@ -323,7 +324,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  tox_add_friend_norequest@Base 0.0.0+20140922.1
  tox_add_groupchat@Base 0.0.0+20140922.1
  tox_add_tcp_relay@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140925.1-1# tox_avatar_hash@Base 0.0.0+20140923.1
+#MISSING: 0.0.0+20140925.1# tox_avatar_hash@Base 0.0.0+20140923.1
  tox_bootstrap_from_address@Base 0.0.0+20140922.1
  tox_callback_avatar_data@Base 0.0.0+20140923.1
  tox_callback_avatar_info@Base 0.0.0+20140923.1
@@ -406,6 +407,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  tox_set_user_is_typing@Base 0.0.0+20140922.1
  tox_set_user_status@Base 0.0.0+20140922.1
  tox_size@Base 0.0.0+20140922.1
+ tox_unset_avatar@Base 0.0.0+20140928.1
  unix_time@Base 0.0.0+20140922.1
  unix_time_update@Base 0.0.0+20140922.1
  unpack_nodes@Base 0.0.0+20140922.1
