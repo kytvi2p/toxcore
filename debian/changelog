@@ -1,3 +1,9 @@
+toxcore (0.0.0+20141001.1-1ubuntu1) trusty; urgency=medium
+
+  * Upload to PPA
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 02 Oct 2014 13:24:48 +0000
+
 toxcore (0.0.0+20141001.1-1) unstable; urgency=medium
 
   [ dubslow ]
@@ -29,12 +35,6 @@ toxcore (0.0.0+20141001.1-1) unstable; urgency=medium
   * Update libtoxcore0.symbols
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 02 Oct 2014 02:40:56 +0000
-
-toxcore (0.0.0+20140928.1-1ubuntu1) trusty; urgency=medium
-
-  * Upload to PPA
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 28 Sep 2014 23:46:17 +0000
 
 toxcore (0.0.0+20140928.1-1) unstable; urgency=medium
 
