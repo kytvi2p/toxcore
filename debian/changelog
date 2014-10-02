@@ -1,3 +1,35 @@
+toxcore (0.0.0+20141001.1-1) unstable; urgency=medium
+
+  [ dubslow ]
+  * Modify avatar recommendations
+
+  [ Alexandre Erwin Ittner ]
+  * test_avatars: Implement new policy for the user avatar file
+
+  [ irungentoo ]
+  * Group chats now use friendcon_id instead of friendnumber.
+
+  [ dubslow ]
+  * change avatar requirements
+
+  [ irungentoo ]
+  * Fixed crash in tox_new().
+
+  [ sin ]
+  * Rework toxav/rtp.c to use ntohl/htonl and ntohs/htons
+
+  [ irungentoo ]
+  * Added some functions to friend_connection.
+  * Group chats now actually work somewhat.
+  * del_groupchat and kill_groupchats now work properly.
+  * If connection is already connected, send a online packet to it.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+  * Update libtoxcore0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 02 Oct 2014 02:40:56 +0000
+
 toxcore (0.0.0+20140928.1-1ubuntu1) trusty; urgency=medium
 
   * Upload to PPA

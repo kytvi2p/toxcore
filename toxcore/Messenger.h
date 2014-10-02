@@ -58,7 +58,9 @@
 #define PACKET_ID_FILE_CONTROL 81
 #define PACKET_ID_FILE_DATA 82
 #define PACKET_ID_INVITE_GROUPCHAT 96
-#define PACKET_ID_MESSAGE_GROUPCHAT 97
+#define PACKET_ID_ONLINE_PACKET 97
+#define PACKET_ID_DIRECT_GROUPCHAT 98
+#define PACKET_ID_MESSAGE_GROUPCHAT 99
 
 
 /* Max number of tcp relays sent to friends */
@@ -351,6 +353,11 @@ int32_t getfriend_id(const Messenger *m, const uint8_t *client_id);
  *  return -1 if failure
  */
 int getclient_id(const Messenger *m, int32_t friendnumber, uint8_t *client_id);
+
+/*  return friend connection id on success.
+ *  return -1 if failure.
+ */
+int getfriendcon_id(const Messenger *m, int32_t friendnumber);
 
 /* Remove a friend.
  *
