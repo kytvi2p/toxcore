@@ -18,8 +18,8 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  DHT_size@Base 0.0.0+20140922.1
  LAN_ip@Base 0.0.0+20140922.1
  LANdiscovery_init@Base 0.0.0+20140922.1
- U16_to_bytes@Base 0.0.0+20140922.1
- U32_to_bytes@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141001.1-1# U16_to_bytes@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141001.1-1# U32_to_bytes@Base 0.0.0+20140922.1
  accept_crypto_connection@Base 0.0.0+20140922.1
  add_groupchat@Base 0.0.0+20140922.1
  add_tcp_relay@Base 0.0.0+20140922.1
@@ -36,8 +36,8 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  bs_list_init@Base 0.0.0+20140922.1
  bs_list_remove@Base 0.0.0+20140922.1
  bs_list_trim@Base 0.0.0+20140922.1
- bytes_to_U16@Base 0.0.0+20140922.1
- bytes_to_U32@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141001.1-1# bytes_to_U16@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141001.1-1# bytes_to_U32@Base 0.0.0+20140922.1
  callback_file_control@Base 0.0.0+20140922.1
  callback_file_data@Base 0.0.0+20140922.1
  callback_file_sendrequest@Base 0.0.0+20140922.1
@@ -95,29 +95,34 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  file_data@Base 0.0.0+20140922.1
  file_dataremaining@Base 0.0.0+20140922.1
  file_sendrequest@Base 0.0.0+20140922.1
+ friend_con_connected@Base 0.0.0+20141001.1
  friend_connection_callbacks@Base 0.0.0+20140928.1
  friend_connection_crypt_connection_id@Base 0.0.0+20140928.1
+ friend_connection_lock@Base 0.0.0+20141001.1
  friend_ips@Base 0.0.0+20140922.1
  friendreq_init@Base 0.0.0+20140922.1
  g_callback_group_invite@Base 0.0.0+20140928.1
  g_callback_group_message@Base 0.0.0+20140928.1
  get_close_nodes@Base 0.0.0+20140922.1
  get_connection_dht_key@Base 0.0.0+20140922.1
+ get_friendcon_public_keys@Base 0.0.0+20141001.1
  get_friendlist@Base 0.0.0+20140922.1
  get_nospam@Base 0.0.0+20140922.1
  get_num_online_friends@Base 0.0.0+20140922.1
- get_peer_index@Base 0.0.0+20140928.1
+#MISSING: 0.0.0+20141001.1-1# get_peer_index@Base 0.0.0+20140928.1
  get_shared_key@Base 0.0.0+20140922.1
  getaddress@Base 0.0.0+20140922.1
  getclient_id@Base 0.0.0+20140922.1
  getfriend_conn_id_pk@Base 0.0.0+20140928.1
  getfriend_id@Base 0.0.0+20140922.1
+ getfriendcon_id@Base 0.0.0+20141001.1
  getname@Base 0.0.0+20140922.1
  getself_name@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20140928.1# group_action_send@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20140928.1# group_client_names@Base 0.0.0+20140922.1
  group_message_send@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20140928.1# group_names@Base 0.0.0+20140922.1
+ group_new_peer_send@Base 0.0.0+20141001.1
 #MISSING: 0.0.0+20140928.1# group_newpeer@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20140928.1# group_number_peers@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20140928.1# group_numpeers@Base 0.0.0+20140922.1
@@ -293,7 +298,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  send_disconnect_request@Base 0.0.0+20140922.1
  send_friendrequest@Base 0.0.0+20140922.1
  send_group_invite_packet@Base 0.0.0+20140928.1
- send_group_message_packet@Base 0.0.0+20140928.1
+#MISSING: 0.0.0+20141001.1-1# send_group_message_packet@Base 0.0.0+20140928.1
  send_lossy_cryptpacket@Base 0.0.0+20140922.1
  send_onion_data@Base 0.0.0+20140922.1
  send_onion_packet@Base 0.0.0+20140922.1
@@ -306,6 +311,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  sendpacket@Base 0.0.0+20140922.1
  set_callback_handle_recv_1@Base 0.0.0+20140922.1
  set_connection_dht_public_key@Base 0.0.0+20140922.1
+ set_dht_temp_pk@Base 0.0.0+20141001.1
  set_direct_ip_port@Base 0.0.0+20140922.1
  set_filter_function@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20140928.1# set_nick@Base 0.0.0+20140922.1
