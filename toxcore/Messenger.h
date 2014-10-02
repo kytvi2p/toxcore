@@ -41,6 +41,8 @@
 
 /* NOTE: Packet ids below 17 must never be used. */
 #define PACKET_ID_SHARE_RELAYS 17
+#define PACKET_ID_ONLINE 24
+#define PACKET_ID_OFFLINE 25
 #define PACKET_ID_NICKNAME 48
 #define PACKET_ID_STATUSMESSAGE 49
 #define PACKET_ID_USERSTATUS 50
@@ -913,13 +915,5 @@ uint32_t get_num_online_friends(const Messenger *m);
  * If the array was too small, the contents
  * of out_list will be truncated to list_size. */
 uint32_t copy_friendlist(const Messenger *m, int32_t *out_list, uint32_t list_size);
-
-/* Allocate and return a list of valid friend id's. List must be freed by the
- * caller.
- *
- * retun 0 if success.
- * return -1 if failure.
- */
-int get_friendlist(const Messenger *m, int **out_list, uint32_t *out_list_length);
 
 #endif

@@ -1,3 +1,18 @@
+toxcore (0.0.0+20141002.1-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Removed useless code.
+  * Peers now time out and delete themselves from group chats.
+  * People in groups can now be added/removed from friends list without issues.
+  * Fixed tox_load() comment.
+  * Implemented tox_callback_group_namelist_change callback in group chats.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+  * Update libtoxcore0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 02 Oct 2014 22:06:23 +0000
+
 toxcore (0.0.0+20141001.1-1ubuntu1) trusty; urgency=medium
 
   * Upload to PPA

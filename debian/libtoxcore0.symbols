@@ -103,10 +103,11 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  friendreq_init@Base 0.0.0+20140922.1
  g_callback_group_invite@Base 0.0.0+20140928.1
  g_callback_group_message@Base 0.0.0+20140928.1
+ g_callback_group_namelistchange@Base 0.0.0+20141002.1
  get_close_nodes@Base 0.0.0+20140922.1
  get_connection_dht_key@Base 0.0.0+20140922.1
  get_friendcon_public_keys@Base 0.0.0+20141001.1
- get_friendlist@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141002.1-1# get_friendlist@Base 0.0.0+20140922.1
  get_nospam@Base 0.0.0+20140922.1
  get_num_online_friends@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20141001.1-1# get_peer_index@Base 0.0.0+20140928.1
@@ -124,9 +125,10 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
 #MISSING: 0.0.0+20140928.1# group_names@Base 0.0.0+20140922.1
  group_new_peer_send@Base 0.0.0+20141001.1
 #MISSING: 0.0.0+20140928.1# group_newpeer@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140928.1# group_number_peers@Base 0.0.0+20140922.1
+ group_number_peers@Base 0.0.0+20141002.1
 #MISSING: 0.0.0+20140928.1# group_numpeers@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140928.1# group_peername@Base 0.0.0+20140922.1
+ group_peername@Base 0.0.0+20141002.1
+ group_ping_send@Base 0.0.0+20141002.1
 #MISSING: 0.0.0+20140928.1# group_sendaction@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20140928.1# group_sendmessage@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20140928.1# handle_groupchatpacket@Base 0.0.0+20140922.1
