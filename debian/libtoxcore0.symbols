@@ -302,6 +302,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  send_group_invite_packet@Base 0.0.0+20140928.1
 #MISSING: 0.0.0+20141001.1-1# send_group_message_packet@Base 0.0.0+20140928.1
  send_lossy_cryptpacket@Base 0.0.0+20140922.1
+ send_name_all_groups@Base 0.0.0+20141003.2
  send_onion_data@Base 0.0.0+20140922.1
  send_onion_packet@Base 0.0.0+20140922.1
  send_onion_request@Base 0.0.0+20140922.1

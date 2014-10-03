@@ -212,7 +212,7 @@ enum {
 };
 
 static int friend_in_close(Group_c *g, int friendcon_id);
-static int add_conn_to_groupchat(Group_Chats *g_c, int friendcon_id, int groupnumber, uint8_t closest);
+static int add_conn_to_groupchat(Group_Chats *g_c, int friendcon_id, int groupnumber, uint8_t closest, uint8_t lock);
 
 static int add_to_closest(Group_Chats *g_c, int groupnumber, const uint8_t *real_pk, const uint8_t *temp_pk)
 {
@@ -327,8 +327,11 @@ static int connect_to_closest(Group_Chats *g_c, int groupnumber)
 
         int friendcon_id = getfriend_conn_id_pk(g_c->fr_c, g->closest_peers[i].real_pk);
 
+        uint8_t lock = 1;
+
         if (friendcon_id == -1) {
             friendcon_id = new_friend_connection(g_c->fr_c, g->closest_peers[i].real_pk);
+            lock = 0;
 
             if (friendcon_id == -1) {
                 continue;
@@ -337,7 +340,7 @@ static int connect_to_closest(Group_Chats *g_c, int groupnumber)
             set_dht_temp_pk(g_c->fr_c, friendcon_id, g->closest_peers[i].temp_pk);
         }
 
-        add_conn_to_groupchat(g_c, friendcon_id, groupnumber, 1);
+        add_conn_to_groupchat(g_c, friendcon_id, groupnumber, 1, lock);
 
         if (friend_con_connected(g_c->fr_c, friendcon_id) == FRIENDCONN_STATUS_CONNECTED) {
             send_packet_online(g_c->fr_c, friendcon_id, groupnumber, g->identifier);
@@ -394,7 +397,6 @@ static int addpeer(Group_Chats *g_c, int groupnumber, const uint8_t *real_pk, co
     g->group[g->numpeers].peer_number = peer_number;
 
     g->group[g->numpeers].last_recv = unix_time();
-    g->group[g->numpeers].last_recv_msgping = unix_time();
     ++g->numpeers;
 
     add_to_closest(g_c, groupnumber, real_pk, temp_pk);
@@ -450,6 +452,30 @@ static int delpeer(Group_Chats *g_c, int groupnumber, int peer_index)
 
     if (g_c->peer_namelistchange)
         g_c->peer_namelistchange(g_c->m, groupnumber, peer_index, CHAT_CHANGE_PEER_DEL, g_c->group_namelistchange_userdata);
+
+    return 0;
+}
+
+static int setnick(Group_Chats *g_c, int groupnumber, int peer_index, const uint8_t *nick, uint16_t nick_len)
+{
+    if (nick_len > MAX_NAME_LENGTH || nick_len == 0)
+        return -1;
+
+    Group_c *g = get_group_c(g_c, groupnumber);
+
+    if (!g)
+        return -1;
+
+    /* same name as already stored? */
+    if (g->group[peer_index].nick_len == nick_len)
+        if (!memcmp(g->group[peer_index].nick, nick, nick_len))
+            return 0;
+
+    memcpy(g->group[peer_index].nick, nick, nick_len);
+    g->group[peer_index].nick_len = nick_len;
+
+    if (g_c->peer_namelistchange)
+        g_c->peer_namelistchange(g_c->m, groupnumber, peer_index, CHAT_CHANGE_PEER_NAME, g_c->group_namelistchange_userdata);
 
     return 0;
 }
@@ -531,7 +557,7 @@ static int handle_packet(void *object, int friendcon_id, uint8_t *data, uint16_t
  * return close index on success
  * return -1 on failure.
  */
-static int add_conn_to_groupchat(Group_Chats *g_c, int friendcon_id, int groupnumber, uint8_t closest)
+static int add_conn_to_groupchat(Group_Chats *g_c, int friendcon_id, int groupnumber, uint8_t closest, uint8_t lock)
 {
     Group_c *g = get_group_c(g_c, groupnumber);
 
@@ -547,6 +573,7 @@ static int add_conn_to_groupchat(Group_Chats *g_c, int friendcon_id, int groupnu
         }
 
         if (g->close[i].number == (uint32_t)friendcon_id) {
+            g->close[i].closest = closest;
             return i; /* Already in list. */
         }
     }
@@ -554,7 +581,9 @@ static int add_conn_to_groupchat(Group_Chats *g_c, int friendcon_id, int groupnu
     if (ind == MAX_GROUP_CONNECTIONS)
         return -1;
 
-    friend_connection_lock(g_c->fr_c, friendcon_id);
+    if (lock)
+        friend_connection_lock(g_c->fr_c, friendcon_id);
+
     g->close[ind].type = GROUPCHAT_CLOSE_CONNECTION;
     g->close[ind].number = friendcon_id;
     g->close[ind].closest = closest;
@@ -580,10 +609,18 @@ int add_groupchat(Group_Chats *g_c)
     Group_c *g = &g_c->chats[groupnumber];
 
     g->status = GROUPCHAT_STATUS_CONNECTED;
+    g->number_joined = -1;
     new_symmetric_key(g->identifier);
     g->peer_number = 0; /* Founder is peer 0. */
     memcpy(g->real_pk, g_c->m->net_crypto->self_public_key, crypto_box_PUBLICKEYBYTES);
-    addpeer(g_c, groupnumber, g->real_pk, g_c->m->dht->self_public_key, 0);
+    int peer_index = addpeer(g_c, groupnumber, g->real_pk, g_c->m->dht->self_public_key, 0);
+
+    if (peer_index == -1) {
+        return -1;
+    }
+
+    setnick(g_c, groupnumber, peer_index, g_c->m->name, g_c->m->name_length);
+
     return groupnumber;
 }
 
@@ -731,6 +768,7 @@ int join_groupchat(Group_Chats *g_c, int32_t friendnumber, const uint8_t *data, 
 
     uint16_t group_num = htons(groupnumber);
     g->status = GROUPCHAT_STATUS_VALID;
+    g->number_joined = -1;
     memcpy(g->real_pk, g_c->m->net_crypto->self_public_key, crypto_box_PUBLICKEYBYTES);
 
     uint8_t response[INVITE_RESPONSE_PACKET_SIZE];
@@ -743,11 +781,12 @@ int join_groupchat(Group_Chats *g_c, int32_t friendnumber, const uint8_t *data, 
         memcpy(&other_groupnum, data, sizeof(other_groupnum));
         other_groupnum = ntohs(other_groupnum);
         memcpy(g->identifier, data + sizeof(uint16_t), GROUP_IDENTIFIER_LENGTH);
-        int close_index = add_conn_to_groupchat(g_c, friendcon_id, groupnumber, 0);
+        int close_index = add_conn_to_groupchat(g_c, friendcon_id, groupnumber, 0, 1);
 
         if (close_index != -1) {
             g->close[close_index].group_number = other_groupnum;
             g->close[close_index].type = GROUPCHAT_CLOSE_ONLINE;
+            g->number_joined = friendcon_id;
         }
 
         send_peer_query(g_c, friendcon_id, other_groupnum);
@@ -852,6 +891,24 @@ int group_kill_peer_send(const Group_Chats *g_c, int groupnumber, uint16_t peer_
     }
 }
 
+#define GROUP_MESSAGE_NAME_ID 48
+
+/* send a name message
+ * return 0 on success
+ * return -1 on failure
+ */
+static int group_name_send(const Group_Chats *g_c, int groupnumber, const uint8_t *nick, uint16_t nick_len)
+{
+    if (nick_len > MAX_NAME_LENGTH)
+        return -1;
+
+    if (send_message_group(g_c, groupnumber, GROUP_MESSAGE_NAME_ID, nick, nick_len)) {
+        return 0;
+    } else {
+        return -1;
+    }
+}
+
 static void handle_friend_invite_packet(Messenger *m, int32_t friendnumber, const uint8_t *data, uint16_t length)
 {
     Group_Chats *g_c = m->group_chat_object;
@@ -904,7 +961,7 @@ static void handle_friend_invite_packet(Messenger *m, int32_t friendnumber, cons
 
             uint16_t peer_number = rand(); /* TODO: make it not random. */
             addpeer(g_c, groupnum, real_pk, temp_pk, peer_number);
-            int close_index = add_conn_to_groupchat(g_c, friendcon_id, groupnum, 0);
+            int close_index = add_conn_to_groupchat(g_c, friendcon_id, groupnum, 0, 1);
 
             if (close_index != -1) {
                 g->close[close_index].group_number = other_groupnum;
@@ -955,6 +1012,8 @@ static int send_packet_online(Friend_Connections *fr_c, int friendcon_id, uint16
                              sizeof(packet), 0) != -1;
 }
 
+static unsigned int send_peer_kill(Group_Chats *g_c, int friendcon_id, uint16_t group_num);
+
 static int handle_packet_online(Group_Chats *g_c, int friendcon_id, uint8_t *data, uint16_t length)
 {
     if (length != ONLINE_PACKET_DATA_SIZE)
@@ -977,11 +1036,45 @@ static int handle_packet_online(Group_Chats *g_c, int friendcon_id, uint8_t *dat
 
     g->close[index].group_number = other_groupnum;
     g->close[index].type = GROUPCHAT_CLOSE_ONLINE;
+
+    if (g->number_joined != -1 && g->number_joined != friendcon_id) {
+        int fr_close_index = friend_in_close(g, g->number_joined);
+        uint8_t real_pk[crypto_box_PUBLICKEYBYTES];
+        uint8_t dht_temp_pk[crypto_box_PUBLICKEYBYTES];
+        get_friendcon_public_keys(real_pk, dht_temp_pk, g_c->fr_c, g->number_joined);
+        g->number_joined = -1;
+
+        if (fr_close_index == -1)
+            return -1;
+
+        if (!g->close[fr_close_index].closest && pk_in_closest_peers(g, real_pk)) {
+            g->close[fr_close_index].closest = 1;
+        }
+
+        if (!g->close[fr_close_index].closest) {
+            g->close[fr_close_index].type = GROUPCHAT_CLOSE_NONE;
+            send_peer_kill(g_c, g->close[fr_close_index].number, g->close[fr_close_index].group_number);
+            kill_friend_connection(g_c->fr_c, g->close[fr_close_index].number);
+        }
+    }
+
     return 0;
 }
 
-#define PEER_QUERY_ID 4
-#define PEER_RESPONSE_ID 8
+#define PEER_KILL_ID 1
+#define PEER_QUERY_ID 8
+#define PEER_RESPONSE_ID 9
+
+/* return 1 on success.
+ * return 0 on failure
+ */
+static unsigned int send_peer_kill(Group_Chats *g_c, int friendcon_id, uint16_t group_num)
+{
+    uint8_t packet[1];
+    packet[0] = PEER_KILL_ID;
+    return send_packet_group_peer(g_c->fr_c, friendcon_id, PACKET_ID_DIRECT_GROUPCHAT, group_num, packet, sizeof(packet));
+}
+
 
 /* return 1 on success.
  * return 0 on failure
@@ -1011,15 +1104,7 @@ static unsigned int send_peers(Group_Chats *g_c, int groupnumber, int friendcon_
     unsigned int i;
 
     for (i = 0; i < g->numpeers; ++i) {
-        uint16_t peer_num = htons(g->group[i].peer_number);
-        memcpy(p, &peer_num, sizeof(peer_num));
-        p += sizeof(peer_num);
-        memcpy(p, g->group[i].real_pk, crypto_box_PUBLICKEYBYTES);
-        p += crypto_box_PUBLICKEYBYTES;
-        memcpy(p, g->group[i].temp_pk, crypto_box_PUBLICKEYBYTES);
-        p += crypto_box_PUBLICKEYBYTES;
-
-        if ((p - packet) + sizeof(uint16_t) + crypto_box_PUBLICKEYBYTES * 2 > sizeof(packet)) {
+        if ((p - packet) + sizeof(uint16_t) + crypto_box_PUBLICKEYBYTES * 2 + 1 + g->group[i].nick_len > sizeof(packet)) {
             if (send_packet_group_peer(g_c->fr_c, friendcon_id, PACKET_ID_DIRECT_GROUPCHAT, group_num, packet, (p - packet))) {
                 sent = i;
             } else {
@@ -1028,6 +1113,18 @@ static unsigned int send_peers(Group_Chats *g_c, int groupnumber, int friendcon_
 
             p = packet + 1;
         }
+
+        uint16_t peer_num = htons(g->group[i].peer_number);
+        memcpy(p, &peer_num, sizeof(peer_num));
+        p += sizeof(peer_num);
+        memcpy(p, g->group[i].real_pk, crypto_box_PUBLICKEYBYTES);
+        p += crypto_box_PUBLICKEYBYTES;
+        memcpy(p, g->group[i].temp_pk, crypto_box_PUBLICKEYBYTES);
+        p += crypto_box_PUBLICKEYBYTES;
+        *p = g->group[i].nick_len;
+        p += 1;
+        memcpy(p, g->group[i].nick, g->group[i].nick_len);
+        p += g->group[i].nick_len;
     }
 
     if (sent != i) {
@@ -1044,9 +1141,6 @@ static int handle_send_peers(Group_Chats *g_c, int groupnumber, const uint8_t *d
     if (length == 0)
         return -1;
 
-    if (length % (sizeof(uint16_t) + crypto_box_PUBLICKEYBYTES * 2) != 0)
-        return -1;
-
     Group_c *g = get_group_c(g_c, groupnumber);
 
     if (!g)
@@ -1055,20 +1149,32 @@ static int handle_send_peers(Group_Chats *g_c, int groupnumber, const uint8_t *d
     unsigned int i;
     const uint8_t *d = data;
 
-    while ((length - (d - data)) >= sizeof(uint16_t) + crypto_box_PUBLICKEYBYTES * 2) {
+    while ((length - (d - data)) >= sizeof(uint16_t) + crypto_box_PUBLICKEYBYTES * 2 + 1) {
         uint16_t peer_num;
         memcpy(&peer_num, d, sizeof(peer_num));
         peer_num = ntohs(peer_num);
         d += sizeof(uint16_t);
-        addpeer(g_c, groupnumber, d, d + crypto_box_PUBLICKEYBYTES, peer_num);
+        int peer_index = addpeer(g_c, groupnumber, d, d + crypto_box_PUBLICKEYBYTES, peer_num);
+
+        if (peer_index == -1)
+            return -1;
 
         if (g->status == GROUPCHAT_STATUS_VALID
                 && memcmp(d, g_c->m->net_crypto->self_public_key, crypto_box_PUBLICKEYBYTES) == 0) {
             g->peer_number = peer_num;
             g->status = GROUPCHAT_STATUS_CONNECTED;
+            group_name_send(g_c, groupnumber, g_c->m->name, g_c->m->name_length);
         }
 
         d += crypto_box_PUBLICKEYBYTES * 2;
+        uint8_t name_length = *d;
+        d += 1;
+
+        if (name_length > (length - (d - data)) || name_length > MAX_NAME_LENGTH)
+            return -1;
+
+        setnick(g_c, groupnumber, peer_index, d, name_length);
+        d += name_length;
     }
 
     return 0;
@@ -1081,6 +1187,18 @@ static void handle_direct_packet(Group_Chats *g_c, int groupnumber, const uint8_
         return;
 
     switch (data[0]) {
+        case PEER_KILL_ID: {
+            Group_c *g = get_group_c(g_c, groupnumber);
+
+            if (!g)
+                return;
+
+            if (!g->close[close_index].closest) {
+                g->close[close_index].type = GROUPCHAT_CLOSE_NONE;
+                kill_friend_connection(g_c->fr_c, g->close[close_index].number);
+            }
+        }
+
         case PEER_QUERY_ID: {
             Group_c *g = get_group_c(g_c, groupnumber);
 
@@ -1264,13 +1382,23 @@ static void handle_message_packet_group(Group_Chats *g_c, int groupnumber, const
         }
         break;
 
+        case GROUP_MESSAGE_NAME_ID: {
+            if (setnick(g_c, groupnumber, index, msg_data, msg_data_len) == -1)
+                return;
+        }
+        break;
+
         case PACKET_ID_MESSAGE: {
             if (msg_data_len == 0)
                 return;
 
+            uint8_t newmsg[msg_data_len + 1];
+            memcpy(newmsg, msg_data, msg_data_len);
+            newmsg[msg_data_len] = 0;
+
             //TODO
             if (g_c->message_callback)
-                g_c->message_callback(g_c->m, groupnumber, index, msg_data, msg_data_len, g_c->message_callback_userdata);
+                g_c->message_callback(g_c->m, groupnumber, index, newmsg, msg_data_len, g_c->message_callback_userdata);
 
             break;
         }
@@ -1365,6 +1493,24 @@ static int groupchat_clear_timedout(Group_Chats *g_c, int groupnumber)
     }
 
     return 0;
+}
+
+/* Send current name (set in messenger) to all online groups.
+ */
+void send_name_all_groups(Group_Chats *g_c)
+{
+    unsigned int i;
+
+    for (i = 0; i < g_c->num_chats; ++i) {
+        Group_c *g = get_group_c(g_c, i);
+
+        if (!g)
+            continue;
+
+        if (g->status == GROUPCHAT_STATUS_CONNECTED) {
+            group_name_send(g_c, i, g_c->m->name, g_c->m->name_length);
+        }
+    }
 }
 
 /* Create new groupchat instance. */
