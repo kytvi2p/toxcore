@@ -1,3 +1,18 @@
+toxcore (0.0.0+20141003.1-1) unstable; urgency=medium
+
+  [ dubslow ]
+  * null terminate group messages (cause jfreegman can't str8 c)
+
+  [ irungentoo ]
+  * Added name packet to group chats, send one when appropriate.
+  * Kill group connection to friend once we are connected to group.
+  * Fixed group bugs.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 03 Oct 2014 21:15:27 +0000
+
 toxcore (0.0.0+20141002.1-1~deb7u+1) stable; urgency=medium
 
   * Backport to Wheezy

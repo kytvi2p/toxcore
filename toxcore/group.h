@@ -90,6 +90,8 @@ typedef struct {
     uint16_t peer_number;
 
     uint64_t last_sent_ping;
+
+    int number_joined; /* friendcon_id of person that invited us to the chat. (-1 means none) */
 } Group_c;
 
 typedef struct {
@@ -207,6 +209,10 @@ int group_number_peers(const Group_Chats *g_c, int groupnumber);
  */
 int group_names(const Group_Chats *g_c, int groupnumber, uint8_t names[][MAX_NAME_LENGTH], uint16_t lengths[],
                 uint16_t length);
+
+/* Send current name (set in messenger) to all online groups.
+ */
+void send_name_all_groups(Group_Chats *g_c);
 
 /* Create new groupchat instance. */
 Group_Chats *new_groupchats(Messenger *m);
