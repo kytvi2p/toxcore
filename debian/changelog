@@ -1,3 +1,15 @@
+toxcore (0.0.0+20141003.2-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Added names to peer response packet.
+  * Removed useless variables.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+  * Update debian/libtoxcore0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 03 Oct 2014 21:58:26 +0000
+
 toxcore (0.0.0+20141003.1-1~deb7u+1) stable; urgency=medium
 
   * Backport to Wheezy
