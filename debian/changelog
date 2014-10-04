@@ -1,3 +1,14 @@
+toxcore (0.0.0+20141004.1-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Fixed group peer chosing algorithm.
+  * Reduced the risk of two people being given the same peer id in groups.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sat, 04 Oct 2014 17:26:53 +0000
+
 toxcore (0.0.0+20141003.2-1ubuntu1) trusty; urgency=medium
 
   * Upload to PPA
