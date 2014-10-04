@@ -298,7 +298,8 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  send_data@Base 0.0.0+20140922.1
  send_data_request@Base 0.0.0+20140922.1
  send_disconnect_request@Base 0.0.0+20140922.1
- send_friendrequest@Base 0.0.0+20140922.1
+ send_friend_request_packet@Base 0.0.0+20141004.2
+#MISSING: 0.0.0+20141004.2-1# send_friendrequest@Base 0.0.0+20140922.1
  send_group_invite_packet@Base 0.0.0+20140928.1
 #MISSING: 0.0.0+20141001.1-1# send_group_message_packet@Base 0.0.0+20140928.1
  send_lossy_cryptpacket@Base 0.0.0+20140922.1
@@ -317,6 +318,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  set_dht_temp_pk@Base 0.0.0+20141001.1
  set_direct_ip_port@Base 0.0.0+20140922.1
  set_filter_function@Base 0.0.0+20140922.1
+ set_friend_request_callback@Base 0.0.0+20141004.2
 #MISSING: 0.0.0+20140928.1# set_nick@Base 0.0.0+20140922.1
  set_nospam@Base 0.0.0+20140922.1
  set_socket_dualstack@Base 0.0.0+20140922.1

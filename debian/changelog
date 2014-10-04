@@ -1,3 +1,15 @@
+toxcore (0.0.0+20141004.2-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Send friend request with connection if for some reason (groupchats) we are
+    already connected to the friend but they have not added us yet.
+
+  [ Kill Your TV ]
+  * New upstrem git snashot
+  * Update debian/libtoxcore0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sat, 04 Oct 2014 21:34:55 +0000
+
 toxcore (0.0.0+20141004.1-1~deb7u+1) stable; urgency=medium
 
   * Backport to Wheezy
