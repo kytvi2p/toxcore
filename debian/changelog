@@ -1,3 +1,9 @@
+toxcore (0.0.0+20141005.1-2) UNRELEASED; urgency=medium
+
+  * Update debian/libtoxcore0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 05 Oct 2014 18:26:46 +0000
+
 toxcore (0.0.0+20141005.1-1) unstable; urgency=medium
 
   [ Jfreegman ]
