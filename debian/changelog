@@ -1,3 +1,9 @@
+toxcore (0.0.0+20141007.1~git3df5401-1~deb7u+1) stable; urgency=medium
+
+  * Backport to Wheezy
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 07 Oct 2014 23:01:03 +0000
+
 toxcore (0.0.0+20141007.1~git3df5401-1) unstable; urgency=medium
 
   [ David Lohle ]
@@ -16,12 +22,6 @@ toxcore (0.0.0+20141007.1~git3df5401-1) unstable; urgency=medium
 
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 07 Oct 2014 22:48:36 +0000
-
-toxcore (0.0.0+20141005.1-1~deb7u+1) stable; urgency=medium
-
-  * Backport to Wheezy
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 05 Oct 2014 18:16:59 +0000
 
 toxcore (0.0.0+20141005.1-1) unstable; urgency=medium
 
