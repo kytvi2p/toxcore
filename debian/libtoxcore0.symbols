@@ -122,7 +122,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
 #MISSING: 0.0.0+20140928.1# group_action_send@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20140928.1# group_client_names@Base 0.0.0+20140922.1
  group_message_send@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140928.1# group_names@Base 0.0.0+20140922.1
+ group_names@Base 0.0.0+20141005.1
  group_new_peer_send@Base 0.0.0+20141001.1
 #MISSING: 0.0.0+20140928.1# group_newpeer@Base 0.0.0+20140922.1
  group_number_peers@Base 0.0.0+20141002.1
