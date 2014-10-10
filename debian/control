@@ -30,33 +30,33 @@ Description: distributed, secure messenger with a/v support - development header
  as a multimedia messenger, but many people have shown us that Tox can be used
  for a lot more than just instant messaging.
 
-Package: tox-bootstrapd
-Section: net
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Pre-Depends: adduser
-Replaces: tox-daemon
-Conflicts: tox-daemon
-Description: distributed, secure messenger with a/v support - daemon
- Tox provides an encrypted, distributed, and extensible peer-to-peer platform
- that can be used for various forms of communication. Tox is intended to be used
- as a multimedia messenger, but many people have shown us that Tox can be used
- for a lot more than just instant messaging.
- .
- This package contains the bootstrap daemon.
+#Package: tox-bootstrapd
+#Section: net
+#Architecture: any
+#Depends: ${shlibs:Depends}, ${misc:Depends}
+#Pre-Depends: adduser
+#Replaces: tox-daemon
+#Conflicts: tox-daemon
+#Description: distributed, secure messenger with a/v support - daemon
+# Tox provides an encrypted, distributed, and extensible peer-to-peer platform
+# that can be used for various forms of communication. Tox is intended to be used
+# as a multimedia messenger, but many people have shown us that Tox can be used
+# for a lot more than just instant messaging.
+# .
+# This package contains the bootstrap daemon.
 
-Package: tox-daemon
-Section: oldlibs
-Priority: extra
-Architecture: any
-Depends: tox-bootstrapd, ${misc:Depends}
-Description: distributed, secure messenger with a/v support - daemon
- Tox provides an encrypted, distributed, and extensible peer-to-peer platform
- that can be used for various forms of communication. Tox is intended to be used
- as a multimedia messenger, but many people have shown us that Tox can be used
- for a lot more than just instant messaging.
- .
- This is a transitional package to pull in the tox-bootstrapd package.
+#Package: tox-daemon
+#Section: oldlibs
+#Priority: extra
+#Architecture: any
+#Depends: tox-bootstrapd, ${misc:Depends}
+#Description: distributed, secure messenger with a/v support - daemon
+# Tox provides an encrypted, distributed, and extensible peer-to-peer platform
+# that can be used for various forms of communication. Tox is intended to be used
+# as a multimedia messenger, but many people have shown us that Tox can be used
+# for a lot more than just instant messaging.
+# .
+# This is a transitional package to pull in the tox-bootstrapd package.
 
 Package: libtoxcore0
 Architecture: any
