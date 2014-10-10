@@ -1,3 +1,10 @@
+toxcore (0.0.0+20141009.r2836-1~deb7u+1) stable; urgency=medium
+
+  * Backport to Wheezy
+  * Disable systemd in Wheezy
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 10 Oct 2014 03:19:50 +0000
+
 toxcore (0.0.0+20141009.r2836-1) unstable; urgency=medium
 
   [ A. L'mao ]
