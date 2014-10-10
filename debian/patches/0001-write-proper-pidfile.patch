@@ -1,0 +1,21 @@
+From: Kill Your TV <killyourtv@i2pmail.org>
+Date: Fri, 10 Oct 2014 22:38:04 +0000
+Subject: write proper pidfile
+
+---
+ other/bootstrap_daemon/tox-bootstrapd.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/other/bootstrap_daemon/tox-bootstrapd.c b/other/bootstrap_daemon/tox-bootstrapd.c
+index e4cadb3..dcbdb5c 100644
+--- a/other/bootstrap_daemon/tox-bootstrapd.c
++++ b/other/bootstrap_daemon/tox-bootstrapd.c
+@@ -616,7 +616,7 @@ int main(int argc, char *argv[])
+     pid_t pid = fork();
+ 
+     if (pid > 0) {
+-        fprintf(pidf, "%d ", pid);
++        fprintf(pidf, "%d\n", pid);
+         fclose(pidf);
+         syslog(LOG_DEBUG, "Forked successfully: PID: %d.\n", pid);
+         return 0;
