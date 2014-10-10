@@ -1,0 +1,27 @@
+#!/bin/sh
+
+set -e
+
+PKGS="
+  libtoxcore0 \
+  libtoxcore-dbg \
+  libtoxcore-dev \
+  libtoxencryptsave0 \
+  libtoxencryptsave-dev \
+  libtoxencryptsave-dbg \
+  libtoxdns0 \
+  libtoxdns-dev \
+  libtoxdns-dbg \
+  libtox-dev \
+  libtoxcore-dev \
+  libtoxcore-dbg"
+
+  if [ ! -z $2 ]; then
+      if dpkg --compare-versions $2 lt 0.0.0+20141008.r2833-1; then
+          for pkg in $PKGS; do
+              test -d /usr/share/doc/$pkg && rm -rf /usr/share/doc/$pkg
+          done
+      fi
+  fi
+
+#DEBHELPER#
