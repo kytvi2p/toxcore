@@ -9,6 +9,7 @@ toxcore (0.0.0+20141009.r2836-1) unstable; urgency=medium
   [ Kill Your TV ]
   * set up initscript, daemon, daemon user, and manpages
   * Symlink duplicate doc directories under /usr/share/doc
+  * Add systemd service file
   * New upstream git snapshot
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 10 Oct 2014 03:12:10 +0000

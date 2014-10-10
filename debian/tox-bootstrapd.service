@@ -1,0 +1,11 @@
+[Unit]
+Description=Tox bootstrap daemon
+
+[Service]
+ExecStart=/usr/sbin/tox-bootstrapd /etc/tox-bootstrapd.conf
+PIDFile=/var/run/tox-bootstrapd/tox-bootstrapd.pid
+User=tox-bootstrapd
+Group=tox-bootstrapd
+
+[Install]
+WantedBy=multi-user.target
