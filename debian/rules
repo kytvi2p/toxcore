@@ -2,7 +2,7 @@
 
 CFLAGS += -g
 %:
-	dh $@ --with autoreconf --parallel
+	dh $@ --with autoreconf,systemd --parallel
 
 override_dh_auto_configure:
 	dh_auto_configure -- --enable-av --disable-tests --enable-daemon
@@ -23,7 +23,7 @@ override_dh_installdocs:
 	dh_installdocs -plibtoxencryptsave-dev -plibtoxencryptsave-dbg --link-doc=libtoxencryptsave0
 	dh_installdocs -plibtoxcore-dev -plibtoxcore-dbg --link-doc=libtoxcore0
 	dh_installdocs -plibtoxdns-dev -plibtoxdns-dbg --link-doc=libtoxdns0
-	dh_installdocs -ptox-demon -ptox-bootstrapd
+	dh_installdocs -ptox-daemon -ptox-bootstrapd
 	dh_installdocs -plibtoxdns0 -plibtoxencryptsave0 -plibtoxav0 -plibtox-dev --link-doc=libtoxcore0
 	dh_installdocs --remaining-packages
 
