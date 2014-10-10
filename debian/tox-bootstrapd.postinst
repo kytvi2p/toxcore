@@ -4,6 +4,7 @@ set -e
 
 TOXUSER=tox-bootstrapd
 TOXHOME=/var/lib/${TOXUSER}
+COMMENT="Tox Bootstrap Daemon"
 
 case "$1" in
     configure|reconfigure)
@@ -15,13 +16,14 @@ case "$1" in
     # Create user and group as a system user.
     if getent passwd ${TOXUSER} > /dev/null 2>&1 ; then
         groupadd -f ${TOXUSER} || true
-        usermod -c "Tox Bootstrap Daemon" -d ${TOXHOME} -g ${TOXUSER} -s "/bin/false" \
+        usermod -c ${COMMENT} -d ${TOXHOME} -g ${TOXUSER} -s "/bin/false" \
             ${TOXUSER} -e 1 > /dev/null 2>&1 || true
     else
-        adduser --system --quiet --group --home ${TOXHOME} ${TOXUSER} > /dev/null 2>&1
+        adduser --system --quiet --group --gecos ${COMMENT} --home ${TOXHOME} ${TOXUSER} > /dev/null 2>&1
     fi
 
     chown -f -R ${TOXUSER}:${TOXUSER} ${TOXHOME}
+    chmod 700 ${TOXHOME}
 
 ;;
 abort-upgrade|abort-remove|abort-deconfigure)

@@ -3,6 +3,7 @@ Description=Tox bootstrap daemon
 
 [Service]
 ExecStart=/usr/sbin/tox-bootstrapd /etc/tox-bootstrapd.conf
+Type=forking
 PIDFile=/var/run/tox-bootstrapd/tox-bootstrapd.pid
 User=tox-bootstrapd
 Group=tox-bootstrapd
