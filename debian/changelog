@@ -1,10 +1,24 @@
+toxcore (0.0.0+20141011.r2839-1) unstable; urgency=medium
+
+  [ dubslow ]
+  * refactor toxencryptedsave to allow passphrase encryption of arbitrary data
+    also a minor API change for clarity
+  * re-refactor to separate pass->key and key->encryption
+
+  [ Kill Your TV ]
+  * Remove files created by tox-bootstrap when package is purged.
+  * Update debian/libtoxencryptsave0.symbols
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sat, 11 Oct 2014 11:44:47 +0000
+
 toxcore (0.0.0+20141009.r2836-3~deb7u+1) stable; urgency=medium
 
   * Backport to Wheezy
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 10 Oct 2014 23:06:32 +0000
 
-toxcore (0.0.0+20141009.r2836-3) unstable; urgency=medium
+toxcore (0.0.0+20141009.r2836-2) unstable; urgency=medium
 
   * Set gecos field when creating user
   * Fix systemd unit file
