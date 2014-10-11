@@ -1,3 +1,9 @@
+toxcore (0.0.0+20141011.r2839-1~precise+1) precise; urgency=medium
+
+  * Upload to PPA
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sat, 11 Oct 2014 13:03:35 +0000
+
 toxcore (0.0.0+20141011.r2839-1) unstable; urgency=medium
 
   [ dubslow ]
