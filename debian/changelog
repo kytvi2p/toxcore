@@ -1,3 +1,14 @@
+toxcore (0.0.0+20141011.r2842-1) unstable; urgency=medium
+
+  [ Sean Qureshi ]
+  * Enable IPv6
+  * Does a realloc with a size of 0 if every port is invalid
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 12 Oct 2014 00:03:44 +0000
+
 toxcore (0.0.0+20141011.r2839-1) unstable; urgency=medium
 
   [ dubslow ]
