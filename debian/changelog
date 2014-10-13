@@ -1,8 +1,14 @@
-toxcore (0.0.0+20141011.r2842-2) UNRELEASED; urgency=medium
+toxcore (0.0.0+20141012.r2846-1) unstable; urgency=medium
 
+
+  [ dubslow ]
+  * Fix include issue
+
+  [ Kill Your TV ]
   * Add dependency on libsodium-dbg for libtoxcore-dbg
+  * New upstream git snapshot
 
- -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 12 Oct 2014 02:24:02 +0000
+ -- Kill Your TV <killyourtv@i2pmail.org>  Mon, 13 Oct 2014 10:03:50 +0000
 
 toxcore (0.0.0+20141011.r2842-1) unstable; urgency=medium
 
