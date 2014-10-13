@@ -1,3 +1,9 @@
+toxcore (0.0.0+20141012.r2846-1ubuntu1) trusty; urgency=medium
+
+  * Build for Trusty
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Mon, 13 Oct 2014 10:07:37 +0000
+
 toxcore (0.0.0+20141012.r2846-1) unstable; urgency=medium
 
 
@@ -20,12 +26,6 @@ toxcore (0.0.0+20141011.r2842-1) unstable; urgency=medium
   * New upstream git snapshot
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 12 Oct 2014 00:03:44 +0000
-
-toxcore (0.0.0+20141011.r2839-1ubuntu1) trusty; urgency=medium
-
-  * Upload to PPA
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Sat, 11 Oct 2014 13:01:52 +0000
 
 toxcore (0.0.0+20141011.r2839-1) unstable; urgency=medium
 
