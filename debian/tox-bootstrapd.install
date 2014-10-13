@@ -1,5 +1,5 @@
 #!/usr/bin/dh-exec
 
-debian/tmp/usr/bin/DHT_bootstrap => usr/sbin/tox-DHT_bootstrap
+#debian/tmp/usr/bin/DHT_bootstrap => usr/sbin/tox-DHT_bootstrap
 debian/tmp/usr/bin/tox-bootstrapd => usr/sbin/tox-bootstrapd
 other/bootstrap_daemon/tox-bootstrapd.conf => etc/tox-bootstrapd.conf

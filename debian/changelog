@@ -1,3 +1,9 @@
+toxcore (0.0.0+20141012.r2846-4) UNRELEASED; urgency=medium
+
+  *Stop packaging DHT_bootstrap in the daemon package
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Mon, 13 Oct 2014 17:08:58 +0000
+
 toxcore (0.0.0+20141012.r2846-3) unstable; urgency=medium
 
   * Add missing quotes to postinst script
