@@ -1,14 +1,14 @@
+toxcore (0.0.0+20141012.r2846-3~deb7u+1) stable; urgency=medium
+
+  * Backport to Wheezy
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Mon, 13 Oct 2014 15:08:43 +0000
+
 toxcore (0.0.0+20141012.r2846-3) unstable; urgency=medium
 
   * Add missing quotes to postinst script
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Mon, 13 Oct 2014 15:00:28 +0000
-
-toxcore (0.0.0+20141012.r2846-2~deb7u+1) stable; urgency=medium
-
-  * Backport to Wheezy
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Mon, 13 Oct 2014 14:02:10 +0000
 
 toxcore (0.0.0+20141012.r2846-2) unstable; urgency=medium
 
