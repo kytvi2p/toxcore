@@ -25,7 +25,7 @@ case "$1" in
     chown -f -R ${TOXUSER}:${TOXUSER} ${TOXHOME}
     chmod 700 ${TOXHOME}
     setcap cap_net_bind_service=+ep /usr/sbin/tox-bootstrapd
-    setcap cap_net_bind_service=+ep /usr/sbin/tox-DHT_bootstrap
+    #setcap cap_net_bind_service=+ep /usr/sbin/tox-DHT_bootstrap
 
 ;;
 abort-upgrade|abort-remove|abort-deconfigure)
