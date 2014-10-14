@@ -1,3 +1,22 @@
+toxcore (0.0.0+20141013.r2847-1) unstable; urgency=medium
+
+
+  [ irungentoo ]
+  * tox_count_chatlist() now works.
+
+  [ Kill Your TV ]
+  * Stop packaging DHT_bootstrap in the daemon package
+  * Stop using dh-exec: it's no longer needed without DHT_bootstrap
+  * Update debian/libtoxcore0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 14 Oct 2014 01:02:22 +0000
+
+toxcore (0.0.0+20141012.r2846-3) unstable; urgency=medium
+
+  * Add missing quotes to postinst script
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Mon, 13 Oct 2014 15:00:28 +0000
+
 toxcore (0.0.0+20141012.r2846-2~precise1) precise; urgency=medium
 
   * Backport to Precise
