@@ -1,3 +1,10 @@
+toxcore (0.0.0+20141013.r2847-1~precise+2) precise; urgency=medium
+
+  * Disable bootstrap daemon again; for whatever reason it's not found in
+    precise. Will set-up a VM for testing later.
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 14 Oct 2014 01:55:24 +0000
+
 toxcore (0.0.0+20141013.r2847-1~precise+1) precise; urgency=medium
 
   * Backport to Precise
