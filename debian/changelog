@@ -1,3 +1,10 @@
+toxcore (0.0.0+20141013.r2847-1~precise+1) precise; urgency=medium
+
+  * Backport to Precise
+  * Re-enable tox-bootstrap packages
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 14 Oct 2014 01:31:12 +0000
+
 toxcore (0.0.0+20141013.r2847-1) unstable; urgency=medium
 
 
