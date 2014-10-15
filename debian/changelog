@@ -1,3 +1,15 @@
+toxcore (0.0.0+20141014.r2849-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Add function to check if the peernumber is ours for group chats.
+  * Added basic IRC group syncbot to testing.
+
+  [ Kill Your TV ]
+  * Update debian/libtoxcore0.symbols
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 15 Oct 2014 14:25:49 +0000
+
 toxcore (0.0.0+20141013.r2847-1) unstable; urgency=medium
 
 
