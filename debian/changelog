@@ -1,3 +1,9 @@
+toxcore (0.0.0+20141014.r2849-1~precise+1) precise; urgency=medium
+
+  * Backport to Precise
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 15 Oct 2014 20:40:25 +0000
+
 toxcore (0.0.0+20141014.r2849-1) unstable; urgency=medium
 
   [ irungentoo ]
