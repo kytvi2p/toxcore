@@ -564,7 +564,7 @@ void tox_callback_group_invite(Tox *tox, void (*function)(Messenger *tox, int32_
 
 /* Set the callback for group messages.
  *
- *  Function(Tox *tox, int groupnumber, int friendgroupnumber, uint8_t * message, uint16_t length, void *userdata)
+ *  Function(Tox *tox, int groupnumber, int peernumber, uint8_t * message, uint16_t length, void *userdata)
  */
 void tox_callback_group_message(Tox *tox, void (*function)(Messenger *tox, int, int, const uint8_t *, uint16_t, void *),
                                 void *userdata)
@@ -575,7 +575,7 @@ void tox_callback_group_message(Tox *tox, void (*function)(Messenger *tox, int, 
 
 /* Set the callback for group actions.
  *
- *  Function(Tox *tox, int groupnumber, int friendgroupnumber, uint8_t * action, uint16_t length, void *userdata)
+ *  Function(Tox *tox, int groupnumber, int peernumber, uint8_t * action, uint16_t length, void *userdata)
  */
 void tox_callback_group_action(Tox *tox, void (*function)(Messenger *tox, int, int, const uint8_t *, uint16_t, void *),
                                void *userdata)
@@ -672,6 +672,17 @@ int tox_group_action_send(Tox *tox, int groupnumber, const uint8_t *action, uint
     return -1;
 }
 
+/* Check if the current peernumber corresponds to ours.
+ *
+ * return 1 if the peernumber corresponds to ours.
+ * return 0 on failure.
+ */
+unsigned int tox_group_peernumber_is_ours(const Tox *tox, int groupnumber, int peernumber)
+{
+    const Messenger *m = tox;
+    return group_peernumber_is_ours(m->group_chat_object, groupnumber, peernumber);
+}
+
 /* Return the number of peers in the group chat on success.
  * return -1 on failure
  */
@@ -712,11 +723,10 @@ uint32_t tox_count_chatlist(const Tox *tox)
  * Otherwise, returns the number of elements copied.
  * If the array was too small, the contents
  * of out_list will be truncated to list_size. */
-uint32_t tox_get_chatlist(const Tox *tox, int *out_list, uint32_t list_size)
+uint32_t tox_get_chatlist(const Tox *tox, int32_t *out_list, uint32_t list_size)
 {
     const Messenger *m = tox;
-    //return copy_chatlist(m, out_list, list_size);
-    return 0;
+    return copy_chatlist(m->group_chat_object, out_list, list_size);
 }
 
 

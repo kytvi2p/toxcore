@@ -51,7 +51,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  connection_data_handler@Base 0.0.0+20140922.1
  connection_lossy_data_handler@Base 0.0.0+20140922.1
  connection_status_handler@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140928.1# copy_chatlist@Base 0.0.0+20140922.1
+ copy_chatlist@Base 0.0.0+20141015.r2861
  copy_connected_tcp_relays@Base 0.0.0+20140922.1
  copy_friendlist@Base 0.0.0+20140922.1
  count_chatlist@Base 0.0.0+20141013.r2847
@@ -128,6 +128,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  group_number_peers@Base 0.0.0+20141002.1
 #MISSING: 0.0.0+20140928.1# group_numpeers@Base 0.0.0+20140922.1
  group_peername@Base 0.0.0+20141002.1
+ group_peernumber_is_ours@Base 0.0.0+20141014.r2849
  group_ping_send@Base 0.0.0+20141002.1
 #MISSING: 0.0.0+20140928.1# group_sendaction@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20140928.1# group_sendmessage@Base 0.0.0+20140922.1
@@ -393,6 +394,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  tox_group_message_send@Base 0.0.0+20140922.1
  tox_group_number_peers@Base 0.0.0+20140922.1
  tox_group_peername@Base 0.0.0+20140922.1
+ tox_group_peernumber_is_ours@Base 0.0.0+20141014.r2849
  tox_hash@Base 0.0.0+20140925.1
  tox_invite_friend@Base 0.0.0+20140922.1
  tox_isconnected@Base 0.0.0+20140922.1
