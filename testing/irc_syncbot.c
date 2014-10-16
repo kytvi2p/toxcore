@@ -33,11 +33,12 @@ int sock;
 #define SERVER_CONNECT "NICK "IRC_NAME"\nUSER "IRC_NAME" 8 * :"IRC_NAME"\n"
 #define CHANNEL_JOIN "JOIN "IRC_CHANNEL"\n"
 
+/* In toxcore/network.c */
+uint64_t current_time_monotonic(void);
+
 uint64_t get_monotime_sec(void)
 {
-    struct timespec monotime;
-    clock_gettime(CLOCK_MONOTONIC_RAW, &monotime);
-    return monotime.tv_sec;
+    return current_time_monotonic() / 1000;
 }
 
 int reconnect(void)
@@ -132,6 +133,9 @@ static void copy_groupmessage(Tox *tox, int groupnumber, int friendgroupnumber, 
     for (i = 0; i < send_len; ++i) {
         if (sendbuf[i] == '\n')
             sendbuf[i] = '|';
+
+        if (sendbuf[i] == 0)
+            sendbuf[i] = ' ';
     }
 
     sendbuf[send_len] = '\n';
