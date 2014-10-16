@@ -51,7 +51,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  connection_data_handler@Base 0.0.0+20140922.1
  connection_lossy_data_handler@Base 0.0.0+20140922.1
  connection_status_handler@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140928.1# copy_chatlist@Base 0.0.0+20140922.1
+ copy_chatlist@Base 0.0.0+20141015.r2861
  copy_connected_tcp_relays@Base 0.0.0+20140922.1
  copy_friendlist@Base 0.0.0+20140922.1
  count_chatlist@Base 0.0.0+20141013.r2847

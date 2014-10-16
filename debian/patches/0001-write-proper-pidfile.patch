@@ -7,12 +7,10 @@ Signed-off-by: Kill Your TV <killyourtv@i2pmail.org>
  other/bootstrap_daemon/tox-bootstrapd.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/other/bootstrap_daemon/tox-bootstrapd.c b/other/bootstrap_daemon/tox-bootstrapd.c
-index 7e78da4..be3877d 100644
 --- a/other/bootstrap_daemon/tox-bootstrapd.c
 +++ b/other/bootstrap_daemon/tox-bootstrapd.c
-@@ -618,7 +618,7 @@ int main(int argc, char *argv[])
-     pid_t pid = fork();
+@@ -659,7 +659,7 @@
+     const pid_t pid = fork();
  
      if (pid > 0) {
 -        fprintf(pidf, "%d", pid);
