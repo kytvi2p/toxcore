@@ -1,5 +1,7 @@
 libtoxencryptsave.so.0 libtoxencryptsave0 #MINVER#
  tox_derive_key_from_pass@Base 0.0.0+20141011.r2839
+ tox_encrypted_key_load@Base 0.0.0+20141016.r2870-1
+ tox_encrypted_key_save@Base 0.0.0+20141016.r2870-1
  tox_encrypted_load@Base 0.0.0+20140922.1
  tox_encrypted_save@Base 0.0.0+20140922.1
  tox_encrypted_size@Base 0.0.0+20140922.1
