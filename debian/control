@@ -34,7 +34,7 @@ Package: tox-bootstrapd
 Section: net
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Pre-Depends: adduser
+Pre-Depends: adduser, libcap2-bin
 Replaces: tox-daemon
 Conflicts: tox-daemon
 Description: distributed, secure messenger with a/v support - daemon
