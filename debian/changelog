@@ -1,3 +1,9 @@
+toxcore (0.0.0+20141016.r2870-1~deb7u+1) stable; urgency=medium
+
+  * Backport to Wheezy
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 17 Oct 2014 21:09:27 +0000
+
 toxcore (0.0.0+20141016.r2870-1) unstable; urgency=medium
 
   [ irungentoo ]
@@ -22,12 +28,6 @@ toxcore (0.0.0+20141016.r2870-1) unstable; urgency=medium
   * Update debian/libtoxencryptsave0.symbols
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 17 Oct 2014 20:36:08 +0000
-
-toxcore (0.0.0+20141015.r2861-1~deb7u+1) stable; urgency=medium
-
-  * Backport to Wheezy
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 16 Oct 2014 00:49:52 +0000
 
 toxcore (0.0.0+20141015.r2861-1) unstable; urgency=medium
 
@@ -151,12 +151,6 @@ toxcore (0.0.0+20141009.r2836-1) unstable; urgency=medium
   * New upstream git snapshot
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 10 Oct 2014 03:12:10 +0000
-
-toxcore (0.0.0+20141008.r2833-1~deb7u+1) stable; urgency=medium
-
-  * Backport to Wheezy
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 09 Oct 2014 22:38:19 +0000
 
 toxcore (0.0.0+20141008.r2833-1) unstable; urgency=medium
 
