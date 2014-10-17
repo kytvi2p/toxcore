@@ -1,3 +1,28 @@
+toxcore (0.0.0+20141016.r2870-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * astyle toxencryptsave.
+
+  [ xor2003 ]
+  * forgotten to free memory in pAdapterInfo
+  * Trying to fix TimerHandler *handler memory leak
+
+  [ dubslow ]
+  * add load/save from key instead of pw
+  * fix #1120
+
+  [ xor2003 ]
+  * Initialise source.port to prevent garbage value
+
+  [ dubslow ]
+  * add new test cases, cleanup astray printf
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+  * Update debian/libtoxencryptsave0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 17 Oct 2014 20:36:08 +0000
+
 toxcore (0.0.0+20141015.r2861-1~deb7u+1) stable; urgency=medium
 
   * Backport to Wheezy
