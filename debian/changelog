@@ -1,3 +1,9 @@
+toxcore (0.0.0+20141016.r2870-2) unstable; urgency=medium
+
+  * Add libcap2-bin to tox-bootstrapd's depends
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 17 Oct 2014 22:55:10 +0000
+
 toxcore (0.0.0+20141016.r2870-1) unstable; urgency=medium
 
   [ irungentoo ]
