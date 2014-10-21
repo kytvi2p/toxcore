@@ -1,3 +1,9 @@
+toxcore (0.0.0+20141021.r2875-1~deb7u+1) stable; urgency=medium
+
+  * Backport to Wheezy
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 21 Oct 2014 22:37:43 +0000
+
 toxcore (0.0.0+20141021.r2875-1) unstable; urgency=medium
 
   [ irungentoo_trip ]
@@ -7,12 +13,6 @@ toxcore (0.0.0+20141021.r2875-1) unstable; urgency=medium
   * New upstream git snapshot
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 21 Oct 2014 20:45:14 +0000
-
-toxcore (0.0.0+20141020.r2874-1~deb7u+1) stable; urgency=medium
-
-  * Backport to Wheezy
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 21 Oct 2014 08:19:46 +0000
 
 toxcore (0.0.0+20141020.r2874-1) unstable; urgency=medium
 
