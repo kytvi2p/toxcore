@@ -1,3 +1,20 @@
+toxcore (0.0.0+20141023.r2879-1) unstable; urgency=medium
+
+  [ Urras ]
+  * Update to Libsodium 1.0.0 since backward-compatibility is guaranteed
+    through all the 1.x.y releases.
+
+  [ dubslow ]
+  * fix #1124 by adding salt manip functions Also, all data now has the magic
+    number prepended. This is incompatible for all but the save/load
+    functions, but I think nothing besides the one experimental qTox branch
+    used any of those, which is why I feel confident about the change.
+
+  [ Kill Your TV ]
+  * New git upstream snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 24 Oct 2014 01:54:06 +0000
+
 toxcore (0.0.0+20141021.r2875-1~deb7u+1) stable; urgency=medium
 
   * Backport to Wheezy
