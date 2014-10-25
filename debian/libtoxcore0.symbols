@@ -134,6 +134,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
 #MISSING: 0.0.0+20140928.1# group_sendmessage@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20140928.1# handle_groupchatpacket@Base 0.0.0+20140922.1
  handle_request@Base 0.0.0+20140922.1
+ host_to_lendian32@Base 0.0.0+20141025.r2891
  host_to_net@Base 0.0.0+20140922.1
  id_closest@Base 0.0.0+20140922.1
  id_copy@Base 0.0.0+20140922.1
@@ -172,6 +173,8 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  kill_onion_client@Base 0.0.0+20140922.1
  kill_ping@Base 0.0.0+20140922.1
  kill_sock@Base 0.0.0+20140922.1
+ lendian_to_host16@Base 0.0.0+20141025.r2891
+ lendian_to_host32@Base 0.0.0+20141025.r2891
  load_keys@Base 0.0.0+20140922.1
  load_state@Base 0.0.0+20140922.1
  m_addfriend@Base 0.0.0+20140922.1
