@@ -1,3 +1,26 @@
+toxcore (0.0.0+20141028.r2901-1) unstable; urgency=medium
+
+  [ irdan ]
+  * Modify DHT.md to render correctly
+
+  [ irungentoo_trip ]
+  * Initial friend finding might work a bit better.
+
+  [ Tux3 / Mlkj / !Lev.uXFMLA ]
+  * Fix typo: romdom->random
+  * Fix DHT memory leak
+
+  [ Sean ]
+  * Update README.md
+
+  [ Lance Tuller ]
+  * Update TODO
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 29 Oct 2014 01:44:24 +0000
+
 toxcore (0.0.0+20141025.r2891-1ubuntu1) trusty; urgency=medium
 
   * Building for Trusty
@@ -13,7 +36,8 @@ toxcore (0.0.0+20141025.r2891-1) unstable; urgency=medium
   * Fix for memory leak. And add forgotten break
   * Fix uninitialized
   * Prevent lock
-  * Don't send -1 bytes. There is such check everythere. But if we add it in side funciton the logic will change
+  * Don't send -1 bytes. There is such check everythere. But if we add it in
+    side funciton the logic will change
   * Add a check (reported by Coverity)
 
   [ irungentoo_trip ]
