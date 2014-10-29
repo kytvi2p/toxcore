@@ -149,7 +149,7 @@ static int is_path_used(const Onion_Client_Paths *onion_paths, const Node_format
 }
 
 /* Create a new path or use an old suitable one (if pathnum is valid)
- * or a rondom one from onion_paths.
+ * or a random one from onion_paths.
  *
  * return -1 on failure
  * return 0 on success
@@ -1126,10 +1126,10 @@ static void populate_path_nodes(Onion_Client *onion_c)
 }
 
 #define ANNOUNCE_FRIEND (ONION_NODE_PING_INTERVAL * 3)
-#define ANNOUNCE_FRIEND_BEGINNING 5
+#define ANNOUNCE_FRIEND_BEGINNING 3
 #define FRIEND_ONION_NODE_TIMEOUT (ONION_NODE_TIMEOUT * 3)
 
-#define RUN_COUNT_FRIEND_ANNOUNCE_BEGINNING 15
+#define RUN_COUNT_FRIEND_ANNOUNCE_BEGINNING 17
 
 static void do_friend(Onion_Client *onion_c, uint16_t friendnum)
 {
