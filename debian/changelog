@@ -1,3 +1,9 @@
+toxcore (0.0.0+20141031.r2905-1~deb7u+1) stable; urgency=medium
+
+  * Backport to Wheezy
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 31 Oct 2014 23:53:55 +0000
+
 toxcore (0.0.0+20141031.r2905-1) unstable; urgency=medium
 
   [ Tux3 / Mlkj / !Lev.uXFMLA ]
@@ -10,12 +16,6 @@ toxcore (0.0.0+20141031.r2905-1) unstable; urgency=medium
   * New upstream git snapshot
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 31 Oct 2014 23:27:01 +0000
-
-toxcore (0.0.0+20141029.r2902-1~deb7u+1) stable; urgency=medium
-
-  * Backport to Wheezy
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 31 Oct 2014 01:32:34 +0000
 
 toxcore (0.0.0+20141029.r2902-1) unstable; urgency=medium
 
