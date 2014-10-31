@@ -23,7 +23,6 @@ override_dh_installdocs:
 	dh_installdocs -plibtoxencryptsave-dev -plibtoxencryptsave-dbg --link-doc=libtoxencryptsave0
 	dh_installdocs -plibtoxcore-dev -plibtoxcore-dbg --link-doc=libtoxcore0
 	dh_installdocs -plibtoxdns-dev -plibtoxdns-dbg --link-doc=libtoxdns0
-	dh_installdocs -ptox-daemon -ptox-bootstrapd
 	dh_installdocs -plibtoxdns0 -plibtoxencryptsave0 -plibtoxav0 -plibtox-dev --link-doc=libtoxcore0
 	dh_installdocs --remaining-packages
 
