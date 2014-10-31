@@ -101,6 +101,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  friend_connection_lock@Base 0.0.0+20141001.1
  friend_ips@Base 0.0.0+20140922.1
  friendreq_init@Base 0.0.0+20140922.1
+ g_callback_group_action@Base 0.0.0+20141029.r2902-1
  g_callback_group_invite@Base 0.0.0+20140928.1
  g_callback_group_message@Base 0.0.0+20140928.1
  g_callback_group_namelistchange@Base 0.0.0+20141002.1
@@ -119,7 +120,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  getfriendcon_id@Base 0.0.0+20141001.1
  getname@Base 0.0.0+20140922.1
  getself_name@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20140928.1# group_action_send@Base 0.0.0+20140922.1
+ group_action_send@Base 0.0.0+20141029.r2902-1
 #MISSING: 0.0.0+20140928.1# group_client_names@Base 0.0.0+20140922.1
  group_message_send@Base 0.0.0+20140922.1
  group_names@Base 0.0.0+20141005.1
