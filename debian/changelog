@@ -1,3 +1,16 @@
+toxcore (0.0.0+20141103.r2908-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Decreased Tox idle bandwidth usage but potentially increased time to find
+    friends (needs some real world testing).
+  * This might fix some peer finding issues.
+  * Added some comments to net_crypto.h
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 04 Nov 2014 02:44:36 +0000
+
 toxcore (0.0.0+20141031.r2905-1~deb7u+1) stable; urgency=medium
 
   * Backport to Wheezy
