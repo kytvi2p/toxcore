@@ -1,4 +1,5 @@
 libtoxav.so.0 libtoxav0 #MINVER#
+ add_av_groupchat@Base 0.0.0+20141111.r2927-1
  add_ext_header@Base 0.0.0+20140922.1
  add_header@Base 0.0.0+20140922.1
  av_DefaultSettings@Base 0.0.0+20140922.1
@@ -14,11 +15,13 @@ libtoxav.so.0 libtoxav0 #MINVER#
  extract_ext_header@Base 0.0.0+20140922.1
  extract_header@Base 0.0.0+20140922.1
  format_output@Base 0.0.0+20140922.1
+ group_send_audio@Base 0.0.0+20141111.r2927-1
  init_audio_decoder@Base 0.0.0+20140922.1
  init_audio_encoder@Base 0.0.0+20140922.1
  init_video_decoder@Base 0.0.0+20140922.1
  init_video_encoder@Base 0.0.0+20140922.1
  invoke_callback@Base 0.0.0+20140922.1
+ join_av_groupchat@Base 0.0.0+20141111.r2927-1
  msg_parse@Base 0.0.0+20140922.1
  msi_answer@Base 0.0.0+20140922.1
  msi_cancel@Base 0.0.0+20140922.1
@@ -48,6 +51,7 @@ libtoxav.so.0 libtoxav0 #MINVER#
  rtp_terminate_session@Base 0.0.0+20140922.1
  send_reponse@Base 0.0.0+20140922.1
  terminate_queue@Base 0.0.0+20140922.1
+ toxav_add_av_groupchat@Base 0.0.0+20141111.r2927-1
  toxav_answer@Base 0.0.0+20140922.1
  toxav_call@Base 0.0.0+20140922.1
  toxav_cancel@Base 0.0.0+20140922.1
@@ -57,9 +61,11 @@ libtoxav.so.0 libtoxav0 #MINVER#
  toxav_get_peer_csettings@Base 0.0.0+20140922.1
  toxav_get_peer_id@Base 0.0.0+20140922.1
  toxav_get_tox@Base 0.0.0+20140922.1
+ toxav_group_send_audio@Base 0.0.0+20141111.r2927-1
  toxav_handle_packet@Base 0.0.0+20140922.1
  toxav_hangup@Base 0.0.0+20140922.1
  toxav_has_activity@Base 0.0.0+20140922.1
+ toxav_join_av_groupchat@Base 0.0.0+20141111.r2927-1
  toxav_kill@Base 0.0.0+20140922.1
  toxav_kill_transmission@Base 0.0.0+20140922.1
  toxav_new@Base 0.0.0+20140922.1
