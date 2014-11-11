@@ -43,6 +43,8 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  callback_file_sendrequest@Base 0.0.0+20140922.1
  callback_friendrequest@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20140928.1# callback_groupaction@Base 0.0.0+20140922.1
+ callback_groupchat_peer_delete@Base 0.0.0+20141111.r2927
+ callback_groupchat_peer_new@Base 0.0.0+20141111.r2927
 #MISSING: 0.0.0+20140928.1# callback_groupmessage@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20140928.1# callback_namelistchange@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20140928.1# chat_bootstrap@Base 0.0.0+20140922.1
@@ -101,7 +103,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  friend_connection_lock@Base 0.0.0+20141001.1
  friend_ips@Base 0.0.0+20140922.1
  friendreq_init@Base 0.0.0+20140922.1
- g_callback_group_action@Base 0.0.0+20141029.r2902-1
+ g_callback_group_action@Base 0.0.0+20141029.r2902
  g_callback_group_invite@Base 0.0.0+20140928.1
  g_callback_group_message@Base 0.0.0+20140928.1
  g_callback_group_namelistchange@Base 0.0.0+20141002.1
@@ -120,19 +122,24 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  getfriendcon_id@Base 0.0.0+20141001.1
  getname@Base 0.0.0+20140922.1
  getself_name@Base 0.0.0+20140922.1
- group_action_send@Base 0.0.0+20141029.r2902-1
+ group_action_send@Base 0.0.0+20141029.r2902
 #MISSING: 0.0.0+20140928.1# group_client_names@Base 0.0.0+20140922.1
+ group_get_object@Base 0.0.0+20141111.r2927
+ group_lossy_packet_registerhandler@Base 0.0.0+20141111.r2927
  group_message_send@Base 0.0.0+20140922.1
  group_names@Base 0.0.0+20141005.1
  group_new_peer_send@Base 0.0.0+20141001.1
 #MISSING: 0.0.0+20140928.1# group_newpeer@Base 0.0.0+20140922.1
  group_number_peers@Base 0.0.0+20141002.1
 #MISSING: 0.0.0+20140928.1# group_numpeers@Base 0.0.0+20140922.1
+ group_peer_get_object@Base 0.0.0+20141111.r2927
+ group_peer_set_object@Base 0.0.0+20141111.r2927
  group_peername@Base 0.0.0+20141002.1
  group_peernumber_is_ours@Base 0.0.0+20141014.r2849
  group_ping_send@Base 0.0.0+20141002.1
 #MISSING: 0.0.0+20140928.1# group_sendaction@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20140928.1# group_sendmessage@Base 0.0.0+20140922.1
+ group_set_object@Base 0.0.0+20141111.r2927
 #MISSING: 0.0.0+20140928.1# handle_groupchatpacket@Base 0.0.0+20140922.1
  handle_request@Base 0.0.0+20140922.1
  host_to_lendian32@Base 0.0.0+20141025.r2891
@@ -306,6 +313,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  send_friend_request_packet@Base 0.0.0+20141004.2
 #MISSING: 0.0.0+20141004.2-1# send_friendrequest@Base 0.0.0+20140922.1
  send_group_invite_packet@Base 0.0.0+20140928.1
+ send_group_lossy_packet@Base 0.0.0+20141111.r2927
 #MISSING: 0.0.0+20141001.1-1# send_group_message_packet@Base 0.0.0+20140928.1
  send_lossy_cryptpacket@Base 0.0.0+20140922.1
  send_name_all_groups@Base 0.0.0+20141003.2
