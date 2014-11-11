@@ -43,6 +43,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  callback_file_sendrequest@Base 0.0.0+20140922.1
  callback_friendrequest@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20140928.1# callback_groupaction@Base 0.0.0+20140922.1
+ callback_groupchat_delete@Base 0.0.0+20141111.r2929
  callback_groupchat_peer_delete@Base 0.0.0+20141111.r2927
  callback_groupchat_peer_new@Base 0.0.0+20141111.r2927
 #MISSING: 0.0.0+20140928.1# callback_groupmessage@Base 0.0.0+20140922.1
