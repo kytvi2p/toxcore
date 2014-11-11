@@ -1,3 +1,14 @@
+toxcore (0.0.0+20141111.r2929-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Cleaned up some code, made group av clean up properly after itself when
+    the group is killed.
+
+  [ Kill Your TV ]
+  * New git upstream snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 11 Nov 2014 22:56:27 +0000
+
 toxcore (0.0.0+20141111.r2928-1~precise+1) precise; urgency=medium
 
   * Backport to Precise
