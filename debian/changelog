@@ -1,3 +1,13 @@
+toxcore (0.0.0+20141112.r2933-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Fixed groupchat bug that caused peers to not connect to each other.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 12 Nov 2014 16:14:20 +0000
+
 toxcore (0.0.0+20141111.r2932-1~deb7u+1) stable; urgency=medium
 
   * Backport to Wheezy
