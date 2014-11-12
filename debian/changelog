@@ -1,3 +1,14 @@
+toxcore (0.0.0+20141111.r2930-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Added function to get groupchat type.
+
+  [ Kill Your TV ]
+  * New git upstream snapshot
+  * Update debian/libtoxcore0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 12 Nov 2014 00:12:32 +0000
+
 toxcore (0.0.0+20141111.r2929-1) unstable; urgency=medium
 
   [ irungentoo ]
