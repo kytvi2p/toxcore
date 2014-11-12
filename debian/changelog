@@ -1,3 +1,14 @@
+toxcore (0.0.0+20141111.r2932-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Fixed audio groupchat issue.
+  * Fixed group av issues.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 12 Nov 2014 02:31:32 +0000
+
 toxcore (0.0.0+20141111.r2930-1~deb7u+1) stable; urgency=medium
 
   * Backport to Wheezy
