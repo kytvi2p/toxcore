@@ -126,6 +126,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  group_action_send@Base 0.0.0+20141029.r2902
 #MISSING: 0.0.0+20140928.1# group_client_names@Base 0.0.0+20140922.1
  group_get_object@Base 0.0.0+20141111.r2927
+ group_get_type@Base 0.0.0+20141111.r2930
  group_lossy_packet_registerhandler@Base 0.0.0+20141111.r2927
  group_message_send@Base 0.0.0+20140922.1
  group_names@Base 0.0.0+20141005.1
@@ -404,6 +405,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  tox_get_user_status@Base 0.0.0+20140922.1
  tox_group_action_send@Base 0.0.0+20140922.1
  tox_group_get_names@Base 0.0.0+20140922.1
+ tox_group_get_type@Base 0.0.0+20141111.r2930
  tox_group_message_send@Base 0.0.0+20140922.1
  tox_group_number_peers@Base 0.0.0+20140922.1
  tox_group_peername@Base 0.0.0+20140922.1
