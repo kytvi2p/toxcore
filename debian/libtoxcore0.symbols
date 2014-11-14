@@ -108,6 +108,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  g_callback_group_invite@Base 0.0.0+20140928.1
  g_callback_group_message@Base 0.0.0+20140928.1
  g_callback_group_namelistchange@Base 0.0.0+20141002.1
+ g_callback_group_title@Base 0.0.0+20141114.r2941
  get_close_nodes@Base 0.0.0+20140922.1
  get_connection_dht_key@Base 0.0.0+20140922.1
  get_friendcon_public_keys@Base 0.0.0+20141001.1
@@ -142,6 +143,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
 #MISSING: 0.0.0+20140928.1# group_sendaction@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20140928.1# group_sendmessage@Base 0.0.0+20140922.1
  group_set_object@Base 0.0.0+20141111.r2927
+ group_title_send@Base 0.0.0+20141114.r2941
 #MISSING: 0.0.0+20140928.1# handle_groupchatpacket@Base 0.0.0+20140922.1
  handle_request@Base 0.0.0+20140922.1
  host_to_lendian32@Base 0.0.0+20141025.r2891
@@ -365,6 +367,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  tox_callback_group_invite@Base 0.0.0+20140922.1
  tox_callback_group_message@Base 0.0.0+20140922.1
  tox_callback_group_namelist_change@Base 0.0.0+20140922.1
+ tox_callback_group_title@Base 0.0.0+20141114.r2941
  tox_callback_name_change@Base 0.0.0+20140922.1
  tox_callback_read_receipt@Base 0.0.0+20140922.1
  tox_callback_status_message@Base 0.0.0+20140922.1
@@ -410,6 +413,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  tox_group_number_peers@Base 0.0.0+20140922.1
  tox_group_peername@Base 0.0.0+20140922.1
  tox_group_peernumber_is_ours@Base 0.0.0+20141014.r2849
+ tox_group_set_title@Base 0.0.0+20141114.r2941
  tox_hash@Base 0.0.0+20140925.1
  tox_invite_friend@Base 0.0.0+20140922.1
  tox_isconnected@Base 0.0.0+20140922.1
