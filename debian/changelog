@@ -1,3 +1,21 @@
+toxcore (0.0.0+20141114.r2941-1) unstable; urgency=medium
+
+  [ dubslow ]
+  * basic group titles
+  * add title send to peer send
+  * public api, finishing tweaks
+  * fix type checking
+
+  [ irungentoo ]
+  * Fixed some threading related issues in toxcore.
+  * Group chat title fixes.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+  * Update debian/libtoxcore0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 14 Nov 2014 20:01:03 +0000
+
 toxcore (0.0.0+20141112.r2934-1ubuntu1) trusty; urgency=medium
 
   * Building for Trusty
