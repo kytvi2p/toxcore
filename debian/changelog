@@ -1,3 +1,15 @@
+toxcore (0.0.0+20141115.r2947-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Setting groupchat title when the groupchat isn't connected should now
+    return success.
+  * Last fix didn't really work well.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sat, 15 Nov 2014 22:04:16 +0000
+
 toxcore (0.0.0+20141115.r2945-1~deb7u+1) stable; urgency=medium
 
   * Backport to Wheezy
