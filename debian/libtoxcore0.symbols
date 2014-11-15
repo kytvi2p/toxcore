@@ -143,6 +143,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
 #MISSING: 0.0.0+20140928.1# group_sendaction@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20140928.1# group_sendmessage@Base 0.0.0+20140922.1
  group_set_object@Base 0.0.0+20141111.r2927
+ group_title_get@Base 0.0.0+20141115.r2945
  group_title_send@Base 0.0.0+20141114.r2941
 #MISSING: 0.0.0+20140928.1# handle_groupchatpacket@Base 0.0.0+20140922.1
  handle_request@Base 0.0.0+20140922.1
@@ -408,6 +409,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  tox_get_user_status@Base 0.0.0+20140922.1
  tox_group_action_send@Base 0.0.0+20140922.1
  tox_group_get_names@Base 0.0.0+20140922.1
+ tox_group_get_title@Base 0.0.0+20141115.r2945
  tox_group_get_type@Base 0.0.0+20141111.r2930
  tox_group_message_send@Base 0.0.0+20140922.1
  tox_group_number_peers@Base 0.0.0+20140922.1

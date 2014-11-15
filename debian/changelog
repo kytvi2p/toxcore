@@ -1,3 +1,18 @@
+toxcore (0.0.0+20141115.r2945-1) unstable; urgency=medium
+
+  [ Jfreegman ]
+  * add api function to get group title
+
+  [ irungentoo ]
+  * Increased audio packet queue size by 2.
+  * Some modifications to the last pull request.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+  * Update debian/libtoxcore0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sat, 15 Nov 2014 19:50:53 +0000
+
 toxcore (0.0.0+20141114.r2941-1) unstable; urgency=medium
 
   [ dubslow ]
