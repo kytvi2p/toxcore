@@ -1,3 +1,13 @@
+toxcore (0.0.0+20141117.r2949-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Added an unfinished doc on how groupchats work.
+  * Cut bitrate by half for 1 channel audio.
+
+  [ Kill Your TV ]
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 18 Nov 2014 20:50:11 +0000
+
 toxcore (0.0.0+20141115.r2947-1~precise+1) precise; urgency=medium
 
   * Backport to Precise
