@@ -136,6 +136,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  group_number_peers@Base 0.0.0+20141002.1
 #MISSING: 0.0.0+20140928.1# group_numpeers@Base 0.0.0+20140922.1
  group_peer_get_object@Base 0.0.0+20141111.r2927
+ group_peer_pubkey@Base 0.0.0+20141121.r2955
  group_peer_set_object@Base 0.0.0+20141111.r2927
  group_peername@Base 0.0.0+20141002.1
  group_peernumber_is_ours@Base 0.0.0+20141014.r2849
@@ -413,6 +414,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  tox_group_get_type@Base 0.0.0+20141111.r2930
  tox_group_message_send@Base 0.0.0+20140922.1
  tox_group_number_peers@Base 0.0.0+20140922.1
+ tox_group_peer_pubkey@Base 0.0.0+20141121.r2955
  tox_group_peername@Base 0.0.0+20140922.1
  tox_group_peernumber_is_ours@Base 0.0.0+20141014.r2849
  tox_group_set_title@Base 0.0.0+20141114.r2941
