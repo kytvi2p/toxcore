@@ -1,3 +1,17 @@
+toxcore (0.0.0+20141121.r2955-1) unstable; urgency=medium
+
+  [ dubslow ]
+  * get peer pubkey api
+
+  [ irungentoo ]
+  * Tox clients now should show they are offline with much better precision.
+
+  [ Kill Your TV ]
+  * Update debian/libtoxcore0.symbols
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 21 Nov 2014 15:52:29 +0000
+
 toxcore (0.0.0+20141120.r2952-1~deb7u+1) stable; urgency=medium
 
   * Backport to Wheezy
@@ -13,6 +27,7 @@ toxcore (0.0.0+20141120.r2952-1) unstable; urgency=medium
     stream.
 
   [ Kill Your TV ]
+  * New upstream git snapshot
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 21 Nov 2014 00:32:00 +0000
 
