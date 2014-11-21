@@ -1,3 +1,15 @@
+toxcore (0.0.0+20141120.r2952-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Decrease time to announce ourselves to 3 seconds.
+  * Small update to groupchat docs.
+  * Fixed small issue where group audio would jumble up sometimes at start of
+    stream.
+
+  [ Kill Your TV ]
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 21 Nov 2014 00:32:00 +0000
+
 toxcore (0.0.0+20141117.r2949-1) unstable; urgency=medium
 
   [ irungentoo ]
