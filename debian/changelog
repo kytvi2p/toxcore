@@ -1,3 +1,12 @@
+toxcore (0.0.0+20141121.r2956-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Cleaned up packet length types in toxcore.
+
+  [ Kill Your TV ]
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sat, 22 Nov 2014 02:29:20 +0000
+
 toxcore (0.0.0+20141121.r2955-1) unstable; urgency=medium
 
   [ dubslow ]
