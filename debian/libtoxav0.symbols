@@ -3,66 +3,86 @@ libtoxav.so.0 libtoxav0 #MINVER#
  add_ext_header@Base 0.0.0+20140922.1
  add_header@Base 0.0.0+20140922.1
  av_DefaultSettings@Base 0.0.0+20140922.1
- av_VADd@Base 0.0.0+20140922.1
- av_jbufdc@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141125.r2965-1# av_VADd@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141125.r2965-1# av_jbufdc@Base 0.0.0+20140922.1
  build_header@Base 0.0.0+20140922.1
- check_late_message@Base 0.0.0+20140922.1
- codec_init_session@Base 0.0.0+20140922.1
- codec_terminate_session@Base 0.0.0+20140922.1
- create_queue@Base 0.0.0+20140922.1
- dequeue@Base 0.0.0+20140922.1
- energy_VAD@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141125.r2965-1# check_late_message@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141125.r2965-1# codec_init_session@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141125.r2965-1# codec_terminate_session@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141125.r2965-1# create_queue@Base 0.0.0+20140922.1
+ cs_calculate_vad@Base 0.0.0+20141125.r2965
+ cs_do@Base 0.0.0+20141125.r2965
+ cs_get_split_video_frame@Base 0.0.0+20141125.r2965
+ cs_kill@Base 0.0.0+20141125.r2965
+ cs_new@Base 0.0.0+20141125.r2965
+ cs_register_audio_callback@Base 0.0.0+20141125.r2965
+ cs_register_video_callback@Base 0.0.0+20141125.r2965
+ cs_set_vad_treshold@Base 0.0.0+20141125.r2965
+ cs_set_video_encoder_bitrate@Base 0.0.0+20141125.r2965
+ cs_set_video_encoder_resolution@Base 0.0.0+20141125.r2965
+ cs_split_video_payload@Base 0.0.0+20141125.r2965
+#MISSING: 0.0.0+20141125.r2965-1# dequeue@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141125.r2965-1# energy_VAD@Base 0.0.0+20140922.1
  extract_ext_header@Base 0.0.0+20140922.1
  extract_header@Base 0.0.0+20140922.1
  format_output@Base 0.0.0+20140922.1
  group_send_audio@Base 0.0.0+20141111.r2927
- init_audio_decoder@Base 0.0.0+20140922.1
- init_audio_encoder@Base 0.0.0+20140922.1
- init_video_decoder@Base 0.0.0+20140922.1
- init_video_encoder@Base 0.0.0+20140922.1
- invoke_callback@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141125.r2965-1# init_audio_decoder@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141125.r2965-1# init_audio_encoder@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141125.r2965-1# init_video_decoder@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141125.r2965-1# init_video_encoder@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141125.r2965-1# invoke_callback@Base 0.0.0+20140922.1
  join_av_groupchat@Base 0.0.0+20141111.r2927
  msg_parse@Base 0.0.0+20140922.1
  msi_answer@Base 0.0.0+20140922.1
  msi_cancel@Base 0.0.0+20140922.1
  msi_change_csettings@Base 0.0.0+20140922.1
+ msi_do@Base 0.0.0+20141125.r2965
  msi_hangup@Base 0.0.0+20140922.1
- msi_init_session@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141125.r2965-1# msi_init_session@Base 0.0.0+20140922.1
  msi_invite@Base 0.0.0+20140922.1
+ msi_kill@Base 0.0.0+20141125.r2965
  msi_msg_get_csettings@Base 0.0.0+20140922.1
  msi_msg_set_callid@Base 0.0.0+20140922.1
  msi_msg_set_csettings@Base 0.0.0+20140922.1
  msi_msg_set_reason@Base 0.0.0+20140922.1
+ msi_new@Base 0.0.0+20141125.r2965
  msi_new_message@Base 0.0.0+20140922.1
  msi_register_callback@Base 0.0.0+20140922.1
  msi_reject@Base 0.0.0+20140922.1
  msi_stopcall@Base 0.0.0+20140922.1
- msi_terminate_session@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141125.r2965-1# msi_terminate_session@Base 0.0.0+20140922.1
  parse_recv@Base 0.0.0+20140922.1
  parse_send@Base 0.0.0+20140922.1
- queue@Base 0.0.0+20140922.1
- reconfigure_video_encoder_bitrate@Base 0.0.0+20140922.1
- reconfigure_video_encoder_resolution@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141125.r2965-1# queue@Base 0.0.0+20140922.1
+ queue_message@Base 0.0.0+20141125.r2965
+#MISSING: 0.0.0+20141125.r2965-1# reconfigure_video_encoder_bitrate@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141125.r2965-1# reconfigure_video_encoder_resolution@Base 0.0.0+20140922.1
  rtp_free_msg@Base 0.0.0+20140922.1
  rtp_handle_packet@Base 0.0.0+20140922.1
- rtp_init_session@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141125.r2965-1# rtp_init_session@Base 0.0.0+20140922.1
+ rtp_kill@Base 0.0.0+20141125.r2965
+ rtp_new@Base 0.0.0+20141125.r2965
  rtp_new_message@Base 0.0.0+20140922.1
  rtp_send_msg@Base 0.0.0+20140922.1
- rtp_terminate_session@Base 0.0.0+20140922.1
- send_reponse@Base 0.0.0+20140922.1
- terminate_queue@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141125.r2965-1# rtp_terminate_session@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141125.r2965-1# send_reponse@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141125.r2965-1# terminate_queue@Base 0.0.0+20140922.1
  toxav_add_av_groupchat@Base 0.0.0+20141111.r2927
  toxav_answer@Base 0.0.0+20140922.1
  toxav_call@Base 0.0.0+20140922.1
  toxav_cancel@Base 0.0.0+20140922.1
  toxav_capability_supported@Base 0.0.0+20140922.1
  toxav_change_settings@Base 0.0.0+20140922.1
+ toxav_do@Base 0.0.0+20141125.r2965
+ toxav_do_interval@Base 0.0.0+20141125.r2965
+ toxav_get_active_count@Base 0.0.0+20141125.r2965
  toxav_get_call_state@Base 0.0.0+20140922.1
  toxav_get_peer_csettings@Base 0.0.0+20140922.1
  toxav_get_peer_id@Base 0.0.0+20140922.1
  toxav_get_tox@Base 0.0.0+20140922.1
  toxav_group_send_audio@Base 0.0.0+20141111.r2927
- toxav_handle_packet@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141125.r2965-1# toxav_handle_packet@Base 0.0.0+20140922.1
  toxav_hangup@Base 0.0.0+20140922.1
  toxav_has_activity@Base 0.0.0+20140922.1
  toxav_join_av_groupchat@Base 0.0.0+20141111.r2927
@@ -72,11 +92,14 @@ libtoxav.so.0 libtoxav0 #MINVER#
  toxav_prepare_audio_frame@Base 0.0.0+20140922.1
  toxav_prepare_transmission@Base 0.0.0+20140922.1
  toxav_prepare_video_frame@Base 0.0.0+20140922.1
- toxav_register_audio_recv_callback@Base 0.0.0+20140922.1
+ toxav_register_audio_callback@Base 0.0.0+20141125.r2965
+#MISSING: 0.0.0+20141125.r2965-1# toxav_register_audio_recv_callback@Base 0.0.0+20140922.1
  toxav_register_callstate_callback@Base 0.0.0+20140922.1
- toxav_register_video_recv_callback@Base 0.0.0+20140922.1
+ toxav_register_video_callback@Base 0.0.0+20141125.r2965
+#MISSING: 0.0.0+20141125.r2965-1# toxav_register_video_recv_callback@Base 0.0.0+20140922.1
  toxav_reject@Base 0.0.0+20140922.1
  toxav_send_audio@Base 0.0.0+20140922.1
  toxav_send_video@Base 0.0.0+20140922.1
+ toxav_set_vad_treshold@Base 0.0.0+20141125.r2965
  toxav_stop_call@Base 0.0.0+20140922.1
 
