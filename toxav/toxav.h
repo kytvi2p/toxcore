@@ -29,7 +29,10 @@ extern "C" {
 #endif
 
 typedef struct _ToxAv ToxAv;
-typedef struct vpx_image vpx_image_t;
+
+/* vpx_image_t */
+#include <vpx/vpx_image.h>
+
 typedef void ( *ToxAVCallback ) ( void *agent, int32_t call_idx, void *arg );
 typedef void ( *ToxAvAudioCallback ) (void *agent, int32_t call_idx, const int16_t *PCM, uint16_t size, void *data);
 typedef void ( *ToxAvVideoCallback ) (void *agent, int32_t call_idx, const vpx_image_t *img, void *data);
