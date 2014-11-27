@@ -1,4 +1,4 @@
-toxcore (0.0.0+20141126.r2974-1ubuntu1) trusty; urgency=medium
+toxcore (0.0.0+20141126.r2974-1~trusty+1) trusty; urgency=medium
 
   * Building for Trusty
 
