@@ -1,3 +1,9 @@
+toxcore (0.0.0+20141126.r2974-1ubuntu1) utopic; urgency=medium
+
+  * Building for Utopic
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 27 Nov 2014 02:29:04 +0000
+
 toxcore (0.0.0+20141126.r2974-1) unstable; urgency=medium
 
   [ Jin^eLD ]
