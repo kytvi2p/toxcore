@@ -1,3 +1,48 @@
+toxcore (0.0.0+20141126.r2974-1) unstable; urgency=medium
+
+  [ Jin^eLD ]
+  * Added check to ensure that the available libsodium library is compatible
+
+  [ Andy Conrad ]
+  * Fix link in TODO
+
+  [ irungentoo ]
+  * Fixed build issue.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 26 Nov 2014 22:08:04 +0000
+
+toxcore (0.0.0+20141125.r2968-1) unstable; urgency=medium
+
+  [ Imperative ]
+  * Fixed some fatal spelling mistakes
+
+  [ Kill Your TV ]
+  * New git upstream snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 26 Nov 2014 03:55:22 +0000
+
+toxcore (0.0.0+20141125.r2965-1) unstable; urgency=medium
+
+  [ mannol ]
+  * av refactor
+
+  [ irungentoo ]
+  * Updated TODO.
+  * Removed some no longer promising clients from the TODO.
+  * Fixed possible issue.
+  * Astyle autotests.
+  * Fixed integer rollover bug in toxav.
+  * Fixed threading issues in toxcore.
+
+  [ Kill Your TV ]
+  * Update debian/libtoxav0.symbols
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 25 Nov 2014 23:02:45 +0000
+
 toxcore (0.0.0+20141122.r2957-1~precise+1) precise; urgency=medium
 
   * Backport to Precise
