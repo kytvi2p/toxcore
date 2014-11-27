@@ -1,3 +1,9 @@
+toxcore (0.0.0+20141126.r2974-1~precise+1) precise; urgency=medium
+
+  * Backport to Precise
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 27 Nov 2014 02:32:39 +0000
+
 toxcore (0.0.0+20141126.r2974-1) unstable; urgency=medium
 
   [ Jin^eLD ]
@@ -42,12 +48,6 @@ toxcore (0.0.0+20141125.r2965-1) unstable; urgency=medium
   * New upstream git snapshot
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 25 Nov 2014 23:02:45 +0000
-
-toxcore (0.0.0+20141122.r2957-1~precise+1) precise; urgency=medium
-
-  * Backport to Precise
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 23 Nov 2014 01:36:26 +0000
 
 toxcore (0.0.0+20141122.r2957-1) unstable; urgency=medium
 
