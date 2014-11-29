@@ -64,6 +64,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  create_onion_packet@Base 0.0.0+20140922.1
  create_onion_packet_tcp@Base 0.0.0+20140922.1
  create_onion_path@Base 0.0.0+20140922.1
+ create_recursive_mutex@Base 0.0.0+20141129.r2982
  create_request@Base 0.0.0+20140922.1
  crypto_cmp@Base 0.0.0+20140922.1
  crypto_connection_status@Base 0.0.0+20140922.1

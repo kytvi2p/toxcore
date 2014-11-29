@@ -10,14 +10,14 @@ libtoxav.so.0 libtoxav0 #MINVER#
 #MISSING: 0.0.0+20141125.r2965-1# codec_init_session@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20141125.r2965-1# codec_terminate_session@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20141125.r2965-1# create_queue@Base 0.0.0+20140922.1
- cs_calculate_vad@Base 0.0.0+20141125.r2965
+#MISSING: 0.0.0+20141129.r2982-1# cs_calculate_vad@Base 0.0.0+20141125.r2965
  cs_do@Base 0.0.0+20141125.r2965
  cs_get_split_video_frame@Base 0.0.0+20141125.r2965
  cs_kill@Base 0.0.0+20141125.r2965
  cs_new@Base 0.0.0+20141125.r2965
- cs_register_audio_callback@Base 0.0.0+20141125.r2965
- cs_register_video_callback@Base 0.0.0+20141125.r2965
- cs_set_vad_treshold@Base 0.0.0+20141125.r2965
+#MISSING: 0.0.0+20141129.r2982-1# cs_register_audio_callback@Base 0.0.0+20141125.r2965
+#MISSING: 0.0.0+20141129.r2982-1# cs_register_video_callback@Base 0.0.0+20141125.r2965
+#MISSING: 0.0.0+20141129.r2982-1# cs_set_vad_treshold@Base 0.0.0+20141125.r2965
  cs_set_video_encoder_bitrate@Base 0.0.0+20141125.r2965
  cs_set_video_encoder_resolution@Base 0.0.0+20141125.r2965
  cs_split_video_payload@Base 0.0.0+20141125.r2965
@@ -84,7 +84,7 @@ libtoxav.so.0 libtoxav0 #MINVER#
  toxav_group_send_audio@Base 0.0.0+20141111.r2927
 #MISSING: 0.0.0+20141125.r2965-1# toxav_handle_packet@Base 0.0.0+20140922.1
  toxav_hangup@Base 0.0.0+20140922.1
- toxav_has_activity@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141129.r2982-1# toxav_has_activity@Base 0.0.0+20140922.1
  toxav_join_av_groupchat@Base 0.0.0+20141111.r2927
  toxav_kill@Base 0.0.0+20140922.1
  toxav_kill_transmission@Base 0.0.0+20140922.1
@@ -100,6 +100,6 @@ libtoxav.so.0 libtoxav0 #MINVER#
  toxav_reject@Base 0.0.0+20140922.1
  toxav_send_audio@Base 0.0.0+20140922.1
  toxav_send_video@Base 0.0.0+20140922.1
- toxav_set_vad_treshold@Base 0.0.0+20141125.r2965
+#MISSING: 0.0.0+20141129.r2982-1# toxav_set_vad_treshold@Base 0.0.0+20141125.r2965
  toxav_stop_call@Base 0.0.0+20140922.1
 
