@@ -1,3 +1,13 @@
+toxcore (0.0.0+20141130.r2983-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Check if key file was opened correctly in DHT_bootstrap.c
+
+  [ Kill Your TV ]
+  * New usptream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 30 Nov 2014 19:12:24 +0000
+
 toxcore (0.0.0+20141129.r2982-1) unstable; urgency=medium
 
   [ mannol ]
