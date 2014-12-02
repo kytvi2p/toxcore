@@ -1,3 +1,18 @@
+toxcore (0.0.0+20141202.r2989-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Joining a group chat should be more reliable.
+  * Group chats should be less likely to break.
+  * Prevent joining groupchat more than once.
+  * Removed useless code.
+  * Groupchat stability fixes.
+  * Comment fix.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 02 Dec 2014 03:38:13 +0000
+
 toxcore (0.0.0+20141130.r2983-1~deb7u+1) stable; urgency=medium
 
   * Backport to Wheezy
