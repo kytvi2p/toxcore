@@ -1,3 +1,9 @@
+toxcore (0.0.0+20141202.r2989-1~trusty+1) trusty; urgency=medium
+
+  * Building for Trusty
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 02 Dec 2014 17:34:56 +0000
+
 toxcore (0.0.0+20141202.r2989-1) unstable; urgency=medium
 
   [ irungentoo ]
@@ -12,12 +18,6 @@ toxcore (0.0.0+20141202.r2989-1) unstable; urgency=medium
   * New upstream git snapshot
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 02 Dec 2014 03:38:13 +0000
-
-toxcore (0.0.0+20141130.r2983-1~trusty+1) trusty; urgency=medium
-
-  * Building for Trusty
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 30 Nov 2014 19:52:39 +0000
 
 toxcore (0.0.0+20141130.r2983-1) unstable; urgency=medium
 
