@@ -830,7 +830,9 @@ static int64_t send_lossless_packet(Net_Crypto *c, int crypt_connection_id, cons
     dt.time = 0;
     dt.length = length;
     memcpy(dt.data, data, length);
+    pthread_mutex_lock(&conn->mutex);
     int64_t packet_num = add_data_end_of_buffer(&conn->send_array, &dt);
+    pthread_mutex_unlock(&conn->mutex);
 
     if (packet_num == -1)
         return -1;
@@ -1166,7 +1168,15 @@ static int handle_data_packet_helper(const Net_Crypto *c, int crypt_connection_i
         if (add_data_to_buffer(&conn->recv_array, num, &dt) != 0)
             return -1;
 
-        while (read_data_beg_buffer(&conn->recv_array, &dt) != -1) {
+
+        while (1) {
+            pthread_mutex_lock(&conn->mutex);
+            int ret = read_data_beg_buffer(&conn->recv_array, &dt);
+            pthread_mutex_unlock(&conn->mutex);
+
+            if (ret == -1)
+                break;
+
             if (conn->connection_data_callback)
                 conn->connection_data_callback(conn->connection_data_callback_object, conn->connection_data_callback_id, dt.data,
                                                dt.length);
@@ -2341,7 +2351,9 @@ static int udp_handle_packet(void *object, IP_Port source, const uint8_t *packet
     if (conn == 0)
         return -1;
 
+    pthread_mutex_lock(&conn->mutex);
     conn->direct_lastrecv_time = current_time_monotonic();
+    pthread_mutex_unlock(&conn->mutex);
     return 0;
 }
 
@@ -2593,8 +2605,11 @@ int send_lossy_cryptpacket(Net_Crypto *c, int crypt_connection_id, const uint8_t
     int ret = -1;
 
     if (conn) {
-        ret = send_data_packet_helper(c, crypt_connection_id, conn->recv_array.buffer_start, conn->send_array.buffer_end, data,
-                                      length);
+        pthread_mutex_lock(&conn->mutex);
+        uint32_t buffer_start = conn->recv_array.buffer_start;
+        uint32_t buffer_end = conn->send_array.buffer_end;
+        pthread_mutex_unlock(&conn->mutex);
+        ret = send_data_packet_helper(c, crypt_connection_id, buffer_start, buffer_end, data, length);
     }
 
     pthread_mutex_lock(&c->connections_mutex);
