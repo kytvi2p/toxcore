@@ -1,3 +1,20 @@
+toxcore (0.0.0+20141206.r3004-1) unstable; urgency=medium
+
+  [ Aaron1011 ]
+  * Fix typo
+  * Fix usage of 'have' versus 'has'
+
+  [ irungentoo ]
+  * Added simple group auto test.
+  * Added basic group message test.
+  * Test now works with large groups.
+  * Group stability fixes.
+
+  [ Kill Your TV ]
+  * New git upstream snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 07 Dec 2014 03:25:28 +0000
+
 toxcore (0.0.0+20141203.r2996-1) unstable; urgency=medium
 
   [ irungentoo ]
