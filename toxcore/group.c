@@ -194,9 +194,9 @@ static uint64_t calculate_comp_value(const uint8_t *pk1, const uint8_t *pk2)
 
     unsigned int i;
 
-    for (i = sizeof(uint64_t); i != 0; --i) {
-        cmp1 = (cmp1 << 8) + (uint64_t)pk1[i - 1];
-        cmp2 = (cmp2 << 8) + (uint64_t)pk2[i - 1];
+    for (i = 0; i < sizeof(uint64_t); ++i) {
+        cmp1 = (cmp1 << 8) + (uint64_t)pk1[i];
+        cmp2 = (cmp2 << 8) + (uint64_t)pk2[i];
     }
 
     return (cmp1 - cmp2);
@@ -434,6 +434,30 @@ static int addpeer(Group_Chats *g_c, int groupnumber, const uint8_t *real_pk, co
     return (g->numpeers - 1);
 }
 
+static int remove_close_conn(Group_Chats *g_c, int groupnumber, int friendcon_id)
+{
+    Group_c *g = get_group_c(g_c, groupnumber);
+
+    if (!g)
+        return -1;
+
+    uint32_t i;
+
+    for (i = 0; i < MAX_GROUP_CONNECTIONS; ++i) {
+        if (g->close[i].type == GROUPCHAT_CLOSE_NONE)
+            continue;
+
+        if (g->close[i].number == friendcon_id) {
+            g->close[i].type = GROUPCHAT_CLOSE_NONE;
+            kill_friend_connection(g_c->fr_c, friendcon_id);
+            return 0;
+        }
+    }
+
+    return -1;
+}
+
+
 /*
  * Delete a peer from the group chat.
  *
@@ -455,6 +479,12 @@ static int delpeer(Group_Chats *g_c, int groupnumber, int peer_index)
             g->changed = GROUPCHAT_CLOSEST_REMOVED;
             break;
         }
+    }
+
+    int friendcon_id = getfriend_conn_id_pk(g_c->fr_c, g->group[peer_index].real_pk);
+
+    if (friendcon_id != -1) {
+        remove_close_conn(g_c, groupnumber, friendcon_id);
     }
 
     Group_Peer *temp;
@@ -531,29 +561,6 @@ static int settitle(Group_Chats *g_c, int groupnumber, int peer_index, const uin
         g_c->title_callback(g_c->m, groupnumber, peer_index, title, title_len, g_c->title_callback_userdata);
 
     return 0;
-}
-
-static int remove_close_conn(Group_Chats *g_c, int groupnumber, int friendcon_id)
-{
-    Group_c *g = get_group_c(g_c, groupnumber);
-
-    if (!g)
-        return -1;
-
-    uint32_t i;
-
-    for (i = 0; i < MAX_GROUP_CONNECTIONS; ++i) {
-        if (g->close[i].type == GROUPCHAT_CLOSE_NONE)
-            continue;
-
-        if (g->close[i].number == friendcon_id) {
-            g->close[i].type = GROUPCHAT_CLOSE_NONE;
-            kill_friend_connection(g_c->fr_c, friendcon_id);
-            return 0;
-        }
-    }
-
-    return -1;
 }
 
 static void set_conns_type_close(Group_Chats *g_c, int groupnumber, int friendcon_id, uint8_t type)
