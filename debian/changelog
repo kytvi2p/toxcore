@@ -1,3 +1,18 @@
+toxcore (0.0.0+20141210.r3012-1) unstable; urgency=medium
+
+  [ Will Rouesnel ]
+  * Change prototype for custom_packet_handler functions
+  * Patch auto_tests/tox_test.c with the new prototype
+
+  [ irungentoo ]
+  * Fixed tox_test.c
+  * Add define for the maximum length of the friend request to the public api.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 10 Dec 2014 18:30:37 +0000
+
 toxcore (0.0.0+20141208.r3007-1) unstable; urgency=medium
 
   [ irungentoo ]
