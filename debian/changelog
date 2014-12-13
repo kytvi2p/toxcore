@@ -1,3 +1,21 @@
+toxcore (0.0.0+20141212.r3022-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Having two buffers for audio isn't really good.
+  * Make the maximum size of the jbuf at least 4 times the capacity.
+  * Increase video quality and distance between keyframes.
+
+  [ Maxim Biro ]
+  * Fixed a memory leak
+
+  [ irungentoo ]
+  * Fixed memory leaks.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sat, 13 Dec 2014 15:25:19 +0000
+
 toxcore (0.0.0+20141212.r3016-1~precise+1) precise; urgency=medium
 
   * Backport to Precise
