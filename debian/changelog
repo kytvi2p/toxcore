@@ -1,3 +1,14 @@
+toxcore (0.0.0+20141212.r3016-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Test if everything goes well when a peer leaves the group chat.
+  * Fixed video packet assembling.
+
+  [ Kill Your TV ]
+  * New usptream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 12 Dec 2014 23:07:59 +0000
+
 toxcore (0.0.0+20141211.r3014-1~precise+1) precise; urgency=medium
 
   * Backport to Precise
