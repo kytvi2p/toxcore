@@ -1,3 +1,15 @@
+toxcore (0.0.0+20141215.r3025-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * More group auto testing.
+  * Sendback data size is always 8 bytes.
+  * Fixed DHT doc.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Mon, 15 Dec 2014 12:14:44 +0000
+
 toxcore (0.0.0+20141212.r3022-1~precise+1) precise; urgency=medium
 
   * Backport to Precise
