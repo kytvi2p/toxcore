@@ -1,3 +1,29 @@
+toxcore (0.0.0+20141218.r3033-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Cut one on one default audio bitrate by half.
+  * Build system fixes.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 18 Dec 2014 16:41:32 +0000
+
+toxcore (0.0.0+20141216.r3031-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Increased max TCP connections.
+  * Some optimizations on how TCP relays are used.
+  * DHT fixes.
+  * Fixed test.
+  * cs_set_video_encoder_resolution improvements.
+  * Fixed some A/V threading issues.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 17 Dec 2014 20:35:27 +0000
+
 toxcore (0.0.0+20141215.r3025-1~deb7u+1) stable; urgency=medium
 
   * Backport to Wheezy
