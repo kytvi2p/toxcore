@@ -1,3 +1,32 @@
+toxcore (0.0.0+20141223.r3043-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Improved detection of dead paths.
+
+  [ Zetok Zalbavar ]
+  * Update INSTALL.md
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 24 Dec 2014 17:48:04 +0000
+
+toxcore (0.0.0+20141221.r3040-1) unstable; urgency=medium
+
+  [ Jon Poler ]
+  * Removed calloc from logger_init, because the pid was no longer being
+    appended.
+  * Added cscope.files to .gitignore
+
+  [ irungentoo ]
+  * auto test group titles.
+  * Fixed bug in tox_load where names of size TOX_MAX_NAME_LENGTH didn't load.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Mon, 22 Dec 2014 22:33:42 +0000
+
 toxcore (0.0.0+20141218.r3033-1~precise+1) precise; urgency=medium
 
   * Backport to Precise
