@@ -1,3 +1,17 @@
+toxcore (0.0.0+20141225.r3047-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Don't populate path nodes too much.
+  * Add function to get nodes from onion path.
+  * Onion client improvements.
+  * Fixed bug.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+  * Update debian/libtoxcore0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 26 Dec 2014 02:58:39 +0000
+
 toxcore (0.0.0+20141223.r3043-1) unstable; urgency=medium
 
   [ irungentoo ]

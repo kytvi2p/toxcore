@@ -272,7 +272,8 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  new_onion_client@Base 0.0.0+20140922.1
  new_ping@Base 0.0.0+20140922.1
  new_symmetric_key@Base 0.0.0+20140922.1
- onion_add_path_node@Base 0.0.0+20140922.1
+ onion_add_bs_path_node@Base 0.0.0+20141225.r3047-1
+#MISSING: 0.0.0+20141225.r3047-1# onion_add_path_node@Base 0.0.0+20140922.1
  onion_addfriend@Base 0.0.0+20140922.1
  onion_backup_nodes@Base 0.0.0+20140922.1
  onion_delfriend@Base 0.0.0+20140922.1
@@ -281,6 +282,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  onion_getfriend_DHT_pubkey@Base 0.0.0+20140922.1
  onion_getfriendip@Base 0.0.0+20140922.1
  onion_isconnected@Base 0.0.0+20140922.1
+ onion_path_to_nodes@Base 0.0.0+20141225.r3047-1
  onion_response_handler@Base 0.0.0+20140922.1
  onion_send_1@Base 0.0.0+20140922.1
  onion_set_friend_DHT_pubkey@Base 0.0.0+20140922.1
