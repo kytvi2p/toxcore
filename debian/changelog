@@ -1,3 +1,9 @@
+toxcore (0.0.0+20141226.r3053-1~precise+1) precise; urgency=medium
+
+  * Backport to Precise
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 28 Dec 2014 01:11:31 +0000
+
 toxcore (0.0.0+20141226.r3053-1) unstable; urgency=medium
 
   [ Maxim Biro ]
@@ -15,12 +21,6 @@ toxcore (0.0.0+20141226.r3053-1) unstable; urgency=medium
   * Update debian/libtoxcore0.symbols
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Sat, 27 Dec 2014 02:36:37 +0000
-
-toxcore (0.0.0+20141225.r3047-1~precise+1) precise; urgency=medium
-
-  * Backport to Precise
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 26 Dec 2014 11:54:15 +0000
 
 toxcore (0.0.0+20141225.r3047-1) unstable; urgency=medium
 
