@@ -1,3 +1,21 @@
+toxcore (0.0.0+20141226.r3053-1) unstable; urgency=medium
+
+  [ Maxim Biro ]
+  * Added HTTP proxy support
+  * Some refactoring of proxy code
+  * Further refactoring of proxy code
+
+  [ irungentoo ]
+  * Fixed bug with auto tests and cleaned up the code a bit.
+  * Make it possible to port clients to the new api by just replacing
+    proxy_enabled with proxy_type.
+
+  [ Kill Your TV ]
+  * New upstrema git snapshot
+  * Update debian/libtoxcore0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sat, 27 Dec 2014 02:36:37 +0000
+
 toxcore (0.0.0+20141225.r3047-1~precise+1) precise; urgency=medium
 
   * Backport to Precise
