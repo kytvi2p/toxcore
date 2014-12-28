@@ -1,3 +1,14 @@
+toxcore (0.0.0+20141228.r3055-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * onion_isconnected fix attempt.
+  * Use same jbuf size for group as for one on one chats.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 28 Dec 2014 21:56:18 +0000
+
 toxcore (0.0.0+20141226.r3053-1~precise+1) precise; urgency=medium
 
   * Backport to Precise
@@ -17,7 +28,7 @@ toxcore (0.0.0+20141226.r3053-1) unstable; urgency=medium
     proxy_enabled with proxy_type.
 
   [ Kill Your TV ]
-  * New upstrema git snapshot
+  * New upstream git snapshot
   * Update debian/libtoxcore0.symbols
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Sat, 27 Dec 2014 02:36:37 +0000
