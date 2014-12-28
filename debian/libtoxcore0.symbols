@@ -18,6 +18,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  DHT_size@Base 0.0.0+20140922.1
  LAN_ip@Base 0.0.0+20140922.1
  LANdiscovery_init@Base 0.0.0+20140922.1
+ TCP_socket_data_recv_buffer@Base 0.0.0+20141226.r3053
 #MISSING: 0.0.0+20141001.1-1# U16_to_bytes@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20141001.1-1# U32_to_bytes@Base 0.0.0+20140922.1
  accept_crypto_connection@Base 0.0.0+20140922.1
@@ -163,6 +164,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  ip_isset@Base 0.0.0+20140922.1
  ip_ntoa@Base 0.0.0+20140922.1
  ip_pack@Base 0.0.0+20140922.1
+ ip_parse_addr@Base 0.0.0+20141226.r3053
  ip_reset@Base 0.0.0+20140922.1
  ip_unpack@Base 0.0.0+20140922.1
  ipport_copy@Base 0.0.0+20140922.1
@@ -272,7 +274,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  new_onion_client@Base 0.0.0+20140922.1
  new_ping@Base 0.0.0+20140922.1
  new_symmetric_key@Base 0.0.0+20140922.1
- onion_add_bs_path_node@Base 0.0.0+20141225.r3047-1
+ onion_add_bs_path_node@Base 0.0.0+20141225.r3047
 #MISSING: 0.0.0+20141225.r3047-1# onion_add_path_node@Base 0.0.0+20140922.1
  onion_addfriend@Base 0.0.0+20140922.1
  onion_backup_nodes@Base 0.0.0+20140922.1
@@ -282,7 +284,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  onion_getfriend_DHT_pubkey@Base 0.0.0+20140922.1
  onion_getfriendip@Base 0.0.0+20140922.1
  onion_isconnected@Base 0.0.0+20140922.1
- onion_path_to_nodes@Base 0.0.0+20141225.r3047-1
+ onion_path_to_nodes@Base 0.0.0+20141225.r3047
  onion_response_handler@Base 0.0.0+20140922.1
  onion_send_1@Base 0.0.0+20140922.1
  onion_set_friend_DHT_pubkey@Base 0.0.0+20140922.1
