@@ -300,7 +300,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  random_64b@Base 0.0.0+20140922.1
  random_int@Base 0.0.0+20140922.1
  random_node@Base 0.0.0+20140922.1
- random_nodes_path@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20141231.r3063-1# random_nodes_path@Base 0.0.0+20140922.1
  random_nonce@Base 0.0.0+20140922.1
  read_TCP_length@Base 0.0.0+20140922.1
  read_TCP_packet@Base 0.0.0+20140922.1
