@@ -97,7 +97,6 @@ typedef int sock_t;
 #define NET_PACKET_PING_REQUEST    0   /* Ping request packet ID. */
 #define NET_PACKET_PING_RESPONSE   1   /* Ping response packet ID. */
 #define NET_PACKET_GET_NODES       2   /* Get nodes request packet ID. */
-#define NET_PACKET_SEND_NODES      3   /* Send nodes response packet ID for IPv4 addresses. */
 #define NET_PACKET_SEND_NODES_IPV6 4   /* Send nodes response packet ID for other addresses. */
 #define NET_PACKET_COOKIE_REQUEST  24  /* Cookie request packet */
 #define NET_PACKET_COOKIE_RESPONSE 25  /* Cookie response packet */
@@ -250,12 +249,14 @@ void ipport_copy(IP_Port *target, const IP_Port *source);
 
 /* packs IP into data, writes SIZE_IP bytes to data */
 void ip_pack(uint8_t *data, const IP *source);
-/* unpacks IP from data, reads SIZE_IP bytes from data */
-void ip_unpack(IP *target, const uint8_t *data);
+/* unpacks IP from data, reads SIZE_IP bytes from data
+   return 0 on success, -1 on failure. */
+int ip_unpack(IP *target, const uint8_t *data, unsigned int data_size);
 /* packs IP_Port into data, writes SIZE_IPPORT bytes to data */
 void ipport_pack(uint8_t *data, const IP_Port *source);
-/* unpacks IP_Port from data, reads SIZE_IPPORT bytes to data */
-void ipport_unpack(IP_Port *target, const uint8_t *data);
+/* unpacks IP_Port from data, reads SIZE_IPPORT bytes to data
+   return 0 on success, -1 on failure. */
+int ipport_unpack(IP_Port *target, const uint8_t *data, unsigned int data_size);
 
 /*
  * addr_resolve():

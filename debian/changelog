@@ -1,3 +1,24 @@
+toxcore (0.0.0+20141231.r3063-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Adjusted onion timeouts.
+  * Remove useless code.
+
+  [ Luke Drummond ]
+  * fixes #1210
+
+  [ irungentoo ]
+  * Check if received ip family is valid for the onion packets.
+  * Removed now useless packet id.
+  * Code cleanup.
+  * Remove useless defines.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+  * Update debian/libtoxcore0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 01 Jan 2015 12:30:10 +0000
+
 toxcore (0.0.0+20141228.r3055-1~deb7u+1) stable; urgency=medium
 
   * Backport to Wheezy
