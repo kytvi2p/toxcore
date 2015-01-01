@@ -133,8 +133,8 @@ static uint16_t random_nodes_path_onion(const Onion_Client *onion_c, Node_format
 
     //if (DHT_non_lan_connected(onion_c->dht)) {
     if (DHT_isconnected(onion_c->dht)) {
-        if (num_nodes < 3)
-            return random_nodes_path(onion_c->dht, nodes, max_num);
+        if (num_nodes == 0)
+            return 0;
 
         for (i = 0; i < max_num; ++i) {
             nodes[i] = onion_c->path_nodes[rand() % num_nodes];
@@ -1190,7 +1190,7 @@ static void populate_path_nodes(Onion_Client *onion_c)
 
 #define ANNOUNCE_FRIEND (ONION_NODE_PING_INTERVAL * 6)
 #define ANNOUNCE_FRIEND_BEGINNING 3
-#define FRIEND_ONION_NODE_TIMEOUT (ONION_NODE_TIMEOUT * 4)
+#define FRIEND_ONION_NODE_TIMEOUT (ONION_NODE_TIMEOUT * 6)
 
 #define RUN_COUNT_FRIEND_ANNOUNCE_BEGINNING 17
 
