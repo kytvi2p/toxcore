@@ -163,15 +163,15 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  ip_init@Base 0.0.0+20140922.1
  ip_isset@Base 0.0.0+20140922.1
  ip_ntoa@Base 0.0.0+20140922.1
- ip_pack@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150101.r3066-1# ip_pack@Base 0.0.0+20140922.1
  ip_parse_addr@Base 0.0.0+20141226.r3053
  ip_reset@Base 0.0.0+20140922.1
- ip_unpack@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150101.r3066-1# ip_unpack@Base 0.0.0+20140922.1
  ipport_copy@Base 0.0.0+20140922.1
  ipport_equal@Base 0.0.0+20140922.1
  ipport_isset@Base 0.0.0+20140922.1
- ipport_pack@Base 0.0.0+20140922.1
- ipport_unpack@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150101.r3066-1# ipport_pack@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150101.r3066-1# ipport_unpack@Base 0.0.0+20140922.1
  is_timeout@Base 0.0.0+20140922.1
  join_groupchat@Base 0.0.0+20140922.1
  kill_Assoc@Base 0.0.0+20140922.1
