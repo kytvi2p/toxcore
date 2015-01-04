@@ -1,3 +1,17 @@
+toxcore (0.0.0+20150101.r3066-1) unstable; urgency=medium
+
+  [ aaannndddyyy ]
+  * fixed a typo
+
+  [ irungentoo ]
+  * Code cleanups.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+  * Update debian/libtoxcore0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 02 Jan 2015 12:11:02 +0000
+
 toxcore (0.0.0+20141231.r3063-1~precise+1) precise; urgency=medium
 
   * Backport to Precise
