@@ -104,7 +104,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  friend_connection_callbacks@Base 0.0.0+20140928.1
  friend_connection_crypt_connection_id@Base 0.0.0+20140928.1
  friend_connection_lock@Base 0.0.0+20141001.1
- friend_ips@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150104.r3071-1# friend_ips@Base 0.0.0+20140922.1
  friendreq_init@Base 0.0.0+20140922.1
  g_callback_group_action@Base 0.0.0+20141029.r2902
  g_callback_group_invite@Base 0.0.0+20140928.1
