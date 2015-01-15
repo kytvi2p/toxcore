@@ -1,3 +1,27 @@
+toxcore (0.0.0+20150113.r3084-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Reduced timeout of onion paths on the first try by 1 second.
+  * Removed unused variables.
+  * Send less net_crypto packets.
+  * Speed up connection to network on TCP only.
+  * Send lossy packets to less peers.
+
+  [ mannol ]
+  * Logger fix
+
+  [ irungentoo ]
+  * Fixed use after free.
+  * Attempted fix of Tox killing routers.
+  * Attempted fix of Tox killing routers part 2.
+  * Fix TCP server regression.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+  * Update debian/libtoxcore0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 15 Jan 2015 00:19:50 +0000
+
 toxcore (0.0.0+20150104.r3071-1~deb7u+1) stable; urgency=medium
 
   * Backport to Wheezy
