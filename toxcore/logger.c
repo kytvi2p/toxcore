@@ -1,6 +1,6 @@
 /*  logger.c
  *
- *  Copyright (C) 2013 Tox project All Rights Reserved.
+ *  Copyright (C) 2013, 2015 Tox project All Rights Reserved.
  *
  *  This file is part of Tox.
  *
@@ -37,12 +37,14 @@
 #if defined(_WIN32) || defined(__WIN32__) || defined (WIN32)
 #   define getpid() ((unsigned) GetCurrentProcessId())
 #   define SFILE(FILE__M) (strrchr(FILE__M, '\\') ? strrchr(FILE__M, '\\') + 1 : FILE__M)
+#   define WIN_CR "\r"
 #else
 #   define SFILE(FILE__M) (strrchr(FILE__M, '/') ? strrchr(FILE__M, '/') + 1 : FILE__M)
+#   define WIN_CR ""
 #endif
 
 
-typedef struct logger {
+struct logger {
     FILE *log_file;
     LOG_LEVEL level;
     uint64_t start_time; /* Time when lib loaded */
@@ -55,9 +57,9 @@ typedef struct logger {
 
     /* For thread synchronisation */
     pthread_mutex_t mutex[1];
-} logger;
+};
 
-logger *global = NULL;
+Logger *global = NULL;
 
 const char *LOG_LEVEL_STR [] = {
     [LOG_TRACE]   = "TRACE",
@@ -83,13 +85,13 @@ char *strtime(char *dest, size_t max_len)
 /**
  * Public Functions
  */
-logger *logger_new (const char *file_name, LOG_LEVEL level, const char *id)
+Logger *logger_new (const char *file_name, LOG_LEVEL level, const char *id)
 {
 #ifndef LOGGING /* Disabled */
     return NULL;
 #endif
 
-    logger *retu = calloc(1, sizeof(logger));
+    Logger *retu = calloc(1, sizeof(Logger));
 
     if (!retu)
         return NULL;
@@ -100,7 +102,7 @@ logger *logger_new (const char *file_name, LOG_LEVEL level, const char *id)
     }
 
     if (!(retu->log_file = fopen(file_name, "ab"))) {
-        fprintf(stderr, "Error opening logger file: %s; info: %s\n", file_name, strerror(errno));
+        fprintf(stderr, "Error opening logger file: %s; info: %s" WIN_CR "\n", file_name, strerror(errno));
         free(retu);
         pthread_mutex_destroy(retu->mutex);
         return NULL;
@@ -126,13 +128,13 @@ logger *logger_new (const char *file_name, LOG_LEVEL level, const char *id)
     retu->level = level;
     retu->start_time = current_time_monotonic();
 
-    fprintf(retu->log_file, "Successfully created and running logger id: %s; time: %s\n",
+    fprintf(retu->log_file, "Successfully created and running logger id: %s; time: %s" WIN_CR "\n",
             retu->id, strtime(retu->tstr, 16));
 
     return retu;
 
 FAILURE:
-    fprintf(stderr, "Failed to create logger!\n");
+    fprintf(stderr, "Failed to create logger!" WIN_CR "\n");
     pthread_mutex_destroy(retu->mutex);
     fclose(retu->log_file);
     free(retu->tstr);
@@ -143,7 +145,7 @@ FAILURE:
     return NULL;
 }
 
-void logger_kill(logger *log)
+void logger_kill(Logger *log)
 {
 #ifndef LOGGING /* Disabled */
     return;
@@ -173,7 +175,7 @@ void logger_kill_global(void)
     global = NULL;
 }
 
-void logger_set_global(logger *log)
+void logger_set_global(Logger *log)
 {
 #ifndef LOGGING /* Disabled */
     return;
@@ -182,7 +184,7 @@ void logger_set_global(logger *log)
     global = log;
 }
 
-logger *logger_get_global(void)
+Logger *logger_get_global(void)
 {
 #ifndef LOGGING /* Disabled */
     return NULL;
@@ -191,7 +193,7 @@ logger *logger_get_global(void)
     return global;
 }
 
-void logger_write (logger *log, LOG_LEVEL level, const char *file, int line, const char *format, ...)
+void logger_write (Logger *log, LOG_LEVEL level, const char *file, int line, const char *format, ...)
 {
 #ifndef LOGGING /* Disabled */
     return;
@@ -204,10 +206,10 @@ void logger_write (logger *log, LOG_LEVEL level, const char *file, int line, con
         "%-5s  " /* Logger lever string */
         "%-20s " /* File:line string */
         "- %s"   /* Output message */
-        "\n";    /* Every new print new line */
+        WIN_CR "\n";    /* Every new print new line */
 
 
-    logger *this_log = log ? log : global;
+    Logger *this_log = log ? log : global;
 
     if (!this_log)
         return;
