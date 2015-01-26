@@ -1,3 +1,18 @@
+toxcore (0.0.0+20150124.r3099-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Fixed gcc warnings.
+  * Fixed gcc warnings.
+  * Code cleanups.
+  * Zero broadcast ips are invalid.
+  * Code cleanups.
+
+  [ Kill Your TV ]
+  * New git upstream snapshot
+  * Update debian/libtoxcore0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sat, 24 Jan 2015 22:45:52 +0000
+
 toxcore (0.0.0+20150118.r3094-1~deb7u+1) stable; urgency=medium
 
   * Backport to Wheezy
