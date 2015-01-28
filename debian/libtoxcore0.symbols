@@ -18,7 +18,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  DHT_size@Base 0.0.0+20140922.1
  LAN_ip@Base 0.0.0+20140922.1
  LANdiscovery_init@Base 0.0.0+20140922.1
- LOG_LEVEL_STR@Base 0.0.0+20150113.r3084-1
+ LOG_LEVEL_STR@Base 0.0.0+20150113.r3084
  TCP_socket_data_recv_buffer@Base 0.0.0+20141226.r3053
 #MISSING: 0.0.0+20141001.1-1# U16_to_bytes@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20141001.1-1# U32_to_bytes@Base 0.0.0+20140922.1
@@ -119,6 +119,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  get_nospam@Base 0.0.0+20140922.1
  get_num_online_friends@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20141001.1-1# get_peer_index@Base 0.0.0+20140928.1
+ get_random_tcp_con_number@Base 0.0.0+20150124.r3099
  get_shared_key@Base 0.0.0+20140922.1
  getaddress@Base 0.0.0+20140922.1
  getclient_id@Base 0.0.0+20140922.1
@@ -127,7 +128,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  getfriendcon_id@Base 0.0.0+20141001.1
  getname@Base 0.0.0+20140922.1
  getself_name@Base 0.0.0+20140922.1
- global@Base 0.0.0+20150113.r3084-1
+ global@Base 0.0.0+20150113.r3084
  group_action_send@Base 0.0.0+20141029.r2902
 #MISSING: 0.0.0+20140928.1# group_client_names@Base 0.0.0+20140922.1
  group_get_object@Base 0.0.0+20141111.r2927
@@ -196,12 +197,12 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  lendian_to_host32@Base 0.0.0+20141025.r2891
  load_keys@Base 0.0.0+20140922.1
  load_state@Base 0.0.0+20140922.1
- logger_get_global@Base 0.0.0+20150113.r3084-1
- logger_kill@Base 0.0.0+20150113.r3084-1
- logger_kill_global@Base 0.0.0+20150113.r3084-1
- logger_new@Base 0.0.0+20150113.r3084-1
- logger_set_global@Base 0.0.0+20150113.r3084-1
- logger_write@Base 0.0.0+20150113.r3084-1
+ logger_get_global@Base 0.0.0+20150113.r3084
+ logger_kill@Base 0.0.0+20150113.r3084
+ logger_kill_global@Base 0.0.0+20150113.r3084
+ logger_new@Base 0.0.0+20150113.r3084
+ logger_set_global@Base 0.0.0+20150113.r3084
+ logger_write@Base 0.0.0+20150113.r3084
  m_addfriend@Base 0.0.0+20140922.1
  m_addfriend_norequest@Base 0.0.0+20140922.1
  m_avatar_hash@Base 0.0.0+20140923.1
@@ -360,7 +361,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  setfriendname@Base 0.0.0+20140922.1
  setname@Base 0.0.0+20140922.1
  sock_valid@Base 0.0.0+20140922.1
- strtime@Base 0.0.0+20150113.r3084-1
+ strtime@Base 0.0.0+20150113.r3084
  tcp_onion_response_handler@Base 0.0.0+20140922.1
  to_host_family@Base 0.0.0+20140922.1
  to_net_family@Base 0.0.0+20140922.1
