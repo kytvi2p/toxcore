@@ -120,9 +120,10 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  get_num_online_friends@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20141001.1-1# get_peer_index@Base 0.0.0+20140928.1
  get_random_tcp_con_number@Base 0.0.0+20150124.r3099
+ get_real_pk@Base 0.0.0+20150129.r3107
  get_shared_key@Base 0.0.0+20140922.1
  getaddress@Base 0.0.0+20140922.1
- getclient_id@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150129.r3107-1# getclient_id@Base 0.0.0+20140922.1
  getfriend_conn_id_pk@Base 0.0.0+20140928.1
  getfriend_id@Base 0.0.0+20140922.1
  getfriendcon_id@Base 0.0.0+20141001.1
