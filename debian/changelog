@@ -1,3 +1,16 @@
+toxcore (0.0.0+20150129.r3107-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Updated TODO.
+  * Code cleanups.
+  * Api break.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+  * Update debian/libtoxcore0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 30 Jan 2015 14:52:18 +0000
+
 toxcore (0.0.0+20150124.r3099-1~deb7u+1) stable; urgency=medium
 
   * Backport to Wheezy

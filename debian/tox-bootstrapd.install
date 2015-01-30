@@ -1,2 +1,2 @@
 debian/tmp/usr/bin/tox-bootstrapd usr/sbin
-other/bootstrap_daemon/tox-bootstrapd.conf etc
+debian/tox-bootstrapd.conf etc
