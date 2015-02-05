@@ -1,3 +1,26 @@
+toxcore (0.0.0+20150205.r3120-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Removed useless misleading define.
+  * Lowered CPU usage.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 05 Feb 2015 20:50:38 +0000
+
+toxcore (0.0.0+20150202.r3114-1) unstable; urgency=medium
+
+  [ Alexandre Erwin Ittner ]
+  * Rename "client id" to "public key" in avatar docs and examples
+  * Update avatar documentation
+  * Add script to generate save files with custom keys
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 03 Feb 2015 11:23:04 +0000
+
 toxcore (0.0.0+20150131.r3109-1~deb7u+1) stable; urgency=medium
 
   * Backport to Wheezy
