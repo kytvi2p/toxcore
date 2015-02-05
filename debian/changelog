@@ -1,3 +1,14 @@
+toxcore (0.0.0+20150205.r3120-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Removed useless misleading define.
+  * Lowered CPU usage.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 05 Feb 2015 20:50:38 +0000
+
 toxcore (0.0.0+20150202.r3114-1) unstable; urgency=medium
 
   [ Alexandre Erwin Ittner ]
