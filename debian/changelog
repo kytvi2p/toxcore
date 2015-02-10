@@ -1,3 +1,22 @@
+toxcore (0.0.0+20150208.r3134-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * kill_TCP_server() now frees everything in TCP server.
+  * Only create one global logger instance.
+
+  [ Maxim Biro ]
+  * Fixed incompatible pointer type warning
+
+  [ irungentoo ]
+  * Properly free everything at the end of each test.
+  * Fixed memory leak.
+  * Fixed memory leak in test.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Mon, 09 Feb 2015 01:22:36 +0000
+
 toxcore (0.0.0+20150206.r3126-1ubuntu1) utopic; urgency=medium
 
   * Building for Utopic
