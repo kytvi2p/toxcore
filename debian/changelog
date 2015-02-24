@@ -1,3 +1,9 @@
+toxcore (0.0.0+20150223.r3147-1ubuntu1) utopic; urgency=medium
+
+  * Building for Utopic
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 24 Feb 2015 01:48:54 +0000
+
 toxcore (0.0.0+20150223.r3147-1) unstable; urgency=medium
 
   [ irungentoo ]
@@ -9,12 +15,6 @@ toxcore (0.0.0+20150223.r3147-1) unstable; urgency=medium
   * New git upstream snapshot
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Mon, 23 Feb 2015 22:03:34 +0000
-
-toxcore (0.0.0+20150212.r3144-1ubuntu1) utopic; urgency=medium
-
-  * Building for Utopic
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Sat, 14 Feb 2015 23:32:00 +0000
 
 toxcore (0.0.0+20150212.r3144-1) unstable; urgency=medium
 
