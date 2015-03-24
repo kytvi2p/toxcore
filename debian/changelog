@@ -1,3 +1,9 @@
+toxcore (0.0.0+20150323.r3271-2) unstable; urgency=medium
+
+  * Add missing header file to libtoxcore-dev package
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 24 Mar 2015 02:52:31 +0000
+
 toxcore (0.0.0+20150323.r3271-1) unstable; urgency=medium
 
   [ irungentoo ]
