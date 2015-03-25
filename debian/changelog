@@ -1,3 +1,9 @@
+toxcore (0.0.0+20150324.r3272-1~utopic+1) utopic; urgency=medium
+
+  * Building for Utopic
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 25 Mar 2015 14:22:32 +0000
+
 toxcore (0.0.0+20150324.r3272-1) unstable; urgency=medium
 
   [ irungentoo ]
@@ -214,12 +220,6 @@ toxcore (0.0.0+20150323.r3271-1) unstable; urgency=medium
   * Update debian/libtoxencryptsave0.symbols
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 24 Mar 2015 02:08:23 +0000
-
-toxcore (0.0.0+20150223.r3147-1ubuntu1) utopic; urgency=medium
-
-  * Building for Utopic
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 24 Feb 2015 01:48:54 +0000
 
 toxcore (0.0.0+20150223.r3147-1) unstable; urgency=medium
 
