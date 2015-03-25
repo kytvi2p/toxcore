@@ -1,3 +1,220 @@
+toxcore (0.0.0+20150324.r3272-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Comment fix.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+  * Main reason for this version: Add 'Breaks:' to debian/control
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 25 Mar 2015 12:52:59 +0000
+
+toxcore (0.0.0+20150323.r3271-2) unstable; urgency=medium
+
+  * Add missing header file to libtoxcore-dev package
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 24 Mar 2015 02:52:31 +0000
+
+toxcore (0.0.0+20150323.r3271-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Changed how receipts work.
+  * Started implementing new Tox api.
+  * A bit of new api work done.
+  * Code cleanups.
+  * New api progress.
+  * Allow empty names and status messages.
+  * More new api work done.
+  * Messenger add friends functions error code fixes.
+  * Fixed friend_not_valid function.
+  * Updated types in Messenger callbacks to fit with the ones in the new api.
+  * More new api functions implemented.
+  * Apparently enums are bad for wrappers and doing this makes wrapping
+    toxcore easier.
+  * use bool in is typing callback.
+
+  [ Dubslow ]
+  * Put const adjective before type nouns
+
+  [ irungentoo ]
+  * Typing and status functions implemented.
+  * Tox connection function and callback should now work as expected.
+  * Implemented message send functions in public api.
+  * Implemented callbacks.
+  * Remove avatar stuff from Messenger.
+  * Ported some of the code in testing/ to the new api.
+  * Fixed bug.
+  * toxav new api fixes.
+  * Ported some tests to the new api.
+
+  [ Urras ]
+  * Minor changes to README
+
+  [ irungentoo ]
+  * Changes to custom packet functions in Messenger.
+  * More tests ported to new api.
+  * Added different error codes for custom packet functions in Messenger.
+  * Implemented custom packet functions in new api.
+
+  [ saneki ]
+  * Allow for specifying the port range to use in Tox_Options
+
+  [ Dubslow ]
+  * Realign toxencryptsave with new API
+
+  [ irungentoo ]
+  * Test fixes.
+  * Removed backwards compatibility code from core.
+
+  [ Dubslow ]
+  * Update encryption autotest
+
+  [ irungentoo ]
+  * Properly fixed encryptsave_test.c
+
+  [ Jin^eLD ]
+  * Fix dist target
+  * Add README.md to the dist tarball
+  * Add spec file for rpm generation
+
+  [ irungentoo ]
+  * Removed useless TODO comments.
+
+  [ aaannndddyyy ]
+  * minor punctuation fixes
+  * spelling, punctuation, ...
+
+  [ irungentoo ]
+  * Code cleanups.
+  * enums are no longer typedefed to uint8_t.
+  * Fixed typedef.
+  * Updated File request packet to new format.
+  * Fixed debug fprintf.
+
+  [ Christoffer Sterner ]
+  * Change fprintf debug into LOGGER_DEBUG for consistency
+  * Change LOGGER_DEBUG to LOGGER_ERROR for fail bind
+
+  [ irungentoo ]
+  * Fixed case where a recv and a sending file would have the same number.
+  * Updated new_filesender function in Messenger.c
+  * Fixed small issue.
+  * Implementation of new api file transfers.
+  * testing/tox_sync now fully works on the new api.
+  * Ported nTox to new file transfer api.
+  * Added group chat functions to the public api.
+  * Implemented the 3 low level network information functions.
+  * Use .h for tox_old instead of .c to not break some of my build commands.
+  * tox_callback_connection_status() implemented.
+
+  [ Dubslow ]
+  *   This is a combination of 11 commits.   The first commit's message is:
+      TOX_STATUS -> TOX_USER_STATUS, is more specific
+
+  [ irungentoo ]
+  * Added simple status message test to tox_test.c
+  * tox_new() fixes.
+  * tox_new now sets error to TOX_ERR_NEW_PORT_ALLOC when binding to port fails.
+  * Fixed tox_new issue.
+  * Added position parameter to tox_file_send_chunk().
+  * Don't assume tox_file_send_chunk() is called in the request chunk callback.
+  * File transfer fixes and improvements.
+  * File sending improvements.
+  * Check more ports in tox_test.c
+
+  [ Dubslow ]
+  * Convert core code depending on the api
+
+  [ irungentoo ]
+  * tox_friend_get_public_key() now does nothing when public_key is NULL.
+  * tox_file_send_chunk() must now send data the same length as requested in
+    the requested chunk callback.
+  * File kind is now a uint32_t.
+
+  [ Dubslow ]
+  * revert to TOX_FILE_KIND
+
+  [ irungentoo ]
+  * Remove TOX_FILE_KIND typedef.
+  * This belongs in the previous commit.
+  * When link can't send packets anymore, stop the request chunk callback.
+  * Better DHT distance function.
+  * Make nTox save on exit.
+  * Install tox_old.h too.
+  * There are many scenarios where the user would want to modify the contents
+    pointed by proxy_address.
+
+  [ Impyy ]
+  * Initialize Tox_Options with default values in tox_options_new
+
+  [ irungentoo ]
+  * Avatar hash is now the filename of the file transfer instead of the first
+    32 bytes.
+
+  [ iphydf ]
+  * New API fixups.
+
+  [ irungentoo ]
+  * Added and implemented file_id parameter to file tranfers.
+  * Allow file names to be of length 0.
+  * Added tox_file_send_seek() function to api.
+  * Changed INVALID_LENGTH to TOO_LONG.
+  * Make sure some defines in the public api are always correct.
+  * Save function renamed to tox_get_savedata()
+  * Renamed SEND_FAILED to SENDQ.
+  * Kill all file transfers associated with the friend when friend goes offline.
+  * Api changes.
+  * When friend goes offline all his file transfers get removed.
+
+  [ Dubslow ]
+  * Move get_connection_status to self pseudonamespace, to contrast
+    friend_get_connection_status
+
+  [ irungentoo ]
+  * Merged normal message function and send action function into one messaging
+    function.
+  * Removed TOX_USER_STATUS_INVALID.
+  * Renamed TOX_MESSAGE_TYPE_MESSAGE to TOX_MESSAGE_TYPE_NORMAL.
+
+  [ Dubslow ]
+  * callback_file_request_chunk -> callback_file_chunk_request A couple of
+    minor reasons, combined warrant a PR imo: a) fileChunkRequested is a
+    better signal name than fileRequestChunkReceived, and I don't want to
+    break consistency by reordering words for just this signal b) "request
+    chunk" is parsed by English speakers as a verb-object combination,
+    implying sending the request, not receiving, whereas "chunk requested" is
+    parsed (more correctly) as an adjective-noun combo (in particular, request
+    is    a noun not a verb), and thus reads far more like "hey heads up we
+    just got a request"
+
+  [ irungentoo ]
+  * Fixed group audio issues when getting an old audio packet.
+  * Fix build warning.
+  * For file transfers UINT64_MAX is now used as the size for streaming
+    transfers instead of 0.
+  * Allow sending of file transfer requests with length 0 but don't allocate
+    any file number for them in core.
+  * Transfers with filelength == 0 now behave exactly like transfers of every
+    other size (except streaming of course).
+  * Renamed tox_file_send_control to tox_file_control.
+
+  [ Anurag Agarwal ]
+  * Fixes #1296
+  * Fixes #1297
+  * Fixes #1298
+
+  [ irungentoo ]
+  * Added some more checks for file packets.
+  * Changed the share relay packet id.
+  * tox.h comment fix.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+  * Update debian/libtoxcore0.symbols
+  * Update debian/libtoxencryptsave0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 24 Mar 2015 02:08:23 +0000
+
 toxcore (0.0.0+20150223.r3147-1~trusty+1) trusty; urgency=medium
 
   * Building for Trusty
