@@ -1,3 +1,13 @@
+toxcore (0.0.0+20150325.r3273-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Removed old avatar doc.
+
+  [ Kill Your TV ]
+  * Really break ratox (<= 0.2.1-1)
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 25 Mar 2015 15:36:34 +0000
+
 toxcore (0.0.0+20150324.r3272-1~precise+1) precise; urgency=medium
 
   * Backport to Precise
