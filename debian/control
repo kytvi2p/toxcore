@@ -49,7 +49,7 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Breaks: toxic ( << 0.5.2+20150324),
  utox ( << 0.2.o+20150324.r1395),
- ratox ( <= 0.2.1),
+ ratox ( <= 0.2.1-1),
  qtox ( << 0.0.0+git20150324),
  pidgin-tox ( << 0.4.2+git20150324),
  tox-weechat ( << 0.1+20150324),
