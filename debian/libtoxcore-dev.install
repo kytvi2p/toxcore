@@ -1,4 +1,5 @@
 usr/include/tox/tox.h
+usr/include/tox/tox_old.h
 usr/lib/*/libtoxcore.so
 usr/lib/*/libtoxcore.la
 usr/lib/*/libtoxcore.a
