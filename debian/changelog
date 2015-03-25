@@ -1,3 +1,9 @@
+toxcore (0.0.0+20150325.r3273-1~precise+1) precise; urgency=medium
+
+  * Backport to Precise
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 25 Mar 2015 18:09:46 +0000
+
 toxcore (0.0.0+20150325.r3273-1) unstable; urgency=medium
 
   [ irungentoo ]
@@ -7,12 +13,6 @@ toxcore (0.0.0+20150325.r3273-1) unstable; urgency=medium
   * Really break ratox (<= 0.2.1-1)
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 25 Mar 2015 15:36:34 +0000
-
-toxcore (0.0.0+20150324.r3272-1~precise+1) precise; urgency=medium
-
-  * Backport to Precise
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 25 Mar 2015 14:24:48 +0000
 
 toxcore (0.0.0+20150324.r3272-1) unstable; urgency=medium
 
