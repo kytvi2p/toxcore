@@ -42,6 +42,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
 #MISSING: 0.0.0+20141001.1-1# bytes_to_U32@Base 0.0.0+20140922.1
  callback_file_control@Base 0.0.0+20140922.1
  callback_file_data@Base 0.0.0+20140922.1
+ callback_file_reqchunk@Base 0.0.0+20150323.r3271
  callback_file_sendrequest@Base 0.0.0+20140922.1
  callback_friendrequest@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20140928.1# callback_groupaction@Base 0.0.0+20140922.1
@@ -100,7 +101,9 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  file_control@Base 0.0.0+20140922.1
  file_data@Base 0.0.0+20140922.1
  file_dataremaining@Base 0.0.0+20140922.1
- file_sendrequest@Base 0.0.0+20140922.1
+ file_get_id@Base 0.0.0+20150323.r3271
+ file_seek@Base 0.0.0+20150323.r3271
+#MISSING: 0.0.0+20150323.r3271-1# file_sendrequest@Base 0.0.0+20140922.1
  friend_con_connected@Base 0.0.0+20141001.1
  friend_connection_callbacks@Base 0.0.0+20140928.1
  friend_connection_crypt_connection_id@Base 0.0.0+20140928.1
@@ -206,12 +209,13 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  logger_write@Base 0.0.0+20150113.r3084
  m_addfriend@Base 0.0.0+20140922.1
  m_addfriend_norequest@Base 0.0.0+20140922.1
- m_avatar_hash@Base 0.0.0+20140923.1
- m_callback_action@Base 0.0.0+20140922.1
- m_callback_avatar_data@Base 0.0.0+20140923.1
- m_callback_avatar_info@Base 0.0.0+20140923.1
+#MISSING: 0.0.0+20150323.r3271-1# m_avatar_hash@Base 0.0.0+20140923.1
+#MISSING: 0.0.0+20150323.r3271-1# m_callback_action@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# m_callback_avatar_data@Base 0.0.0+20140923.1
+#MISSING: 0.0.0+20150323.r3271-1# m_callback_avatar_info@Base 0.0.0+20140923.1
  m_callback_connectionstatus@Base 0.0.0+20140922.1
  m_callback_connectionstatus_internal_av@Base 0.0.0+20140922.1
+ m_callback_core_connection@Base 0.0.0+20150323.r3271
  m_callback_friendmessage@Base 0.0.0+20140922.1
  m_callback_friendrequest@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20140928.1# m_callback_group_action@Base 0.0.0+20140922.1
@@ -221,6 +225,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  m_callback_msi_packet@Base 0.0.0+20140922.1
  m_callback_namechange@Base 0.0.0+20140922.1
  m_callback_read_receipt@Base 0.0.0+20140922.1
+ m_callback_rtp_packet@Base 0.0.0+20150323.r3271
  m_callback_statusmessage@Base 0.0.0+20140922.1
  m_callback_typingchange@Base 0.0.0+20140922.1
  m_callback_userstatus@Base 0.0.0+20140922.1
@@ -232,28 +237,30 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  m_get_istyping@Base 0.0.0+20140922.1
  m_get_last_online@Base 0.0.0+20140922.1
  m_get_name_size@Base 0.0.0+20140922.1
- m_get_self_avatar@Base 0.0.0+20140923.1
+#MISSING: 0.0.0+20150323.r3271-1# m_get_self_avatar@Base 0.0.0+20140923.1
  m_get_self_name_size@Base 0.0.0+20140922.1
  m_get_self_statusmessage_size@Base 0.0.0+20140922.1
  m_get_self_userstatus@Base 0.0.0+20140922.1
  m_get_statusmessage_size@Base 0.0.0+20140922.1
  m_get_userstatus@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20140928.1# m_group_peername@Base 0.0.0+20140922.1
- m_hash@Base 0.0.0+20140925.1
+#MISSING: 0.0.0+20150323.r3271-1# m_hash@Base 0.0.0+20140925.1
  m_msi_packet@Base 0.0.0+20140922.1
- m_request_avatar_data@Base 0.0.0+20140923.1
- m_request_avatar_info@Base 0.0.0+20140923.1
- m_send_avatar_info@Base 0.0.0+20140923.1
- m_sendaction@Base 0.0.0+20140922.1
- m_sendaction_withid@Base 0.0.0+20140922.1
- m_sendmessage@Base 0.0.0+20140922.1
- m_sendmessage_withid@Base 0.0.0+20140922.1
- m_set_avatar@Base 0.0.0+20140923.1
- m_set_sends_receipts@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# m_request_avatar_data@Base 0.0.0+20140923.1
+#MISSING: 0.0.0+20150323.r3271-1# m_request_avatar_info@Base 0.0.0+20140923.1
+#MISSING: 0.0.0+20150323.r3271-1# m_send_avatar_info@Base 0.0.0+20140923.1
+ m_send_message_generic@Base 0.0.0+20150323.r3271
+#MISSING: 0.0.0+20150323.r3271-1# m_sendaction@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# m_sendaction_withid@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# m_sendmessage@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# m_sendmessage_withid@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# m_set_avatar@Base 0.0.0+20140923.1
+#MISSING: 0.0.0+20150323.r3271-1# m_set_sends_receipts@Base 0.0.0+20140922.1
  m_set_statusmessage@Base 0.0.0+20140922.1
  m_set_userstatus@Base 0.0.0+20140922.1
  m_set_usertyping@Base 0.0.0+20140922.1
- m_unset_avatar@Base 0.0.0+20140928.1
+#MISSING: 0.0.0+20150323.r3271-1# m_unset_avatar@Base 0.0.0+20140928.1
+ max_speed_reached@Base 0.0.0+20150323.r3271
  messenger_load@Base 0.0.0+20140922.1
  messenger_run_interval@Base 0.0.0+20140922.1
  messenger_save@Base 0.0.0+20140922.1
@@ -278,6 +285,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  new_messenger@Base 0.0.0+20140922.1
  new_net_crypto@Base 0.0.0+20140922.1
  new_networking@Base 0.0.0+20140922.1
+ new_networking_ex@Base 0.0.0+20150323.r3271
  new_nonce@Base 0.0.0+20140922.1
  new_onion@Base 0.0.0+20140922.1
  new_onion_announce@Base 0.0.0+20140922.1
@@ -288,12 +296,13 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
 #MISSING: 0.0.0+20141225.r3047-1# onion_add_path_node@Base 0.0.0+20140922.1
  onion_addfriend@Base 0.0.0+20140922.1
  onion_backup_nodes@Base 0.0.0+20140922.1
+ onion_connection_status@Base 0.0.0+20150323.r3271
  onion_delfriend@Base 0.0.0+20140922.1
  onion_dht_pk_callback@Base 0.0.0+20140928.1
  onion_friend_num@Base 0.0.0+20140922.1
  onion_getfriend_DHT_pubkey@Base 0.0.0+20140922.1
  onion_getfriendip@Base 0.0.0+20140922.1
- onion_isconnected@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# onion_isconnected@Base 0.0.0+20140922.1
  onion_path_to_nodes@Base 0.0.0+20141225.r3047
  onion_response_handler@Base 0.0.0+20140922.1
  onion_send_1@Base 0.0.0+20140922.1
@@ -331,6 +340,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  send_data@Base 0.0.0+20140922.1
  send_data_request@Base 0.0.0+20140922.1
  send_disconnect_request@Base 0.0.0+20140922.1
+ send_file_control_packet@Base 0.0.0+20150323.r3271
  send_friend_request_packet@Base 0.0.0+20141004.2
 #MISSING: 0.0.0+20141004.2-1# send_friendrequest@Base 0.0.0+20140922.1
  send_group_invite_packet@Base 0.0.0+20140928.1
@@ -366,64 +376,100 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  tcp_onion_response_handler@Base 0.0.0+20140922.1
  to_host_family@Base 0.0.0+20140922.1
  to_net_family@Base 0.0.0+20140922.1
- tox_add_friend@Base 0.0.0+20140922.1
- tox_add_friend_norequest@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_add_friend@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_add_friend_norequest@Base 0.0.0+20140922.1
  tox_add_groupchat@Base 0.0.0+20140922.1
  tox_add_tcp_relay@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20140925.1# tox_avatar_hash@Base 0.0.0+20140923.1
- tox_bootstrap_from_address@Base 0.0.0+20140922.1
- tox_callback_avatar_data@Base 0.0.0+20140923.1
- tox_callback_avatar_info@Base 0.0.0+20140923.1
- tox_callback_connection_status@Base 0.0.0+20140922.1
- tox_callback_file_control@Base 0.0.0+20140922.1
- tox_callback_file_data@Base 0.0.0+20140922.1
- tox_callback_file_send_request@Base 0.0.0+20140922.1
- tox_callback_friend_action@Base 0.0.0+20140922.1
+ tox_bootstrap@Base 0.0.0+20150323.r3271
+#MISSING: 0.0.0+20150323.r3271-1# tox_bootstrap_from_address@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_callback_avatar_data@Base 0.0.0+20140923.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_callback_avatar_info@Base 0.0.0+20140923.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_callback_connection_status@Base 0.0.0+20140922.1
+ tox_callback_file_chunk_request@Base 0.0.0+20150323.r3271
+#MISSING: 0.0.0+20150323.r3271-1# tox_callback_file_control@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_callback_file_data@Base 0.0.0+20140922.1
+ tox_callback_file_recv@Base 0.0.0+20150323.r3271
+ tox_callback_file_recv_chunk@Base 0.0.0+20150323.r3271
+ tox_callback_file_recv_control@Base 0.0.0+20150323.r3271
+#MISSING: 0.0.0+20150323.r3271-1# tox_callback_file_send_request@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_callback_friend_action@Base 0.0.0+20140922.1
+ tox_callback_friend_connection_status@Base 0.0.0+20150323.r3271
+ tox_callback_friend_lossless_packet@Base 0.0.0+20150323.r3271
+ tox_callback_friend_lossy_packet@Base 0.0.0+20150323.r3271
  tox_callback_friend_message@Base 0.0.0+20140922.1
+ tox_callback_friend_name@Base 0.0.0+20150323.r3271
+ tox_callback_friend_read_receipt@Base 0.0.0+20150323.r3271
  tox_callback_friend_request@Base 0.0.0+20140922.1
+ tox_callback_friend_status@Base 0.0.0+20150323.r3271
+ tox_callback_friend_status_message@Base 0.0.0+20150323.r3271
+ tox_callback_friend_typing@Base 0.0.0+20150323.r3271
  tox_callback_group_action@Base 0.0.0+20140922.1
  tox_callback_group_invite@Base 0.0.0+20140922.1
  tox_callback_group_message@Base 0.0.0+20140922.1
  tox_callback_group_namelist_change@Base 0.0.0+20140922.1
  tox_callback_group_title@Base 0.0.0+20141114.r2941
- tox_callback_name_change@Base 0.0.0+20140922.1
- tox_callback_read_receipt@Base 0.0.0+20140922.1
- tox_callback_status_message@Base 0.0.0+20140922.1
- tox_callback_typing_change@Base 0.0.0+20140922.1
- tox_callback_user_status@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_callback_name_change@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_callback_read_receipt@Base 0.0.0+20140922.1
+ tox_callback_self_connection_status@Base 0.0.0+20150323.r3271
+#MISSING: 0.0.0+20150323.r3271-1# tox_callback_status_message@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_callback_typing_change@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_callback_user_status@Base 0.0.0+20140922.1
  tox_count_chatlist@Base 0.0.0+20140922.1
- tox_count_friendlist@Base 0.0.0+20140922.1
- tox_del_friend@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_count_friendlist@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_del_friend@Base 0.0.0+20140922.1
  tox_del_groupchat@Base 0.0.0+20140922.1
- tox_do@Base 0.0.0+20140922.1
- tox_do_interval@Base 0.0.0+20140922.1
- tox_file_data_remaining@Base 0.0.0+20140922.1
- tox_file_data_size@Base 0.0.0+20140922.1
- tox_file_send_control@Base 0.0.0+20140922.1
- tox_file_send_data@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_do@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_do_interval@Base 0.0.0+20140922.1
+ tox_file_control@Base 0.0.0+20150323.r3271
+#MISSING: 0.0.0+20150323.r3271-1# tox_file_data_remaining@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_file_data_size@Base 0.0.0+20140922.1
+ tox_file_get_file_id@Base 0.0.0+20150323.r3271
+ tox_file_seek@Base 0.0.0+20150323.r3271
+ tox_file_send@Base 0.0.0+20150323.r3271
+ tox_file_send_chunk@Base 0.0.0+20150323.r3271
+#MISSING: 0.0.0+20150323.r3271-1# tox_file_send_control@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_file_send_data@Base 0.0.0+20140922.1
+ tox_friend_add@Base 0.0.0+20150323.r3271
+ tox_friend_add_norequest@Base 0.0.0+20150323.r3271
+ tox_friend_by_public_key@Base 0.0.0+20150323.r3271
+ tox_friend_delete@Base 0.0.0+20150323.r3271
  tox_friend_exists@Base 0.0.0+20140922.1
- tox_get_address@Base 0.0.0+20140922.1
+ tox_friend_get_connection_status@Base 0.0.0+20150323.r3271
+ tox_friend_get_name@Base 0.0.0+20150323.r3271
+ tox_friend_get_name_size@Base 0.0.0+20150323.r3271
+ tox_friend_get_public_key@Base 0.0.0+20150323.r3271
+ tox_friend_get_status@Base 0.0.0+20150323.r3271
+ tox_friend_get_status_message@Base 0.0.0+20150323.r3271
+ tox_friend_get_status_message_size@Base 0.0.0+20150323.r3271
+ tox_friend_get_typing@Base 0.0.0+20150323.r3271
+ tox_friend_send_lossless_packet@Base 0.0.0+20150323.r3271
+ tox_friend_send_lossy_packet@Base 0.0.0+20150323.r3271
+ tox_friend_send_message@Base 0.0.0+20150323.r3271
+#MISSING: 0.0.0+20150323.r3271-1# tox_get_address@Base 0.0.0+20140922.1
  tox_get_chatlist@Base 0.0.0+20140922.1
- tox_get_client_id@Base 0.0.0+20140922.1
- tox_get_friend_connection_status@Base 0.0.0+20140922.1
- tox_get_friend_number@Base 0.0.0+20140922.1
- tox_get_friendlist@Base 0.0.0+20140922.1
- tox_get_is_typing@Base 0.0.0+20140922.1
- tox_get_keys@Base 0.0.0+20140922.1
- tox_get_last_online@Base 0.0.0+20140922.1
- tox_get_name@Base 0.0.0+20140922.1
- tox_get_name_size@Base 0.0.0+20140922.1
- tox_get_nospam@Base 0.0.0+20140922.1
- tox_get_num_online_friends@Base 0.0.0+20140922.1
- tox_get_self_avatar@Base 0.0.0+20140923.1
- tox_get_self_name@Base 0.0.0+20140922.1
- tox_get_self_name_size@Base 0.0.0+20140922.1
- tox_get_self_status_message@Base 0.0.0+20140922.1
- tox_get_self_status_message_size@Base 0.0.0+20140922.1
- tox_get_self_user_status@Base 0.0.0+20140922.1
- tox_get_status_message@Base 0.0.0+20140922.1
- tox_get_status_message_size@Base 0.0.0+20140922.1
- tox_get_user_status@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_get_client_id@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_get_friend_connection_status@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_get_friend_number@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_get_friendlist@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_get_is_typing@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_get_keys@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_get_last_online@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_get_name@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_get_name_size@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_get_nospam@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_get_num_online_friends@Base 0.0.0+20140922.1
+ tox_get_savedata@Base 0.0.0+20150323.r3271
+ tox_get_savedata_size@Base 0.0.0+20150323.r3271
+#MISSING: 0.0.0+20150323.r3271-1# tox_get_self_avatar@Base 0.0.0+20140923.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_get_self_name@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_get_self_name_size@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_get_self_status_message@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_get_self_status_message_size@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_get_self_user_status@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_get_status_message@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_get_status_message_size@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_get_user_status@Base 0.0.0+20140922.1
  tox_group_action_send@Base 0.0.0+20140922.1
  tox_group_get_names@Base 0.0.0+20140922.1
  tox_group_get_title@Base 0.0.0+20141115.r2945
@@ -436,30 +482,59 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  tox_group_set_title@Base 0.0.0+20141114.r2941
  tox_hash@Base 0.0.0+20140925.1
  tox_invite_friend@Base 0.0.0+20140922.1
- tox_isconnected@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_isconnected@Base 0.0.0+20140922.1
+ tox_iterate@Base 0.0.0+20150323.r3271
+ tox_iteration_interval@Base 0.0.0+20150323.r3271
  tox_join_groupchat@Base 0.0.0+20140922.1
  tox_kill@Base 0.0.0+20140922.1
- tox_load@Base 0.0.0+20140922.1
- tox_lossless_packet_registerhandler@Base 0.0.0+20140922.1
- tox_lossy_packet_registerhandler@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_load@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_lossless_packet_registerhandler@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_lossy_packet_registerhandler@Base 0.0.0+20140922.1
  tox_new@Base 0.0.0+20140922.1
- tox_new_file_sender@Base 0.0.0+20140922.1
- tox_request_avatar_data@Base 0.0.0+20140923.1
- tox_request_avatar_info@Base 0.0.0+20140923.1
- tox_save@Base 0.0.0+20140922.1
- tox_send_action@Base 0.0.0+20140922.1
- tox_send_avatar_info@Base 0.0.0+20140923.1
- tox_send_lossless_packet@Base 0.0.0+20140922.1
- tox_send_lossy_packet@Base 0.0.0+20140922.1
- tox_send_message@Base 0.0.0+20140922.1
- tox_set_avatar@Base 0.0.0+20140923.1
- tox_set_name@Base 0.0.0+20140922.1
- tox_set_nospam@Base 0.0.0+20140922.1
- tox_set_status_message@Base 0.0.0+20140922.1
- tox_set_user_is_typing@Base 0.0.0+20140922.1
- tox_set_user_status@Base 0.0.0+20140922.1
- tox_size@Base 0.0.0+20140922.1
- tox_unset_avatar@Base 0.0.0+20140928.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_new_file_sender@Base 0.0.0+20140922.1
+ tox_options_default@Base 0.0.0+20150323.r3271
+ tox_options_free@Base 0.0.0+20150323.r3271
+ tox_options_new@Base 0.0.0+20150323.r3271
+#MISSING: 0.0.0+20150323.r3271-1# tox_request_avatar_data@Base 0.0.0+20140923.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_request_avatar_info@Base 0.0.0+20140923.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_save@Base 0.0.0+20140922.1
+ tox_self_get_address@Base 0.0.0+20150323.r3271
+ tox_self_get_connection_status@Base 0.0.0+20150323.r3271
+ tox_self_get_dht_id@Base 0.0.0+20150323.r3271
+ tox_self_get_friend_list@Base 0.0.0+20150323.r3271
+ tox_self_get_friend_list_size@Base 0.0.0+20150323.r3271
+ tox_self_get_name@Base 0.0.0+20150323.r3271
+ tox_self_get_name_size@Base 0.0.0+20150323.r3271
+ tox_self_get_nospam@Base 0.0.0+20150323.r3271
+ tox_self_get_public_key@Base 0.0.0+20150323.r3271
+ tox_self_get_secret_key@Base 0.0.0+20150323.r3271
+ tox_self_get_status@Base 0.0.0+20150323.r3271
+ tox_self_get_status_message@Base 0.0.0+20150323.r3271
+ tox_self_get_status_message_size@Base 0.0.0+20150323.r3271
+ tox_self_get_tcp_port@Base 0.0.0+20150323.r3271
+ tox_self_get_udp_port@Base 0.0.0+20150323.r3271
+ tox_self_set_name@Base 0.0.0+20150323.r3271
+ tox_self_set_nospam@Base 0.0.0+20150323.r3271
+ tox_self_set_status@Base 0.0.0+20150323.r3271
+ tox_self_set_status_message@Base 0.0.0+20150323.r3271
+ tox_self_set_typing@Base 0.0.0+20150323.r3271
+#MISSING: 0.0.0+20150323.r3271-1# tox_send_action@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_send_avatar_info@Base 0.0.0+20140923.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_send_lossless_packet@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_send_lossy_packet@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_send_message@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_set_avatar@Base 0.0.0+20140923.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_set_name@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_set_nospam@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_set_status_message@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_set_user_is_typing@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_set_user_status@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_size@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150323.r3271-1# tox_unset_avatar@Base 0.0.0+20140928.1
+ tox_version_is_compatible@Base 0.0.0+20150323.r3271
+ tox_version_major@Base 0.0.0+20150323.r3271
+ tox_version_minor@Base 0.0.0+20150323.r3271
+ tox_version_patch@Base 0.0.0+20150323.r3271
  unix_time@Base 0.0.0+20140922.1
  unix_time_update@Base 0.0.0+20140922.1
  unpack_nodes@Base 0.0.0+20140922.1
