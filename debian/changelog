@@ -1,3 +1,9 @@
+toxcore (0.0.0+20150325.r3277-1~deb7u+1) stable; urgency=medium
+
+  * Backport to Wheezy
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 26 Mar 2015 13:09:58 +0000
+
 toxcore (0.0.0+20150325.r3277-1) unstable; urgency=medium
 
   [ Roman Pasichnyk ]
@@ -10,12 +16,6 @@ toxcore (0.0.0+20150325.r3277-1) unstable; urgency=medium
   * New upstream git snapshot
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 26 Mar 2015 12:44:30 +0000
-
-toxcore (0.0.0+20150325.r3273-1~deb7u+1) stable; urgency=medium
-
-  * Backport to Wheezy
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 25 Mar 2015 15:38:58 +0000
 
 toxcore (0.0.0+20150325.r3273-1) unstable; urgency=medium
 
@@ -243,12 +243,6 @@ toxcore (0.0.0+20150323.r3271-1) unstable; urgency=medium
   * Update debian/libtoxencryptsave0.symbols
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 24 Mar 2015 02:08:23 +0000
-
-toxcore (0.0.0+20150223.r3147-1~deb7u+1) stable; urgency=medium
-
-  * Backport to Wheezy
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Mon, 23 Feb 2015 23:01:45 +0000
 
 toxcore (0.0.0+20150223.r3147-1) unstable; urgency=medium
 
