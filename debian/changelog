@@ -1,3 +1,20 @@
+toxcore (0.0.0+20150329.r3285-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Comment fix.
+  * Fixed file transfer bug.
+
+  [ Aleksey Mokhovikov ]
+  * Additional description for tox_friend_delete.
+
+  [ irungentoo ]
+  * Increase thread safety.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 29 Mar 2015 22:20:54 +0000
+
 toxcore (0.0.0+20150326.r3278-1~deb7u+1) stable; urgency=medium
 
   * Backport to Wheezy
