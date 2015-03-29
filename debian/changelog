@@ -1,3 +1,27 @@
+toxcore (0.0.0+20150326.r3278-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Making tox_encrypted_new() use the same error codes as tox_new was a bad
+    idea.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 26 Mar 2015 16:54:06 +0000
+
+toxcore (0.0.0+20150325.r3277-1) unstable; urgency=medium
+
+  [ Roman Pasichnyk ]
+  * If length is 0, data should be ignored.
+
+  [ Nick Hovaker ]
+  * Update documentation link
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 26 Mar 2015 12:44:30 +0000
+
 toxcore (0.0.0+20150325.r3273-1~trusty+1) trusty; urgency=medium
 
   * Building for Trusty
