@@ -1,3 +1,20 @@
+toxcore (0.0.0+20150331.r3290-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Removed unused variable.
+
+  [ Dubslow ]
+  * Fix toxencryptsave to be consistent with new_api
+
+  [ Jfreegman ]
+  * Amend comments to reflect undefined filenumber and friendnumber behavior
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+  * Update debian/libtoxencryptsave0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 01 Apr 2015 00:26:28 +0000
+
 toxcore (0.0.0+20150329.r3285-1~deb7u+1) stable; urgency=medium
 
   * Backport to Wheezy
