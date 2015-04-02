@@ -1,3 +1,52 @@
+toxcore (0.0.0+20150401.r3295-1) unstable; urgency=medium
+
+  [ Dubslow ]
+  * Fix minor code duplication
+  * Make keys into a struct for more programmer safety
+
+  [ irungentoo ]
+  * Increased max possible amount of TCP connections in TCP server when using
+    epoll.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 02 Apr 2015 21:50:10 +0000
+
+toxcore (0.0.0+20150331.r3290-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Removed unused variable.
+
+  [ Dubslow ]
+  * Fix toxencryptsave to be consistent with new_api
+
+  [ Jfreegman ]
+  * Amend comments to reflect undefined filenumber and friendnumber behavior
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+  * Update debian/libtoxencryptsave0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 01 Apr 2015 00:26:28 +0000
+
+toxcore (0.0.0+20150329.r3285-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Comment fix.
+  * Fixed file transfer bug.
+
+  [ Aleksey Mokhovikov ]
+  * Additional description for tox_friend_delete.
+
+  [ irungentoo ]
+  * Increase thread safety.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 29 Mar 2015 22:20:54 +0000
+
 toxcore (0.0.0+20150326.r3278-1~utopic+1) utopic; urgency=medium
 
   * Building for Utopic
