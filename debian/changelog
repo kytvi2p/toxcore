@@ -1,3 +1,18 @@
+toxcore (0.0.0+20150401.r3295-1) unstable; urgency=medium
+
+  [ Dubslow ]
+  * Fix minor code duplication
+  * Make keys into a struct for more programmer safety
+
+  [ irungentoo ]
+  * Increased max possible amount of TCP connections in TCP server when using
+    epoll.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 02 Apr 2015 21:50:10 +0000
+
 toxcore (0.0.0+20150331.r3290-1) unstable; urgency=medium
 
   [ irungentoo ]
