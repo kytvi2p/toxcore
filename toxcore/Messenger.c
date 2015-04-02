@@ -1464,6 +1464,11 @@ static void do_reqchunk_filecb(Messenger *m, int32_t friendnumber)
         }
 
         while (ft->status == FILESTATUS_TRANSFERRING && (ft->paused == FILE_PAUSE_NOT)) {
+            if (max_speed_reached(m->net_crypto, friend_connection_crypt_connection_id(m->fr_c,
+                                  m->friendlist[friendnumber].friendcon_id))) {
+                free_slots = 0;
+            }
+
             if (free_slots == 0)
                 break;
 
@@ -1492,10 +1497,6 @@ static void do_reqchunk_filecb(Messenger *m, int32_t friendnumber)
 
             --free_slots;
 
-            if (max_speed_reached(m->net_crypto, friend_connection_crypt_connection_id(m->fr_c,
-                                  m->friendlist[friendnumber].friendcon_id))) {
-                free_slots = 0;
-            }
         }
 
         if (num == 0)
@@ -2003,8 +2004,6 @@ static int handle_packet(void *object, int i, uint8_t *temp, uint16_t len)
 
         case PACKET_ID_MESSAGE:
         case PACKET_ID_ACTION: {
-            const uint8_t *message_id = data;
-
             if (data_length == 0)
                 break;
 

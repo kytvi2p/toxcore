@@ -881,7 +881,8 @@ typedef enum TOX_ERR_FRIEND_ADD {
  * friends. Once added, a friend number is stable for the lifetime of the Tox
  * object. After saving the state and reloading it, the friend numbers may not
  * be the same as before. Deleting a friend creates a gap in the friend number
- * set, which is filled by the next adding of a friend.
+ * set, which is filled by the next adding of a friend. Any pattern in friend
+ * numbers should not be relied on.
  *
  * If more than INT32_MAX friends are added, this function causes undefined
  * behaviour.
@@ -928,6 +929,8 @@ typedef enum TOX_ERR_FRIEND_DELETE {
 
 /**
  * Remove a friend from the friend list.
+ * Other friend numbers are unchanged.
+ * The friend_number can be reused by toxcore as a friend number for a new friend.
  *
  * This does not notify the friend of their deletion. After calling this
  * function, this client will appear offline to the friend and no communication
@@ -936,6 +939,7 @@ typedef enum TOX_ERR_FRIEND_DELETE {
  * @friend_number Friend number for the friend to be deleted.
  *
  * @return true on success.
+ * @see tox_friend_add for detailed description of friend numbers.
  */
 bool tox_friend_delete(Tox *tox, uint32_t friend_number, TOX_ERR_FRIEND_DELETE *error);
 
@@ -1540,7 +1544,7 @@ typedef enum TOX_ERR_FILE_SEEK {
  * TOX_FILE_CONTROL_RESUME is sent.
  *
  * @param friend_number The friend number of the friend the file is being
- *   transferred to or received from.
+ *   received from.
  * @param file_number The friend-specific identifier for the file transfer.
  * @param position The position that the file should be seeked to.
  */
@@ -1657,7 +1661,8 @@ typedef enum TOX_ERR_FILE_SEND {
  *
  * @return A file number used as an identifier in subsequent callbacks. This
  *   number is per friend. File numbers are reused after a transfer terminates.
- *   on failure, this function returns UINT32_MAX.
+ *   on failure, this function returns UINT32_MAX. Any pattern in file numbers
+ *   should not be relied on.
  */
 uint32_t tox_file_send(Tox *tox, uint32_t friend_number, uint32_t kind, uint64_t file_size, const uint8_t *file_id,
                        const uint8_t *filename, size_t filename_length, TOX_ERR_FILE_SEND *error);
