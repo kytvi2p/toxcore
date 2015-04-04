@@ -1,3 +1,21 @@
+toxcore (0.0.0+20150403.r3300-1) unstable; urgency=medium
+
+  [ Jfreegman ]
+  * API function to get last seen timestamp of friend also removed remnants of
+    the no longer used variable ping_lastrecv
+
+  [ irungentoo ]
+  * Attempted fix of on off UDP connection causing toxcore to disconnect from
+    the friend.
+  * File transfer fixes.
+  * Fixed offline callback being called when connection timed out and died
+    without ever actually being connected.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sat, 04 Apr 2015 22:00:56 +0000
+
 toxcore (0.0.0+20150401.r3295-1) unstable; urgency=medium
 
   [ Dubslow ]
