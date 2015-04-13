@@ -1,3 +1,20 @@
+toxcore (0.0.0+20150413.r3315-1) unstable; urgency=medium
+
+  [ GrayHatter ]
+  * Update the toxcore todo list
+
+  [ Carlin ]
+  * do not check for librt on OpenBSD
+
+  [ irungentoo ]
+  * Added link to multiple nospam PR.
+  * Make tox_new return TOX_ERR_NEW_PORT_ALLOC for all socket related errors.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Mon, 13 Apr 2015 18:08:53 +0000
+
 toxcore (0.0.0+20150411.r3309-1) unstable; urgency=medium
 
   [ irungentoo ]
