@@ -1,3 +1,9 @@
+toxcore (0.0.0+20150413.r3316-1~deb7u+1) stable; urgency=medium
+
+  * BAckport to Wheezy
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 14 Apr 2015 12:09:10 +0000
+
 toxcore (0.0.0+20150413.r3316-1) unstable; urgency=medium
 
   [ GrayHatter ]
@@ -16,12 +22,6 @@ toxcore (0.0.0+20150413.r3316-1) unstable; urgency=medium
   * Update debian/libtoxcore0.symbols
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 14 Apr 2015 10:25:49 +0000
-
-toxcore (0.0.0+20150413.r3315-1~deb7u+1) stable; urgency=medium
-
-  * Backport to Wheezy
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 14 Apr 2015 09:33:39 +0000
 
 toxcore (0.0.0+20150411.r3309-1) unstable; urgency=medium
 
