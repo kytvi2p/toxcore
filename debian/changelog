@@ -1,3 +1,9 @@
+toxcore (0.0.0+20150413.r3316-1~utopic+1) utopic; urgency=medium
+
+  * Building for Utopic
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 14 Apr 2015 18:47:57 +0000
+
 toxcore (0.0.0+20150413.r3316-1) unstable; urgency=medium
 
   [ GrayHatter ]
@@ -33,12 +39,6 @@ toxcore (0.0.0+20150411.r3309-1) unstable; urgency=medium
   * New upstream git snapshot
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 12 Apr 2015 20:38:51 +0000
-
-toxcore (0.0.0+20150404.r3301-1~utopic+1) utopic; urgency=medium
-
-  * Building for Utopic
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Mon, 06 Apr 2015 13:58:59 +0000
 
 toxcore (0.0.0+20150404.r3301-1) unstable; urgency=medium
 
