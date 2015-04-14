@@ -1,10 +1,4 @@
-toxcore (0.0.0+20150413.r3315-1~deb7u+1) stable; urgency=medium
-
-  * Backport to Wheezy
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 14 Apr 2015 09:33:39 +0000
-
-toxcore (0.0.0+20150413.r3315-1) unstable; urgency=medium
+toxcore (0.0.0+20150413.r3316-1) unstable; urgency=medium
 
   [ GrayHatter ]
   * Update the toxcore todo list
@@ -15,11 +9,19 @@ toxcore (0.0.0+20150413.r3315-1) unstable; urgency=medium
   [ irungentoo ]
   * Added link to multiple nospam PR.
   * Make tox_new return TOX_ERR_NEW_PORT_ALLOC for all socket related errors.
+  * TCP connection mostly done.
 
   [ Kill Your TV ]
   * New upstream git snapshot
+  * Update debian/libtoxcore0.symbols
 
- -- Kill Your TV <killyourtv@i2pmail.org>  Mon, 13 Apr 2015 18:08:53 +0000
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 14 Apr 2015 10:25:49 +0000
+
+toxcore (0.0.0+20150413.r3315-1~deb7u+1) stable; urgency=medium
+
+  * Backport to Wheezy
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 14 Apr 2015 09:33:39 +0000
 
 toxcore (0.0.0+20150411.r3309-1) unstable; urgency=medium
 
