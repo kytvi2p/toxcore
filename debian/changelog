@@ -1,3 +1,39 @@
+toxcore (0.0.0+20150413.r3316-1) unstable; urgency=medium
+
+  [ GrayHatter ]
+  * Update the toxcore todo list
+
+  [ Carlin ]
+  * do not check for librt on OpenBSD
+
+  [ irungentoo ]
+  * Added link to multiple nospam PR.
+  * Make tox_new return TOX_ERR_NEW_PORT_ALLOC for all socket related errors.
+  * TCP connection mostly done.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+  * Update debian/libtoxcore0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 14 Apr 2015 10:25:49 +0000
+
+toxcore (0.0.0+20150411.r3309-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Fixed typo.
+  * Fixed onion test.
+  * TCP_connection started.
+  * Small change to TCP test.
+  * tox_hash fix.
+  * Some more work on TCP connection.
+  * More work on TCP connection.
+  * Enable SO_REUSEADDR on TCP server socket.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 12 Apr 2015 20:38:51 +0000
+
 toxcore (0.0.0+20150404.r3301-1~precise+1) precise; urgency=medium
 
   * Backport to Precise
