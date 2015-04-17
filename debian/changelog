@@ -1,3 +1,18 @@
+toxcore (0.0.0+20150415.r3320-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Fixed windows warning.
+  * Some work done on TCP_Connection.
+  * Fixed memory leak in TCP connection.
+  * If we know the pk that the oob packet was sent from treat it as a normal
+    data packet.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+  * Update debian/libtoxcore0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 16 Apr 2015 23:43:18 +0000
+
 toxcore (0.0.0+20150413.r3316-1~utopic+1) utopic; urgency=medium
 
   * Building for Utopic

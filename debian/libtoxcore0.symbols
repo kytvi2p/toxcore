@@ -24,9 +24,10 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
 #MISSING: 0.0.0+20141001.1-1# U32_to_bytes@Base 0.0.0+20140922.1
  accept_crypto_connection@Base 0.0.0+20140922.1
  add_groupchat@Base 0.0.0+20140922.1
+ add_tcp_number_relay_connection@Base 0.0.0+20150415.r3320
  add_tcp_relay@Base 0.0.0+20140922.1
- add_tcp_relay_connection@Base 0.0.0+20150413.r3316-1
- add_tcp_relay_global@Base 0.0.0+20150413.r3316-1
+ add_tcp_relay_connection@Base 0.0.0+20150413.r3316
+ add_tcp_relay_global@Base 0.0.0+20150413.r3316
  add_tcp_relay_peer@Base 0.0.0+20140922.1
  add_to_ping@Base 0.0.0+20140922.1
  addr_parse_ip@Base 0.0.0+20140922.1
@@ -96,7 +97,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  do_messenger@Base 0.0.0+20140922.1
  do_net_crypto@Base 0.0.0+20140922.1
  do_onion_client@Base 0.0.0+20140922.1
- do_tcp_connections@Base 0.0.0+20150413.r3316-1
+ do_tcp_connections@Base 0.0.0+20150413.r3316
  do_to_ping@Base 0.0.0+20140922.1
  encrypt_data@Base 0.0.0+20140922.1
  encrypt_data_symmetric@Base 0.0.0+20140922.1
@@ -126,7 +127,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  get_num_online_friends@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20141001.1-1# get_peer_index@Base 0.0.0+20140928.1
  get_random_tcp_con_number@Base 0.0.0+20150124.r3099
- get_random_tcp_conn_number@Base 0.0.0+20150413.r3316-1
+ get_random_tcp_conn_number@Base 0.0.0+20150413.r3316
  get_real_pk@Base 0.0.0+20150129.r3107
  get_shared_key@Base 0.0.0+20140922.1
  getaddress@Base 0.0.0+20140922.1
@@ -201,8 +202,8 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  kill_onion_client@Base 0.0.0+20140922.1
  kill_ping@Base 0.0.0+20140922.1
  kill_sock@Base 0.0.0+20140922.1
- kill_tcp_connection_to@Base 0.0.0+20150413.r3316-1
- kill_tcp_connections@Base 0.0.0+20150413.r3316-1
+ kill_tcp_connection_to@Base 0.0.0+20150413.r3316
+ kill_tcp_connections@Base 0.0.0+20150413.r3316
  lendian_to_host16@Base 0.0.0+20141025.r2891
  lendian_to_host32@Base 0.0.0+20141025.r2891
  load_keys@Base 0.0.0+20140922.1
@@ -298,8 +299,8 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  new_onion_client@Base 0.0.0+20140922.1
  new_ping@Base 0.0.0+20140922.1
  new_symmetric_key@Base 0.0.0+20140922.1
- new_tcp_connection_to@Base 0.0.0+20150413.r3316-1
- new_tcp_connections@Base 0.0.0+20150413.r3316-1
+ new_tcp_connection_to@Base 0.0.0+20150413.r3316
+ new_tcp_connections@Base 0.0.0+20150413.r3316
  onion_add_bs_path_node@Base 0.0.0+20141225.r3047
 #MISSING: 0.0.0+20141225.r3047-1# onion_add_path_node@Base 0.0.0+20140922.1
  onion_addfriend@Base 0.0.0+20140922.1
@@ -361,7 +362,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  send_onion_request@Base 0.0.0+20140922.1
  send_onion_response@Base 0.0.0+20140922.1
  send_oob_packet@Base 0.0.0+20140922.1
- send_packet_tcp_connection@Base 0.0.0+20150413.r3316-1
+ send_packet_tcp_connection@Base 0.0.0+20150413.r3316
  send_ping_request@Base 0.0.0+20140922.1
  send_routing_request@Base 0.0.0+20140922.1
  send_tcp_onion_request@Base 0.0.0+20140922.1
@@ -374,20 +375,22 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  set_friend_request_callback@Base 0.0.0+20141004.2
 #MISSING: 0.0.0+20140928.1# set_nick@Base 0.0.0+20140922.1
  set_nospam@Base 0.0.0+20140922.1
- set_onion_packet_tcp_connection_callback@Base 0.0.0+20150413.r3316-1
- set_oob_packet_tcp_connection_callback@Base 0.0.0+20150413.r3316-1
- set_packet_tcp_connection_callback@Base 0.0.0+20150413.r3316-1
+ set_onion_packet_tcp_connection_callback@Base 0.0.0+20150413.r3316
+ set_oob_packet_tcp_connection_callback@Base 0.0.0+20150413.r3316
+ set_packet_tcp_connection_callback@Base 0.0.0+20150413.r3316
  set_socket_dualstack@Base 0.0.0+20140922.1
  set_socket_nonblock@Base 0.0.0+20140922.1
  set_socket_nosigpipe@Base 0.0.0+20140922.1
- set_socket_reuseaddr@Base 0.0.0+20150413.r3316-1
+ set_socket_reuseaddr@Base 0.0.0+20150413.r3316
  set_tcp_connection_number@Base 0.0.0+20140922.1
  setfriendname@Base 0.0.0+20140922.1
  setname@Base 0.0.0+20140922.1
  sock_valid@Base 0.0.0+20140922.1
  strtime@Base 0.0.0+20150113.r3084
+ tcp_copy_connected_relays@Base 0.0.0+20150415.r3320
  tcp_onion_response_handler@Base 0.0.0+20140922.1
- tcp_send_onion_request@Base 0.0.0+20150413.r3316-1
+ tcp_send_onion_request@Base 0.0.0+20150413.r3316
+ tcp_send_oob_packet@Base 0.0.0+20150415.r3320
  to_host_family@Base 0.0.0+20140922.1
  to_net_family@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20150323.r3271-1# tox_add_friend@Base 0.0.0+20140922.1
@@ -450,7 +453,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  tox_friend_delete@Base 0.0.0+20150323.r3271
  tox_friend_exists@Base 0.0.0+20140922.1
  tox_friend_get_connection_status@Base 0.0.0+20150323.r3271
- tox_friend_get_last_online@Base 0.0.0+20150413.r3316-1
+ tox_friend_get_last_online@Base 0.0.0+20150413.r3316
  tox_friend_get_name@Base 0.0.0+20150323.r3271
  tox_friend_get_name_size@Base 0.0.0+20150323.r3271
  tox_friend_get_public_key@Base 0.0.0+20150323.r3271
