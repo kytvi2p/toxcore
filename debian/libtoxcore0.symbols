@@ -72,7 +72,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  create_onion_path@Base 0.0.0+20140922.1
  create_recursive_mutex@Base 0.0.0+20141129.r2982
  create_request@Base 0.0.0+20140922.1
- crypto_cmp@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150422.r3343-1# crypto_cmp@Base 0.0.0+20140922.1
  crypto_connection_status@Base 0.0.0+20140922.1
  crypto_kill@Base 0.0.0+20140922.1
  crypto_num_free_sendqueue_slots@Base 0.0.0+20140922.1
@@ -108,6 +108,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  file_get_id@Base 0.0.0+20150323.r3271
  file_seek@Base 0.0.0+20150323.r3271
 #MISSING: 0.0.0+20150323.r3271-1# file_sendrequest@Base 0.0.0+20140922.1
+ friend_add_tcp_relay@Base 0.0.0+20150422.r3343
  friend_con_connected@Base 0.0.0+20141001.1
  friend_connection_callbacks@Base 0.0.0+20140928.1
  friend_connection_crypt_connection_id@Base 0.0.0+20140928.1
@@ -120,14 +121,15 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  g_callback_group_namelistchange@Base 0.0.0+20141002.1
  g_callback_group_title@Base 0.0.0+20141114.r2941
  get_close_nodes@Base 0.0.0+20140922.1
- get_connection_dht_key@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150422.r3343-1# get_connection_dht_key@Base 0.0.0+20140922.1
  get_friendcon_public_keys@Base 0.0.0+20141001.1
 #MISSING: 0.0.0+20141002.1-1# get_friendlist@Base 0.0.0+20140922.1
  get_nospam@Base 0.0.0+20140922.1
  get_num_online_friends@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20141001.1-1# get_peer_index@Base 0.0.0+20140928.1
  get_random_tcp_con_number@Base 0.0.0+20150124.r3099
- get_random_tcp_conn_number@Base 0.0.0+20150413.r3316
+#MISSING: 0.0.0+20150422.r3343-1# get_random_tcp_conn_number@Base 0.0.0+20150413.r3316
+ get_random_tcp_onion_conn_number@Base 0.0.0+20150422.r3343
  get_real_pk@Base 0.0.0+20150129.r3107
  get_shared_key@Base 0.0.0+20140922.1
  getaddress@Base 0.0.0+20140922.1
@@ -324,6 +326,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  ping_array_check@Base 0.0.0+20140922.1
  ping_array_free_all@Base 0.0.0+20140922.1
  ping_array_init@Base 0.0.0+20140922.1
+ public_key_cmp@Base 0.0.0+20150422.r3343
  public_key_valid@Base 0.0.0+20140922.1
  random_64b@Base 0.0.0+20140922.1
  random_int@Base 0.0.0+20140922.1
@@ -368,7 +371,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  send_tcp_onion_request@Base 0.0.0+20140922.1
  sendpacket@Base 0.0.0+20140922.1
  set_callback_handle_recv_1@Base 0.0.0+20140922.1
- set_connection_dht_public_key@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150422.r3343-1# set_connection_dht_public_key@Base 0.0.0+20140922.1
  set_dht_temp_pk@Base 0.0.0+20141001.1
  set_direct_ip_port@Base 0.0.0+20140922.1
  set_filter_function@Base 0.0.0+20140922.1
@@ -383,12 +386,14 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  set_socket_nosigpipe@Base 0.0.0+20140922.1
  set_socket_reuseaddr@Base 0.0.0+20150413.r3316
  set_tcp_connection_number@Base 0.0.0+20140922.1
+ set_tcp_connection_to_status@Base 0.0.0+20150422.r3343
+ set_tcp_onion_status@Base 0.0.0+20150422.r3343
  setfriendname@Base 0.0.0+20140922.1
  setname@Base 0.0.0+20140922.1
  sock_valid@Base 0.0.0+20140922.1
  strtime@Base 0.0.0+20150113.r3084
  tcp_copy_connected_relays@Base 0.0.0+20150415.r3320
- tcp_onion_response_handler@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150422.r3343-1# tcp_onion_response_handler@Base 0.0.0+20140922.1
  tcp_send_onion_request@Base 0.0.0+20150413.r3316
  tcp_send_oob_packet@Base 0.0.0+20150415.r3320
  to_host_family@Base 0.0.0+20140922.1
