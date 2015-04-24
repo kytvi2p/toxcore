@@ -1,3 +1,40 @@
+toxcore (0.0.0+20150422.r3343-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Made net_crypto use TCP_connection.
+  * Store TCP relays tied to friend and reconnect to some when reconnecting.
+  * Only increase connection lock if connection is actively used to connect to
+    a friend.
+  * Some fixes and improvements.
+  * Properly share connected relays and connect to the friend correctly with them.
+  * Assign some TCP relays for use with onion packets and keep them connected
+    for that purpose.
+  * Fixed some tox.h comments.
+  * If connected tcp relay becomes disconnected, try to reconnect once.
+  * Enable proxy support in TCP_connection.
+  * Send oob packets to all relays tied to the connection.
+  * Some messenger fixes.
+  * The only secure compare function currently needed is one to compare 2 public keys.
+  * Some changes to net crypto.
+  * If connection is directly connected, don't fallback to sending with tcp if
+    sending directly fails.
+  * Removed useless stuff.
+  * Some small fixes.
+  * If a net_crypto connection isn't using the TCP relays, disconnect from them.
+  * Only allocate some TCP connections for onion use when needed.
+  * Move the send tcp relay packet from Messenger to friend connection.
+  * Fixed possible issue.
+  * Fixed possible bug.
+  * Fixed possible bug.
+  * Fixed a case where the tcp_data_callback would get called when the
+    connection only worked 1 way.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+  * Update debian/libtoxcore0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 22 Apr 2015 16:39:49 +0000
+
 toxcore (0.0.0+20150415.r3320-1ubuntu1) vivid; urgency=medium
 
   * Building for Vivid
