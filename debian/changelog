@@ -1,3 +1,19 @@
+toxcore (0.0.0+20150425.r3349-1) unstable; urgency=medium
+
+  [ Urras ]
+  * Fix markdown formatting
+
+  [ irungentoo ]
+  * Fixed some warnings.
+  * Fixed a couple possible issues with the friend connection callback.
+  * Fixed some possible connection issues.
+  * Switched tox.h to the dsl generated one.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 26 Apr 2015 10:06:30 +0000
+
 toxcore (0.0.0+20150422.r3343-1~deb7u+1) stable; urgency=medium
 
   * Backport to Wheezy
