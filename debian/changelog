@@ -1,3 +1,9 @@
+toxcore (0.0.0+20150425.r3349-1~deb7u+1) oldstable; urgency=medium
+
+  * Backport to Wheezy
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 26 Apr 2015 16:56:43 +0000
+
 toxcore (0.0.0+20150425.r3349-1) unstable; urgency=medium
 
   [ Urras ]
@@ -13,12 +19,6 @@ toxcore (0.0.0+20150425.r3349-1) unstable; urgency=medium
   * New upstream git snapshot
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 26 Apr 2015 10:06:30 +0000
-
-toxcore (0.0.0+20150422.r3343-1~deb7u+1) stable; urgency=medium
-
-  * Backport to Wheezy
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 22 Apr 2015 19:02:16 +0000
 
 toxcore (0.0.0+20150422.r3343-1) unstable; urgency=medium
 
