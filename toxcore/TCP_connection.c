@@ -551,7 +551,7 @@ int set_tcp_connection_to_status(TCP_Connections *tcp_c, int connections_number,
     }
 }
 
-static _Bool tcp_connection_in_conn(TCP_Connection_to *con_to, int tcp_connections_number)
+static _Bool tcp_connection_in_conn(TCP_Connection_to *con_to, unsigned int tcp_connections_number)
 {
     unsigned int i;
 
@@ -567,7 +567,7 @@ static _Bool tcp_connection_in_conn(TCP_Connection_to *con_to, int tcp_connectio
 /* return index on success.
  * return -1 on failure.
  */
-static int add_tcp_connection_to_conn(TCP_Connection_to *con_to, int tcp_connections_number)
+static int add_tcp_connection_to_conn(TCP_Connection_to *con_to, unsigned int tcp_connections_number)
 {
     unsigned int i;
 
@@ -589,7 +589,7 @@ static int add_tcp_connection_to_conn(TCP_Connection_to *con_to, int tcp_connect
 /* return index on success.
  * return -1 on failure.
  */
-static int rm_tcp_connection_from_conn(TCP_Connection_to *con_to, int tcp_connections_number)
+static int rm_tcp_connection_from_conn(TCP_Connection_to *con_to, unsigned int tcp_connections_number)
 {
     unsigned int i;
 
@@ -626,8 +626,8 @@ static unsigned int online_tcp_connection_from_conn(TCP_Connection_to *con_to)
 /* return index on success.
  * return -1 on failure.
  */
-static int set_tcp_connection_status(TCP_Connection_to *con_to, int tcp_connections_number, unsigned int status,
-                                     uint8_t connection_id)
+static int set_tcp_connection_status(TCP_Connection_to *con_to, unsigned int tcp_connections_number,
+                                     unsigned int status, uint8_t connection_id)
 {
     unsigned int i;
 
@@ -1122,6 +1122,19 @@ int add_tcp_relay_connection(TCP_Connections *tcp_c, int connections_number, IP_
 
         return 0;
     }
+}
+
+/* return number of online tcp relays tied to the connection on success.
+ * return 0 on failure.
+ */
+unsigned int tcp_connection_to_online_tcp_relays(TCP_Connections *tcp_c, int connections_number)
+{
+    TCP_Connection_to *con_to = get_connection(tcp_c, connections_number);
+
+    if (!con_to)
+        return 0;
+
+    return online_tcp_connection_from_conn(con_to);
 }
 
 /* Copy a maximum of max_num TCP relays we are connected to to tcp_relays.
