@@ -1,3 +1,9 @@
+toxcore (0.0.0+20150501.r3360-1ubuntu1) vivid; urgency=medium
+
+  * Building for Vivid
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sat, 02 May 2015 17:16:32 +0000
+
 toxcore (0.0.0+20150501.r3360-1) unstable; urgency=medium
 
   [ flan ]
@@ -31,12 +37,6 @@ toxcore (0.0.0+20150426.r3350-1) unstable; urgency=medium
   * New upstream git snapshot
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Mon, 27 Apr 2015 18:03:17 +0000
-
-toxcore (0.0.0+20150425.r3349-1ubuntu1) vivid; urgency=medium
-
-  * Building for Vivid
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 26 Apr 2015 21:23:05 +0000
 
 toxcore (0.0.0+20150425.r3349-1) unstable; urgency=medium
 
