@@ -1,3 +1,26 @@
+toxcore (0.0.0+20150501.r3360-1) unstable; urgency=medium
+
+  [ flan ]
+  * fix useless use of cat
+
+  [ irungentoo ]
+  * Move LAN discovery from Messenger to friend_connection.
+
+  [ worfox ]
+  * Fixed 404ing link to TODO in README.md
+
+  [ irungentoo ]
+  * Fixed some warnings.
+  * Fixed some non standard C.
+  * Added a define for the length of onion paths.
+  * Fixed some non standard C.
+  * Fixed warning.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 01 May 2015 23:24:51 +0000
+
 toxcore (0.0.0+20150426.r3350-1~deb7u1) oldstable; urgency=medium
 
   * Backport to Wheezy
