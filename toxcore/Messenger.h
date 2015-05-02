@@ -27,7 +27,6 @@
 #define MESSENGER_H
 
 #include "friend_requests.h"
-#include "LAN_discovery.h"
 #include "friend_connection.h"
 
 #define MAX_NAME_LENGTH 128
@@ -233,8 +232,6 @@ struct Messenger {
     uint32_t numfriends;
 
     uint32_t numonline_friends;
-
-    uint64_t last_LANdiscovery;
 
 #define NUM_SAVED_TCP_RELAYS 8
     uint8_t has_added_relays; // If the first connection has occurred in do_messenger
