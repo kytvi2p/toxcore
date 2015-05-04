@@ -1,4 +1,4 @@
-toxcore (0.0.0+20150501.r3360-2~deb8u1) stable; urgency=medium
+toxcore (0.0.0+20150501.r3360-2~deb8u1+rpi) stable; urgency=medium
 
   * Backport to Jessie
 
