@@ -1,8 +1,31 @@
-toxcore (0.0.0+20150501.r3360-2~deb8u1+rpi) stable; urgency=medium
+toxcore (0.0.0+20150505.r3364-1~deb8u1+rpi) stable; urgency=medium
 
   * Backport to Jessie
 
- -- Kill Your TV <killyourtv@i2pmail.org>  Sat, 02 May 2015 18:44:25 +0000
+ -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 07 May 2015 22:34:35 +0000
+
+toxcore (0.0.0+20150505.r3364-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Toxav fix.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 07 May 2015 01:02:15 +0000
+
+toxcore (0.0.0+20150504.r3363-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Small cleanups.
+  * Removed useless code.
+  * Fixed possible connection issue.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+  * Update debian/libtoxcore0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 05 May 2015 10:20:00 +0000
 
 toxcore (0.0.0+20150501.r3360-2) unstable; urgency=medium
 
