@@ -6,8 +6,8 @@ Standards-Version: 3.9.6
 Build-Depends: debhelper (>= 9),
  ,adduser
  ,autotools-dev
- ,dh-autoreconf
  ,dh-systemd
+ ,dh-autoreconf
  ,libconfig-dev
  ,libncurses5-dev
  ,libopus-dev
