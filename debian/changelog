@@ -1,3 +1,15 @@
+toxcore (0.0.0+20150509.r3367-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Removed useless line.
+  * Only set last_to_ping if at least one node was pinged,
+  * Check if call supports video encoding before encoding frame.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sat, 09 May 2015 21:42:09 +0000
+
 toxcore (0.0.0+20150505.r3364-1~deb8u1) stable; urgency=medium
 
   * Backport to Jessie
