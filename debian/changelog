@@ -1,3 +1,28 @@
+toxcore (0.0.0+20150521.r3382-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Added basic TCP server hosting to tox.h api.
+  * Increased max announce entries.
+  * TCP relays are not sure to be valid onion nodes.
+  * Fixes and changes to tox_bootstrap and tox_add_tcp_relay.
+  * Connect to own TCP server if hosting one.
+  * Fixed segfault in tox-bootstrapd.
+  * Added tcp test.
+  * Fixed friends getting disconnected when transferring files.
+  * Don't resend the same packet twice within a short timeframe.
+  * Some protocol efficiency improvements.
+  * If we get the ip/port of a relay on a local ip, assume that our friend is
+    hosting a relay on his ip.
+  * Some fixes.
+  * Syncbot fixes.
+  * Load only secret key from tox save, not public key.
+
+  [ Kill Your TV ]
+  * New usptream git snapshot
+  * Update debian/libtoxcore0.symbols
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sat, 23 May 2015 00:46:51 +0000
+
 toxcore (0.0.0+20150509.r3367-1~deb7u+1) oldstable; urgency=medium
 
   * Backport to Wheezy

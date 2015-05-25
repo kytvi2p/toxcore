@@ -20,6 +20,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  LANdiscovery_init@Base 0.0.0+20140922.1
  LANdiscovery_kill@Base 0.0.0+20150501.r3360
  LOG_LEVEL_STR@Base 0.0.0+20150113.r3084
+ Local_ip@Base 0.0.0+20150521.r3382
  TCP_socket_data_recv_buffer@Base 0.0.0+20141226.r3053
 #MISSING: 0.0.0+20141001.1-1# U16_to_bytes@Base 0.0.0+20140922.1
 #MISSING: 0.0.0+20141001.1-1# U32_to_bytes@Base 0.0.0+20140922.1
@@ -209,7 +210,8 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  kill_tcp_connections@Base 0.0.0+20150413.r3316
  lendian_to_host16@Base 0.0.0+20141025.r2891
  lendian_to_host32@Base 0.0.0+20141025.r2891
- load_keys@Base 0.0.0+20140922.1
+#MISSING: 0.0.0+20150521.r3382-1# load_keys@Base 0.0.0+20140922.1
+ load_secret_key@Base 0.0.0+20150521.r3382
  load_state@Base 0.0.0+20140922.1
  logger_get_global@Base 0.0.0+20150113.r3084
  logger_kill@Base 0.0.0+20150113.r3084
