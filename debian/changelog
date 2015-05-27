@@ -1,3 +1,16 @@
+toxcore (0.0.0+20150526.r3393-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * tox_new returns NULL on failure.
+  * These parameters should have been const.
+  * Fixed bug when deleting friend that we are connected to in group chat.
+  * Fixed rare bug where userstatus, name, etc... would not be sent to friend.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 27 May 2015 12:01:47 +0000
+
 toxcore (0.0.0+20150524.r3389-1~deb7u+1) oldstable; urgency=medium
 
   * Backport to Wheezy
