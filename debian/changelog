@@ -1,3 +1,15 @@
+toxcore (0.0.0+20150529.r3396-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Allow empty keys in toxencryptsave.
+  * Fixed comment.
+  * Comment fix.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 29 May 2015 23:21:19 +0000
+
 toxcore (0.0.0+20150526.r3393-1~deb8u+1) stable; urgency=medium
 
   * Backport to Jessie
