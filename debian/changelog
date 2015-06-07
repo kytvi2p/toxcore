@@ -1,3 +1,42 @@
+toxcore (0.0.0+20150603.r3403-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Return port error if tcp server failed to init.
+  * Congestion control tweaks.
+  * Add a test for loading with a secret key.
+  * Small change.
+  * Return error if file_id parameter is NULL.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sat, 06 Jun 2015 01:16:59 +0000
+
+toxcore (0.0.0+20150529.r3396-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Allow empty keys in toxencryptsave.
+  * Fixed comment.
+  * Comment fix.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 29 May 2015 23:21:19 +0000
+
+toxcore (0.0.0+20150526.r3393-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * tox_new returns NULL on failure.
+  * These parameters should have been const.
+  * Fixed bug when deleting friend that we are connected to in group chat.
+  * Fixed rare bug where userstatus, name, etc... would not be sent to friend.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 27 May 2015 12:01:47 +0000
+
 toxcore (0.0.0+20150524.r3389-1~precise+1) precise; urgency=medium
 
   * Backport to Precise
