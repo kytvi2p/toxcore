@@ -1,3 +1,21 @@
+toxcore (0.0.0+20150607.r3411-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Added test.
+
+  [ codedust ]
+  * Improve readability of handle_request() in crypto_core.c
+
+  [ irungentoo ]
+  * Save DHT nodes in a smarter way.
+  * Save DHT friend nodes too.
+  * Don't bootstrap to all loaded nodes at once.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 09 Jun 2015 22:20:00 +0000
+
 toxcore (0.0.0+20150603.r3403-1ubuntu1) vivid; urgency=medium
 
   * Building for Vivid
