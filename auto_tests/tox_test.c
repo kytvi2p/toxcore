@@ -286,6 +286,16 @@ void tox_connection_status(Tox *tox, TOX_CONNECTION connection_status, void *use
 
 START_TEST(test_one)
 {
+    {
+        TOX_ERR_OPTIONS_NEW o_err;
+        struct Tox_Options *o1 = tox_options_new(&o_err);
+        struct Tox_Options o2;
+        tox_options_default(&o2);
+        ck_assert_msg(o_err == TOX_ERR_OPTIONS_NEW_OK, "tox_options_new wrong error");
+        ck_assert_msg(memcmp(o1, &o2, sizeof(struct Tox_Options)) == 0, "tox_options_new error");
+        tox_options_free(o1);
+    }
+
     Tox *tox1 = tox_new(0, 0);
     Tox *tox2 = tox_new(0, 0);
 
@@ -467,6 +477,12 @@ START_TEST(test_few_clients)
     }
 
     printf("tox clients messaging succeeded\n");
+
+    unsigned int save_size1 = tox_get_savedata_size(tox2);
+    ck_assert_msg(save_size1 != 0 && save_size1 < 4096, "save is invalid size %u", save_size1);
+    printf("%u\n", save_size1);
+    uint8_t save1[save_size1];
+    tox_get_savedata(tox2, save1);
 
     tox_callback_friend_name(tox3, print_nickchange, &to_compare);
     TOX_ERR_SET_INFO err_n;
@@ -785,6 +801,14 @@ START_TEST(test_many_clients)
 
     uint8_t address[TOX_ADDRESS_SIZE];
 
+    unsigned int num_f = 0;
+
+    for (i = 0; i < NUM_TOXES; ++i) {
+        num_f += tox_self_get_friend_list_size(toxes[i]);
+    }
+
+    ck_assert_msg(num_f == 0, "bad num friends: %u", num_f);
+
     for (i = 0; i < NUM_FRIENDS; ++i) {
 loop_top:
         pairs[i].tox1 = rand() % NUM_TOXES;
@@ -806,6 +830,12 @@ loop_top:
 
         ck_assert_msg(num != UINT32_MAX && test == TOX_ERR_FRIEND_ADD_OK, "Failed to add friend error code: %i", test);
     }
+
+    for (i = 0; i < NUM_TOXES; ++i) {
+        num_f += tox_self_get_friend_list_size(toxes[i]);
+    }
+
+    ck_assert_msg(num_f == NUM_FRIENDS, "bad num friends: %u", num_f);
 
     while (1) {
         uint16_t counter = 0;
