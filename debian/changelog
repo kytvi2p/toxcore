@@ -1,3 +1,17 @@
+toxcore (0.0.0+20150612.r3416-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Remove useless variables.
+  * Define fix.
+  * Use real path num in onion client.
+  * Reannounce if path is considered dead.
+  * Added save/load live test.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 14 Jun 2015 15:35:36 +0000
+
 toxcore (0.0.0+20150607.r3411-1) unstable; urgency=medium
 
   [ irungentoo ]
