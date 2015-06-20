@@ -1,3 +1,14 @@
+toxcore (0.0.0+20150616.r3420-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Fixed warning.
+  * Made new_tcp_connections() not depend on dht.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 17 Jun 2015 23:52:50 +0000
+
 toxcore (0.0.0+20150612.r3416-1~deb8u+1) stable; urgency=medium
 
   * Backport to Jessie
