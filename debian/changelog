@@ -1,3 +1,14 @@
+toxcore (0.0.0+20150623.r3431-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Fixed warning.
+  * Added code to net_crypto to calculate rtt.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 24 Jun 2015 23:36:39 +0000
+
 toxcore (0.0.0+20150621.r3429-1) unstable; urgency=medium
 
   [ irungentoo ]
