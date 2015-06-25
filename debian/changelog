@@ -1,3 +1,33 @@
+toxcore (0.0.0+20150623.r3431-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Fixed warning.
+  * Added code to net_crypto to calculate rtt.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 24 Jun 2015 23:36:39 +0000
+
+toxcore (0.0.0+20150621.r3429-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Fixed warning.
+  * Readme changes.
+
+  [ Zetok Zalbavar ]
+  * Improve documentation about tcp_port
+  * Add real instruction on how to use APIDSL and astyle
+  * Fix typo in readme: "enrironment" → "environment"
+
+  [ irungentoo ]
+  * Lower the chances of disconnect when transferring files.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Mon, 22 Jun 2015 11:33:28 +0000
+
 toxcore (0.0.0+20150616.r3420-1~deb8u+1) stable; urgency=medium
 
   * Backport to Jessie
