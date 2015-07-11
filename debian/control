@@ -13,7 +13,7 @@ Build-Depends: debhelper (>= 9),
  ,libsodium-dev
  ,libvpx-dev
  ,lsb-base (>= 3.2-14)
-Homepage: http://tox.im
+Homepage: http://tox.chat
 
 Package: libtox-dev
 Section: libdevel
@@ -47,14 +47,14 @@ Description: distributed, secure messenger with a/v support - daemon
 Package: libtoxcore0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Breaks: toxic ( << 0.5.2+20150324),
- utox ( << 0.2.o+20150324.r1395),
+Breaks: toxic ( << 0.6.0),
+ utox ( << 0.3),
  ratox ( <= 0.2.1-1),
  qtox ( << 0.0.0+git20150324),
  pidgin-tox ( << 0.4.2+git20150324),
- tox-weechat ( << 0.1+20150324),
- venom ( << 0.2.0+20150324),
- qttox ( << 0.0.0+20150324)
+ tox-weechat ( << 0.1+20150710),
+ venom ( << 0.2.0+20150710),
+ qttox ( << 0.0.0+20150710)
 Description: distributed, secure messenger with a/v support - runtime library
  Tox provides an encrypted, distributed, and extensible peer-to-peer platform
  that can be used for various forms of communication. Tox is intended to be used
