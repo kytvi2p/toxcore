@@ -7,9 +7,8 @@ CFLAGS += -g
 override_dh_auto_configure:
 	dh_auto_configure -- --enable-av --disable-tests --enable-daemon
 
-override_dh_gencontrol:
-	sed -i "/dependency_libs/ s/'.*'/''/" `find $(CURDIR)/debian -name '*.la'`
-	dh_gencontrol
+override_dh_install:
+	dh_install --list-missing
 
 override_dh_strip:
 	dh_strip -plibtoxcore0 --dbg-package=libtoxcore-dbg
