@@ -1,4 +1,3 @@
 usr/include/tox/toxav.h
 usr/lib/*/libtoxav.so
-usr/lib/*/libtoxav.la
 usr/lib/*/pkgconfig/libtoxav.pc
