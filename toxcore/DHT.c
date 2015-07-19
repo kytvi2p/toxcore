@@ -177,6 +177,28 @@ int to_host_family(IP *ip)
     }
 }
 
+#define PACKED_NODE_SIZE_IP4 (1 + SIZE_IP4 + sizeof(uint16_t) + crypto_box_PUBLICKEYBYTES)
+#define PACKED_NODE_SIZE_IP6 (1 + SIZE_IP6 + sizeof(uint16_t) + crypto_box_PUBLICKEYBYTES)
+
+/* Return packet size of packed node with ip_family on success.
+ * Return -1 on failure.
+ */
+int packed_node_size(uint8_t ip_family)
+{
+    if (ip_family == AF_INET) {
+        return PACKED_NODE_SIZE_IP4;
+    } else if (ip_family == TCP_INET) {
+        return PACKED_NODE_SIZE_IP4;
+    } else if (ip_family == AF_INET6) {
+        return PACKED_NODE_SIZE_IP6;
+    } else if (ip_family == TCP_INET6) {
+        return PACKED_NODE_SIZE_IP6;
+    } else {
+        return -1;
+    }
+}
+
+
 /* Pack number of nodes into data of maxlength length.
  *
  * return length of packed nodes on success.
@@ -207,26 +229,26 @@ int pack_nodes(uint8_t *data, uint16_t length, const Node_format *nodes, uint16_
         }
 
         if (ipv6 == 0) {
-            uint32_t size = 1 + sizeof(IP4) + sizeof(uint16_t) + crypto_box_PUBLICKEYBYTES;
+            uint32_t size = PACKED_NODE_SIZE_IP4;
 
             if (packed_length + size > length)
                 return -1;
 
             data[packed_length] = net_family;
-            memcpy(data + packed_length + 1, &nodes[i].ip_port.ip.ip4, sizeof(IP4));
-            memcpy(data + packed_length + 1 + sizeof(IP4), &nodes[i].ip_port.port, sizeof(uint16_t));
-            memcpy(data + packed_length + 1 + sizeof(IP4) + sizeof(uint16_t), nodes[i].public_key, crypto_box_PUBLICKEYBYTES);
+            memcpy(data + packed_length + 1, &nodes[i].ip_port.ip.ip4, SIZE_IP4);
+            memcpy(data + packed_length + 1 + SIZE_IP4, &nodes[i].ip_port.port, sizeof(uint16_t));
+            memcpy(data + packed_length + 1 + SIZE_IP4 + sizeof(uint16_t), nodes[i].public_key, crypto_box_PUBLICKEYBYTES);
             packed_length += size;
         } else if (ipv6 == 1) {
-            uint32_t size = 1 + sizeof(IP6) + sizeof(uint16_t) + crypto_box_PUBLICKEYBYTES;
+            uint32_t size = PACKED_NODE_SIZE_IP6;
 
             if (packed_length + size > length)
                 return -1;
 
             data[packed_length] = net_family;
-            memcpy(data + packed_length + 1, &nodes[i].ip_port.ip.ip6, sizeof(IP6));
-            memcpy(data + packed_length + 1 + sizeof(IP6), &nodes[i].ip_port.port, sizeof(uint16_t));
-            memcpy(data + packed_length + 1 + sizeof(IP6) + sizeof(uint16_t), nodes[i].public_key, crypto_box_PUBLICKEYBYTES);
+            memcpy(data + packed_length + 1, &nodes[i].ip_port.ip.ip6, SIZE_IP6);
+            memcpy(data + packed_length + 1 + SIZE_IP6, &nodes[i].ip_port.port, sizeof(uint16_t));
+            memcpy(data + packed_length + 1 + SIZE_IP6 + sizeof(uint16_t), nodes[i].public_key, crypto_box_PUBLICKEYBYTES);
             packed_length += size;
         } else {
             return -1;
@@ -275,27 +297,27 @@ int unpack_nodes(Node_format *nodes, uint16_t max_num_nodes, uint16_t *processed
         }
 
         if (ipv6 == 0) {
-            uint32_t size = 1 + sizeof(IP4) + sizeof(uint16_t) + crypto_box_PUBLICKEYBYTES;
+            uint32_t size = PACKED_NODE_SIZE_IP4;
 
             if (len_processed + size > length)
                 return -1;
 
             nodes[num].ip_port.ip.family = host_family;
-            memcpy(&nodes[num].ip_port.ip.ip4, data + len_processed + 1, sizeof(IP4));
-            memcpy(&nodes[num].ip_port.port, data + len_processed + 1 + sizeof(IP4), sizeof(uint16_t));
-            memcpy(nodes[num].public_key, data + len_processed + 1 + sizeof(IP4) + sizeof(uint16_t), crypto_box_PUBLICKEYBYTES);
+            memcpy(&nodes[num].ip_port.ip.ip4, data + len_processed + 1, SIZE_IP4);
+            memcpy(&nodes[num].ip_port.port, data + len_processed + 1 + SIZE_IP4, sizeof(uint16_t));
+            memcpy(nodes[num].public_key, data + len_processed + 1 + SIZE_IP4 + sizeof(uint16_t), crypto_box_PUBLICKEYBYTES);
             len_processed += size;
             ++num;
         } else if (ipv6 == 1) {
-            uint32_t size = 1 + sizeof(IP6) + sizeof(uint16_t) + crypto_box_PUBLICKEYBYTES;
+            uint32_t size = PACKED_NODE_SIZE_IP6;
 
             if (len_processed + size > length)
                 return -1;
 
             nodes[num].ip_port.ip.family = host_family;
-            memcpy(&nodes[num].ip_port.ip.ip6, data + len_processed + 1, sizeof(IP6));
-            memcpy(&nodes[num].ip_port.port, data + len_processed + 1 + sizeof(IP6), sizeof(uint16_t));
-            memcpy(nodes[num].public_key, data + len_processed + 1 + sizeof(IP6) + sizeof(uint16_t), crypto_box_PUBLICKEYBYTES);
+            memcpy(&nodes[num].ip_port.ip.ip6, data + len_processed + 1, SIZE_IP6);
+            memcpy(&nodes[num].ip_port.port, data + len_processed + 1 + SIZE_IP6, sizeof(uint16_t));
+            memcpy(nodes[num].public_key, data + len_processed + 1 + SIZE_IP6 + sizeof(uint16_t), crypto_box_PUBLICKEYBYTES);
             len_processed += size;
             ++num;
         } else {
@@ -2266,26 +2288,30 @@ void kill_DHT(DHT *dht)
 #define DHT_STATE_COOKIE_TYPE      0x11ce
 #define DHT_STATE_TYPE_NODES       4
 
+#define MAX_SAVED_DHT_NODES (((DHT_FAKE_FRIEND_NUMBER * MAX_FRIEND_CLIENTS) + LCLIENT_LIST) * 2)
+
 /* Get the size of the DHT (for saving). */
 uint32_t DHT_size(const DHT *dht)
 {
-    uint32_t num = 0, i, j;
+    uint32_t numv4 = 0, numv6 = 0, i, j;
 
     for (i = 0; i < LCLIENT_LIST; ++i) {
-        num += (dht->close_clientlist[i].assoc4.timestamp != 0) + (dht->close_clientlist[i].assoc6.timestamp != 0);
+        numv4 += (dht->close_clientlist[i].assoc4.timestamp != 0);
+        numv6 += (dht->close_clientlist[i].assoc6.timestamp != 0);
     }
 
     for (i = 0; i < DHT_FAKE_FRIEND_NUMBER && i < dht->num_friends; ++i) {
         DHT_Friend *fr = &dht->friends_list[i];
 
         for (j = 0; j < MAX_FRIEND_CLIENTS; ++j) {
-            num += (fr->client_list[j].assoc4.timestamp != 0) + (fr->client_list[j].assoc6.timestamp != 0);
+            numv4 += (fr->client_list[j].assoc4.timestamp != 0);
+            numv6 += (fr->client_list[j].assoc6.timestamp != 0);
         }
     }
 
     uint32_t size32 = sizeof(uint32_t), sizesubhead = size32 * 2;
-    return size32
-           + sizesubhead + sizeof(Node_format) * num;
+
+    return size32 + sizesubhead + (packed_node_size(AF_INET) * numv4) + (packed_node_size(AF_INET6) * numv6);
 }
 
 static uint8_t *z_state_save_subheader(uint8_t *data, uint32_t len, uint16_t type)
@@ -2296,6 +2322,7 @@ static uint8_t *z_state_save_subheader(uint8_t *data, uint32_t len, uint16_t typ
     data += sizeof(uint32_t) * 2;
     return data;
 }
+
 
 /* Save the DHT in data where data is an array of size DHT_size(). */
 void DHT_save(DHT *dht, uint8_t *data)
@@ -2310,7 +2337,7 @@ void DHT_save(DHT *dht, uint8_t *data)
     /* get right offset. we write the actual header later. */
     data = z_state_save_subheader(data, 0, 0);
 
-    Node_format *clients = (Node_format *)data;
+    Node_format clients[MAX_SAVED_DHT_NODES];
 
     for (num = 0, i = 0; i < LCLIENT_LIST; ++i) {
         if (dht->close_clientlist[i].assoc4.timestamp != 0) {
@@ -2344,7 +2371,7 @@ void DHT_save(DHT *dht, uint8_t *data)
         }
     }
 
-    z_state_save_subheader(old_data, num * sizeof(Node_format), DHT_STATE_TYPE_NODES);
+    z_state_save_subheader(old_data, pack_nodes(data, sizeof(Node_format) * num, clients, num), DHT_STATE_TYPE_NODES);
 }
 
 /* Bootstrap from this number of nodes every time DHT_connect_after_load() is called */
@@ -2381,25 +2408,27 @@ int DHT_connect_after_load(DHT *dht)
 static int dht_load_state_callback(void *outer, const uint8_t *data, uint32_t length, uint16_t type)
 {
     DHT *dht = outer;
-    uint32_t num, i;
+    int i;
 
     switch (type) {
         case DHT_STATE_TYPE_NODES:
-            if ((length % sizeof(Node_format)) != 0)
+            if (length == 0)
                 break;
 
-            { /* localize declarations */
-                num = length / sizeof(Node_format);
-                Node_format *client_list = (Node_format *)data;
-
+            {
                 free(dht->loaded_nodes_list);
                 // Copy to loaded_clients_list
-                dht->loaded_nodes_list = calloc(num, sizeof(Node_format));
+                dht->loaded_nodes_list = calloc(MAX_SAVED_DHT_NODES, sizeof(Node_format));
 
-                for (i = 0; i < num; i++)
-                    memcpy(&(dht->loaded_nodes_list[i]), &(client_list[i]), sizeof(Node_format));
+                int num = unpack_nodes(dht->loaded_nodes_list, MAX_SAVED_DHT_NODES, NULL, data, length, 0);
 
-                dht->loaded_num_nodes = num;
+                Node_format *client_list = (Node_format *)data;
+
+                if (num > 0) {
+                    dht->loaded_num_nodes = num;
+                } else {
+                    dht->loaded_num_nodes = 0;
+                }
 
             } /* localize declarations */
 
