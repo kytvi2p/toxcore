@@ -1,3 +1,19 @@
+toxcore (0.0.0+20150718.r3468-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Pack DHT nodes in save.
+  * Use size define instead of sizeof.
+  * DHT_size now returns correct size for packed nodes.
+  * Added function to help calculate size of packet nodes.
+  * Pack connected TCP relay nodes.
+  * Allow savedata to be slightly smaller than the allocated buffer.
+  * Fixed bug.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 19 Jul 2015 18:32:57 +0000
+
 toxcore (0.0.0+20150711.r3459-1~deb8u+1) stable; urgency=medium
 
   * Backport to Jessie
