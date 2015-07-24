@@ -1,3 +1,14 @@
+toxcore (0.0.0+20150722.r3472-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Pack onion path nodes in save.
+  * Fixed some strange build issues.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 24 Jul 2015 06:16:21 +0000
+
 toxcore (0.0.0+20150718.r3468-1) unstable; urgency=medium
 
   [ irungentoo ]
