@@ -1,3 +1,22 @@
+toxcore (0.0.0+20150801.r3488-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * client_id -> public_key
+
+  [ Jason Locklin ]
+  * OPUS_APPLICATION_VOIP should be used
+  * Enable in-band FEC
+  * Set packet loss percentage
+  * added documentation
+
+  [ irungentoo ]
+  * DHT save fixes.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sun, 02 Aug 2015 16:54:06 +0000
+
 toxcore (0.0.0+20150726.r3476-1ubuntu1) vivid; urgency=medium
 
   * Building for Vivid
