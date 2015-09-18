@@ -1,3 +1,9 @@
+toxcore (0.0.0+20150915.r3513-1+rpi1) stable; urgency=medium
+
+  * Backport to Jessie/rpi
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 18 Sep 2015 23:23:47 +0000
+
 toxcore (0.0.0+20150915.r3513-1) unstable; urgency=medium
 
   [ irungentoo ]
@@ -19,12 +25,6 @@ toxcore (0.0.0+20150915.r3513-1) unstable; urgency=medium
   * New upstream git snapshot
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 18 Sep 2015 20:44:31 +0000
-
-toxcore (0.0.0+20150808.r3496-1+rpi1) stable; urgency=medium
-
-  * Backport to Jessie/rpi
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 11 Aug 2015 21:15:42 +0000
 
 toxcore (0.0.0+20150808.r3496-1) unstable; urgency=medium
 
