@@ -1,3 +1,25 @@
+toxcore (0.0.0+20150915.r3513-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Increased timeouts.
+  * Remove useless code.
+  * Increased max number of stored announce entries.
+
+  [ Jeppler ]
+  * small typo change
+  * changed friends list to friend list
+
+  [ irungentoo ]
+  * Increased cookie timeout.
+
+  [ tux3 ]
+  * Fix PACKET_ID_OFFLINE fallinthrough PACKET_ID_NICKNAME
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 18 Sep 2015 20:44:31 +0000
+
 toxcore (0.0.0+20150808.r3496-1~deb8u+1) stable; urgency=medium
 
   * Backport to Jessie
