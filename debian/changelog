@@ -1,3 +1,21 @@
+toxcore (0.0.0+20151019.r3522-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Lowered interval in onion_client.
+
+  [ Jacob Henner ]
+  * Adding dev irc channel
+  * Editing some README phrasing, IRC channels on new line
+
+  [ Soumitra ]
+  * Added ommited words in comment
+  * Changed gramatically incorrect comment in messenger_test
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Tue, 20 Oct 2015 23:45:03 +0000
+
 toxcore (0.0.0+20150915.r3513-1~deb8u+1) stable; urgency=medium
 
   * Backport to Jessie
