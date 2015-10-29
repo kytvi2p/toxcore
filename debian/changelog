@@ -1,3 +1,14 @@
+toxcore (0.0.0+20151021.r3523-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Prevent seek equal to size of file transfer so that toxcore respects what
+    the docs say.
+
+  [ Kill Your TV ]
+  * new upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 29 Oct 2015 01:39:00 +0000
+
 toxcore (0.0.0+20151019.r3522-1) unstable; urgency=medium
 
   [ irungentoo ]
