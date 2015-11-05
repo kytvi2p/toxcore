@@ -1,3 +1,178 @@
+toxcore (0.0.0+20151103.r3638-1) unstable; urgency=medium
+
+  [ mannol ]
+  * Progress
+  * Current progress
+  * Progress
+  * Control part of new api already kind of works
+  * Started adjusting msi backend to new api
+  * Fixed header protectors and cleaning up the msi
+  * Added 2 new headers into msi for buffer control
+  * Msi should be done; toxav.c need a cleanup and adjustments
+  * Removed extra msi header and started testing
+  * New msi protocol
+  * Implement pausing
+  * Make toxav thread safe
+  * Updating with master
+  * Some progress
+  * Audio works in test
+  * Make it possible to change channels/sample rate of the decoder
+  * Current progress of video testing
+
+  [ Dubslow ]
+  * Consistency with core api
+
+  [ mannol ]
+  * Improvement in test and removed some bloat from CS
+  * A little CS cleanup
+  * Video preview works (lmao)
+  * Video works but there is one deadlock left and video replay is slow
+  * Video works now
+  * Make it possible to decode mono audio with stereo decoder
+  * Random fixes
+  * Started custom RTCP
+  * The pretty basic adaptive bitrate is *working*
+  * Update latest
+  * Fix toxav callback
+  * Update comment
+  * Add extern "C"
+  * Final touchups
+  * Finished refactoring
+  * Almost done
+  * Almooooooost
+  * working av new api
+  * Done
+
+  [ krobelus ]
+  * Fixed typo
+
+  [ mannol ]
+  * Added many test and fixed various warnings
+  * Fixed* api comments and some bugs
+  * Fixed inconsistencies
+  * Fix bug
+  * Added apidsl input file
+  * Forgot about this
+  * Fixed sample size in callback and other stuff
+  * Random fixes
+  * Added payload turning off by setting bit rate to 0
+  * Added explanation about how audio callback works
+  * Renamed TOXAV_CALL_STATE to TOXAV_FRIEND_CALL_STATE
+  * Added support for old groupchats
+  * Implement handling capability change on rtp level
+  * Fixed missing include toxav_old.h
+
+  [ GrayHatter ]
+  * send_message() is too global to be non-static
+
+  [ mannol ]
+  * Fixed documentation.
+  * Fixed CALL_STATE naming
+  * Fixed memory leak during session cleanup and fixed naming.
+  * Removed redundant function from video.[h|c]
+  * Apply OPUS codec fixes
+  * Fix possible double free
+  * Remove empty lines
+  * Fix bug in codec initialization
+
+  [ krobelus ]
+  * typo
+
+  [ Eniz Vukovic ]
+  * New Adaptive BR algorithm, cleanups and fixes
+  * Remove old comment
+  * Test should not assert when hangup fails
+  * Return removed groupchats code
+  * Fix typo and change logger config option
+
+  [ Zetok Zalbavar ]
+  * Fix file modes
+
+  [ Eniz Vukovic ]
+  * Fix setting resolution for vpx v1.4 (or newer i suppose)
+
+  [ irungentoo ]
+  * Increased timeouts.
+
+  [ randoms ]
+  * Install instructions: Use 1.0.3 tag for libsodium
+
+  [ irungentoo ]
+  * Remove useless code.
+  * Increased max number of stored announce entries.
+  * Increased cookie timeout.
+
+  [ tux3 ]
+  * Fix PACKET_ID_OFFLINE fallinthrough PACKET_ID_NICKNAME
+
+  [ Jeppler ]
+  * small typo change
+  * small typo change
+  * changed friends list to friend list
+
+  [ anoadragon453 ]
+  * Changed Binaries/Downloads link to new Wiki page
+
+  [ Pascal Weinberger ]
+  * Fix ubuntu git link for libvpx
+
+  [ irungentoo ]
+  * Lowered interval in onion_client.
+
+  [ Jacob Henner ]
+  * Adding dev irc channel
+  * Editing some README phrasing, IRC channels on new line
+
+  [ Soumitra ]
+  * Added ommited words in comment
+  * Changed gramatically incorrect comment in messenger_test
+
+  [ Vishnu Ks ]
+  * updated git repo urls
+
+  [ irungentoo ]
+  * Prevent seek equal to size of file transfer so that toxcore respects what
+    the docs say.
+
+  [ mannol ]
+  * Fix docs
+
+  [ irungentoo ]
+  * Fixed some memory related bugs.
+  * Fixed error in last commit.
+  * Added mutex lock+unlock.
+
+  [ Eniz Vukovic ]
+  * Removed mutex operations
+  * Add synchronization protection for send_frame API functions
+
+  [ mannol ]
+  * Fix misplaced log message.
+
+  [ Eniz Vukovic ]
+  * Fix possible misalignment of RTP header
+  * Revert "Removed mutex operations"
+  * Fix compile error on mingw
+
+  [ irungentoo ]
+  * Astyle.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Wed, 04 Nov 2015 19:28:13 +0000
+
+toxcore (0.0.0+20151021.r3523-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Prevent seek equal to size of file transfer so that toxcore respects what
+    the docs say.
+
+  [ Kill Your TV ]
+  * new upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 29 Oct 2015 01:39:00 +0000
+
 toxcore (0.0.0+20151019.r3522-1~deb8u+1) stable; urgency=medium
 
   * Backport to Jessie
