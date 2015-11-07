@@ -1,20 +1,9 @@
 libtoxencryptsave.so.0 libtoxencryptsave0 #MINVER#
  tox_derive_key_from_pass@Base 0.0.0+20141011.r2839
  tox_derive_key_with_salt@Base 0.0.0+20141025.r2891
-#MISSING: 0.0.0+20150323.r3271-1# tox_encrypted_key_load@Base 0.0.0+20141016.r2870
-#MISSING: 0.0.0+20150331.r3290-1# tox_encrypted_key_new@Base 0.0.0+20150323.r3271
-#MISSING: 0.0.0+20150331.r3290-1# tox_encrypted_key_save@Base 0.0.0+20141016.r2870
-#MISSING: 0.0.0+20150323.r3271-1# tox_encrypted_load@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20150331.r3290-1# tox_encrypted_new@Base 0.0.0+20150323.r3271
-#MISSING: 0.0.0+20150331.r3290-1# tox_encrypted_save@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20150331.r3290-1# tox_encrypted_size@Base 0.0.0+20140922.1
  tox_get_salt@Base 0.0.0+20141025.r2891
  tox_is_data_encrypted@Base 0.0.0+20141025.r2891
-#MISSING: 0.0.0+20150323.r3271-1# tox_is_save_encrypted@Base 0.0.0+20141011.r2839
  tox_pass_decrypt@Base 0.0.0+20141011.r2839
  tox_pass_encrypt@Base 0.0.0+20141011.r2839
-#MISSING: 0.0.0+20150331.r3290-1# tox_pass_encryption_extra_length@Base 0.0.0+20141012.r2846
  tox_pass_key_decrypt@Base 0.0.0+20141011.r2839
  tox_pass_key_encrypt@Base 0.0.0+20141011.r2839
-#MISSING: 0.0.0+20150331.r3290-1# tox_pass_key_length@Base 0.0.0+20141012.r2846
-#MISSING: 0.0.0+20150331.r3290-1# tox_pass_salt_length@Base 0.0.0+20141025.r2891
