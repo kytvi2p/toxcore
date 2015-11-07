@@ -1,105 +1,89 @@
 libtoxav.so.0 libtoxav0 #MINVER#
+ ac_iterate@Base 0.0.0+20151103.r3638
+ ac_kill@Base 0.0.0+20151103.r3638
+ ac_new@Base 0.0.0+20151103.r3638
+ ac_queue_message@Base 0.0.0+20151103.r3638
+ ac_reconfigure_encoder@Base 0.0.0+20151103.r3638
  add_av_groupchat@Base 0.0.0+20141111.r2927
- add_ext_header@Base 0.0.0+20140922.1
- add_header@Base 0.0.0+20140922.1
- av_DefaultSettings@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20141125.r2965-1# av_VADd@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20141125.r2965-1# av_jbufdc@Base 0.0.0+20140922.1
- build_header@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20141125.r2965-1# check_late_message@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20141125.r2965-1# codec_init_session@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20141125.r2965-1# codec_terminate_session@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20141125.r2965-1# create_queue@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20141129.r2982-1# cs_calculate_vad@Base 0.0.0+20141125.r2965
- cs_do@Base 0.0.0+20141125.r2965
- cs_get_split_video_frame@Base 0.0.0+20141125.r2965
- cs_kill@Base 0.0.0+20141125.r2965
- cs_new@Base 0.0.0+20141125.r2965
-#MISSING: 0.0.0+20141129.r2982-1# cs_register_audio_callback@Base 0.0.0+20141125.r2965
-#MISSING: 0.0.0+20141129.r2982-1# cs_register_video_callback@Base 0.0.0+20141125.r2965
-#MISSING: 0.0.0+20141129.r2982-1# cs_set_vad_treshold@Base 0.0.0+20141125.r2965
- cs_set_video_encoder_bitrate@Base 0.0.0+20141125.r2965
- cs_set_video_encoder_resolution@Base 0.0.0+20141125.r2965
- cs_split_video_payload@Base 0.0.0+20141125.r2965
-#MISSING: 0.0.0+20141125.r2965-1# dequeue@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20141125.r2965-1# energy_VAD@Base 0.0.0+20140922.1
- extract_ext_header@Base 0.0.0+20140922.1
- extract_header@Base 0.0.0+20140922.1
- format_output@Base 0.0.0+20140922.1
+ audio_bit_rate_invalid@Base 0.0.0+20151103.r3638
+ bwc_add_lost@Base 0.0.0+20151103.r3638
+ bwc_add_recv@Base 0.0.0+20151103.r3638
+ bwc_feed_avg@Base 0.0.0+20151103.r3638
+ bwc_handle_data@Base 0.0.0+20151103.r3638
+ bwc_kill@Base 0.0.0+20151103.r3638
+ bwc_new@Base 0.0.0+20151103.r3638
+ call_get@Base 0.0.0+20151103.r3638
+ call_kill_transmission@Base 0.0.0+20151103.r3638
+ call_new@Base 0.0.0+20151103.r3638
+ call_prepare_transmission@Base 0.0.0+20151103.r3638
+ call_remove@Base 0.0.0+20151103.r3638
+ callback_bwc@Base 0.0.0+20151103.r3638
+ callback_capabilites@Base 0.0.0+20151103.r3638
+ callback_end@Base 0.0.0+20151103.r3638
+ callback_error@Base 0.0.0+20151103.r3638
+ callback_invite@Base 0.0.0+20151103.r3638
+ callback_start@Base 0.0.0+20151103.r3638
+ chloss@Base 0.0.0+20151103.r3638
+ create_audio_encoder@Base 0.0.0+20151103.r3638
  group_send_audio@Base 0.0.0+20141111.r2927
-#MISSING: 0.0.0+20141125.r2965-1# init_audio_decoder@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20141125.r2965-1# init_audio_encoder@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20141125.r2965-1# init_video_decoder@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20141125.r2965-1# init_video_encoder@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20141125.r2965-1# invoke_callback@Base 0.0.0+20140922.1
+ handle_init@Base 0.0.0+20151103.r3638
+ handle_msi_packet@Base 0.0.0+20151103.r3638
+ handle_pop@Base 0.0.0+20151103.r3638
+ handle_push@Base 0.0.0+20151103.r3638
+ handle_rtp_packet@Base 0.0.0+20151103.r3638
+ invoke_call_state_callback@Base 0.0.0+20151103.r3638
  join_av_groupchat@Base 0.0.0+20141111.r2927
- msg_parse@Base 0.0.0+20140922.1
+ kill_call@Base 0.0.0+20151103.r3638
+ msg_init@Base 0.0.0+20151103.r3638
+ msg_parse_header_out@Base 0.0.0+20151103.r3638
+ msg_parse_in@Base 0.0.0+20151103.r3638
  msi_answer@Base 0.0.0+20140922.1
- msi_cancel@Base 0.0.0+20140922.1
- msi_change_csettings@Base 0.0.0+20140922.1
- msi_do@Base 0.0.0+20141125.r2965
+ msi_change_capabilities@Base 0.0.0+20151103.r3638
  msi_hangup@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20141125.r2965-1# msi_init_session@Base 0.0.0+20140922.1
  msi_invite@Base 0.0.0+20140922.1
  msi_kill@Base 0.0.0+20141125.r2965
- msi_msg_get_csettings@Base 0.0.0+20140922.1
- msi_msg_set_callid@Base 0.0.0+20140922.1
- msi_msg_set_csettings@Base 0.0.0+20140922.1
- msi_msg_set_reason@Base 0.0.0+20140922.1
  msi_new@Base 0.0.0+20141125.r2965
- msi_new_message@Base 0.0.0+20140922.1
  msi_register_callback@Base 0.0.0+20140922.1
- msi_reject@Base 0.0.0+20140922.1
- msi_stopcall@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20141125.r2965-1# msi_terminate_session@Base 0.0.0+20140922.1
- parse_recv@Base 0.0.0+20140922.1
- parse_send@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20141125.r2965-1# queue@Base 0.0.0+20140922.1
- queue_message@Base 0.0.0+20141125.r2965
-#MISSING: 0.0.0+20141125.r2965-1# reconfigure_video_encoder_bitrate@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20141125.r2965-1# reconfigure_video_encoder_resolution@Base 0.0.0+20140922.1
- rtp_free_msg@Base 0.0.0+20140922.1
- rtp_handle_packet@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20141125.r2965-1# rtp_init_session@Base 0.0.0+20140922.1
+ new_call@Base 0.0.0+20151103.r3638
+ new_message@Base 0.0.0+20151103.r3638
+ on_peer_status@Base 0.0.0+20151103.r3638
+ on_update@Base 0.0.0+20151103.r3638
+ reconfigure_audio_decoder@Base 0.0.0+20151103.r3638
+ reconfigure_audio_encoder@Base 0.0.0+20151103.r3638
+ rtp_allow_receiving@Base 0.0.0+20151103.r3638
  rtp_kill@Base 0.0.0+20141125.r2965
  rtp_new@Base 0.0.0+20141125.r2965
- rtp_new_message@Base 0.0.0+20140922.1
- rtp_send_msg@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20141125.r2965-1# rtp_terminate_session@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20141125.r2965-1# send_reponse@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20141125.r2965-1# terminate_queue@Base 0.0.0+20140922.1
+ rtp_send_data@Base 0.0.0+20151103.r3638
+ rtp_stop_receiving@Base 0.0.0+20151103.r3638
+ send_error@Base 0.0.0+20151103.r3638
+ send_update@Base 0.0.0+20151103.r3638
  toxav_add_av_groupchat@Base 0.0.0+20141111.r2927
  toxav_answer@Base 0.0.0+20140922.1
+ toxav_audio_send_frame@Base 0.0.0+20151103.r3638
+ toxav_bit_rate_set@Base 0.0.0+20151103.r3638
  toxav_call@Base 0.0.0+20140922.1
- toxav_cancel@Base 0.0.0+20140922.1
- toxav_capability_supported@Base 0.0.0+20140922.1
- toxav_change_settings@Base 0.0.0+20140922.1
- toxav_do@Base 0.0.0+20141125.r2965
- toxav_do_interval@Base 0.0.0+20141125.r2965
- toxav_get_active_count@Base 0.0.0+20141125.r2965
- toxav_get_call_state@Base 0.0.0+20140922.1
- toxav_get_peer_csettings@Base 0.0.0+20140922.1
- toxav_get_peer_id@Base 0.0.0+20140922.1
+ toxav_call_control@Base 0.0.0+20151103.r3638
+ toxav_callback_audio_receive_frame@Base 0.0.0+20151103.r3638
+ toxav_callback_bit_rate_status@Base 0.0.0+20151103.r3638
+ toxav_callback_call@Base 0.0.0+20151103.r3638
+ toxav_callback_call_state@Base 0.0.0+20151103.r3638
+ toxav_callback_video_receive_frame@Base 0.0.0+20151103.r3638
  toxav_get_tox@Base 0.0.0+20140922.1
  toxav_group_send_audio@Base 0.0.0+20141111.r2927
-#MISSING: 0.0.0+20141125.r2965-1# toxav_handle_packet@Base 0.0.0+20140922.1
- toxav_hangup@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20141129.r2982-1# toxav_has_activity@Base 0.0.0+20140922.1
+ toxav_iterate@Base 0.0.0+20151103.r3638
+ toxav_iteration_interval@Base 0.0.0+20151103.r3638
  toxav_join_av_groupchat@Base 0.0.0+20141111.r2927
  toxav_kill@Base 0.0.0+20140922.1
- toxav_kill_transmission@Base 0.0.0+20140922.1
  toxav_new@Base 0.0.0+20140922.1
- toxav_prepare_audio_frame@Base 0.0.0+20140922.1
- toxav_prepare_transmission@Base 0.0.0+20140922.1
- toxav_prepare_video_frame@Base 0.0.0+20140922.1
- toxav_register_audio_callback@Base 0.0.0+20141125.r2965
-#MISSING: 0.0.0+20141125.r2965-1# toxav_register_audio_recv_callback@Base 0.0.0+20140922.1
- toxav_register_callstate_callback@Base 0.0.0+20140922.1
- toxav_register_video_callback@Base 0.0.0+20141125.r2965
-#MISSING: 0.0.0+20141125.r2965-1# toxav_register_video_recv_callback@Base 0.0.0+20140922.1
- toxav_reject@Base 0.0.0+20140922.1
- toxav_send_audio@Base 0.0.0+20140922.1
- toxav_send_video@Base 0.0.0+20140922.1
-#MISSING: 0.0.0+20141129.r2982-1# toxav_set_vad_treshold@Base 0.0.0+20141125.r2965
- toxav_stop_call@Base 0.0.0+20140922.1
+ toxav_version_is_compatible@Base 0.0.0+20151103.r3638
+ toxav_version_major@Base 0.0.0+20151103.r3638
+ toxav_version_minor@Base 0.0.0+20151103.r3638
+ toxav_version_patch@Base 0.0.0+20151103.r3638
+ toxav_video_send_frame@Base 0.0.0+20151103.r3638
+ vc_iterate@Base 0.0.0+20151103.r3638
+ vc_kill@Base 0.0.0+20151103.r3638
+ vc_new@Base 0.0.0+20151103.r3638
+ vc_queue_message@Base 0.0.0+20151103.r3638
+ vc_reconfigure_encoder@Base 0.0.0+20151103.r3638
+ video_bit_rate_invalid@Base 0.0.0+20151103.r3638
 
