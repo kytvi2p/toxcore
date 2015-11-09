@@ -48,12 +48,12 @@ Description: distributed, secure messenger with a/v support - daemon
 Package: libtoxcore0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Breaks: toxic ( << 0.6.0),
- utox ( << 0.3),
+Breaks: toxic ( << 0.6.1+git20151103),
+ utox ( << 0.4),
  ratox ( <= 0.2.1-1),
- qtox ( << 0.0.0+git20150324),
- pidgin-tox ( << 0.4.2+git20150324),
- tox-weechat ( << 0.1+20150710),
+ qtox ( << 0.0.0+git201501103),
+ pidgin-tox ( << 0.4.2+git20151103),
+ tox-weechat ( << 0.1+20151103),
  venom ( << 0.2.0+20150710),
  qttox ( << 0.0.0+20150710)
 Description: distributed, secure messenger with a/v support - runtime library
