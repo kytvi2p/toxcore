@@ -296,6 +296,7 @@ libtoxcore.so.0 libtoxcore0 #MINVER#
  realloc_friendlist@Base 0.0.0+20140922.1
  recv_tcp_relay_handler@Base 0.0.0+20140922.1
  remove_request_received@Base 0.0.0+20140922.1
+ return_ip_port_connection@Base 0.0.0+20151111.r3647-1
  route_packet@Base 0.0.0+20140922.1
  route_tofriend@Base 0.0.0+20140922.1
  routing_data_handler@Base 0.0.0+20140922.1
