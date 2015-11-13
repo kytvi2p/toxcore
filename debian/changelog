@@ -1,3 +1,9 @@
+toxcore (0.0.0+20151111.r3647-1ubuntu1) wily; urgency=medium
+
+  * Building for Wily
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Fri, 13 Nov 2015 23:44:14 +0000
+
 toxcore (0.0.0+20151111.r3647-1) unstable; urgency=medium
 
   [ Gregory Mullen (grayhatter) ]
@@ -17,12 +23,6 @@ toxcore (0.0.0+20151111.r3647-1) unstable; urgency=medium
   * New upstream git snapshot
 
  -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 12 Nov 2015 20:00:36 +0000
-
-toxcore (0.0.0+20151103.r3638-1ubuntu1) wily; urgency=medium
-
-  * Building for Wily
-
- -- Kill Your TV <killyourtv@i2pmail.org>  Sat, 07 Nov 2015 19:01:29 +0000
 
 toxcore (0.0.0+20151103.r3638-1) unstable; urgency=medium
 
