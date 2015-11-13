@@ -1,3 +1,23 @@
+toxcore (0.0.0+20151111.r3647-1) unstable; urgency=medium
+
+  [ Gregory Mullen (grayhatter) ]
+  * Removed the unused autotools files
+
+  [ Jfreegman ]
+  * Prevent debug message from spamming stdout
+
+  [ irungentoo ]
+  * File transfer fixes.
+  * More file transfer improvements.
+  * Lower chances of disconnect during file transfers.
+  * Attempted fix of UDP disconnect bug that happens when both ipv4 and ipv6
+    are connected.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 12 Nov 2015 20:00:36 +0000
+
 toxcore (0.0.0+20151103.r3638-1ubuntu1) wily; urgency=medium
 
   * Building for Wily
