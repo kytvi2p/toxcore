@@ -39,7 +39,7 @@
 #define CRYPTO_PACKET_BUFFER_SIZE 16384 /* Must be a power of 2 */
 
 /* Minimum packet rate per second. */
-#define CRYPTO_PACKET_MIN_RATE 8.0
+#define CRYPTO_PACKET_MIN_RATE 4.0
 
 /* Minimum packet queue max length. */
 #define CRYPTO_MIN_QUEUE_LENGTH 64
@@ -81,9 +81,10 @@
 /* Base current transfer speed on last CONGESTION_QUEUE_ARRAY_SIZE number of points taken
    at the dT defined in net_crypto.c */
 #define CONGESTION_QUEUE_ARRAY_SIZE 24
+#define CONGESTION_LAST_SENT_ARRAY_SIZE (CONGESTION_QUEUE_ARRAY_SIZE * 2)
 
 /* Default connection ping in ms. */
-#define DEFAULT_PING_CONNECTION 200
+#define DEFAULT_PING_CONNECTION 1000
 
 typedef struct {
     uint64_t sent_time;
@@ -118,8 +119,10 @@ typedef struct {
     uint64_t temp_packet_sent_time; /* The time at which the last temp_packet was sent in ms. */
     uint32_t temp_packet_num_sent;
 
-    IP_Port ip_port; /* The ip and port to contact this guy directly.*/
-    uint64_t direct_lastrecv_time; /* The Time at which we last received a direct packet in ms. */
+    IP_Port ip_portv4; /* The ip and port to contact this guy directly.*/
+    IP_Port ip_portv6;
+    uint64_t direct_lastrecv_timev4; /* The Time at which we last received a direct packet in ms. */
+    uint64_t direct_lastrecv_timev6;
 
     Packets_Array send_array;
     Packets_Array recv_array;
@@ -147,7 +150,7 @@ typedef struct {
     uint64_t last_packets_left_set;
 
     uint32_t last_sendqueue_size[CONGESTION_QUEUE_ARRAY_SIZE], last_sendqueue_counter;
-    long signed int last_num_packets_sent[CONGESTION_QUEUE_ARRAY_SIZE];
+    long signed int last_num_packets_sent[CONGESTION_LAST_SENT_ARRAY_SIZE];
     uint32_t packets_sent;
     uint64_t last_congestion_event;
     uint64_t rtt_time;
