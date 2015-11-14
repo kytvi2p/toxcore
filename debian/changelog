@@ -1,3 +1,14 @@
+toxcore (0.0.0+20151114.r3649-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Remove an old fix that didn't fix anything.
+  * Less magic numbers.
+
+  [ Kill Your TV ]
+  * New upstream gitsnapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Sat, 14 Nov 2015 14:38:54 +0000
+
 toxcore (0.0.0+20151111.r3647-1) unstable; urgency=medium
 
   [ Gregory Mullen (grayhatter) ]
