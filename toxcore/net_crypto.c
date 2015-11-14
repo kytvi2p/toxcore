@@ -384,6 +384,78 @@ static Crypto_Connection *get_crypto_connection(const Net_Crypto *c, int crypt_c
 }
 
 
+/* Associate an ip_port to a connection.
+ *
+ * return -1 on failure.
+ * return 0 on success.
+ */
+static int add_ip_port_connection(Net_Crypto *c, int crypt_connection_id, IP_Port ip_port)
+{
+    Crypto_Connection *conn = get_crypto_connection(c, crypt_connection_id);
+
+    if (conn == 0)
+        return -1;
+
+    if (ip_port.ip.family == AF_INET) {
+        if (!ipport_equal(&ip_port, &conn->ip_portv4) && LAN_ip(conn->ip_portv4.ip) != 0) {
+            if (!bs_list_add(&c->ip_port_list, (uint8_t *)&ip_port, crypt_connection_id))
+                return -1;
+
+            bs_list_remove(&c->ip_port_list, (uint8_t *)&conn->ip_portv4, crypt_connection_id);
+            conn->ip_portv4 = ip_port;
+            return 0;
+        }
+    } else if (ip_port.ip.family == AF_INET6) {
+        if (!ipport_equal(&ip_port, &conn->ip_portv6)) {
+            if (!bs_list_add(&c->ip_port_list, (uint8_t *)&ip_port, crypt_connection_id))
+                return -1;
+
+            bs_list_remove(&c->ip_port_list, (uint8_t *)&conn->ip_portv6, crypt_connection_id);
+            conn->ip_portv6 = ip_port;
+            return 0;
+        }
+    }
+
+    return -1;
+}
+
+/* Return the IP_Port that should be used to send packets to the other peer.
+ *
+ * return IP_Port with family 0 on failure.
+ * return IP_Port on success.
+ */
+IP_Port return_ip_port_connection(Net_Crypto *c, int crypt_connection_id)
+{
+    IP_Port empty;
+    empty.ip.family = 0;
+
+    Crypto_Connection *conn = get_crypto_connection(c, crypt_connection_id);
+
+    if (conn == 0)
+        return empty;
+
+    uint64_t current_time = unix_time();
+    _Bool v6 = 0, v4 = 0;
+
+    if ((UDP_DIRECT_TIMEOUT + conn->direct_lastrecv_timev4) > current_time) {
+        v4 = 1;
+    }
+
+    if ((UDP_DIRECT_TIMEOUT + conn->direct_lastrecv_timev6) > current_time) {
+        v6 = 1;
+    }
+
+    if (v4 && LAN_ip(conn->ip_portv4.ip) == 0) {
+        return conn->ip_portv4;
+    } else if (v6 && conn->ip_portv6.ip.family == AF_INET6) {
+        return conn->ip_portv6;
+    } else if (conn->ip_portv4.ip.family == AF_INET) {
+        return conn->ip_portv4;
+    } else {
+        return empty;
+    }
+}
+
 /* Sends a packet to the peer using the fastest route.
  *
  * return -1 on failure.
@@ -400,14 +472,15 @@ static int send_packet_to(Net_Crypto *c, int crypt_connection_id, const uint8_t 
     int direct_send_attempt = 0;
 
     pthread_mutex_lock(&conn->mutex);
+    IP_Port ip_port = return_ip_port_connection(c, crypt_connection_id);
 
     //TODO: on bad networks, direct connections might not last indefinitely.
-    if (conn->ip_port.ip.family != 0) {
+    if (ip_port.ip.family != 0) {
         _Bool direct_connected = 0;
         crypto_connection_status(c, crypt_connection_id, &direct_connected, NULL);
 
         if (direct_connected) {
-            if ((uint32_t)sendpacket(c->dht->net, conn->ip_port, data, length) == length) {
+            if ((uint32_t)sendpacket(c->dht->net, ip_port, data, length) == length) {
                 pthread_mutex_unlock(&conn->mutex);
                 return 0;
             } else {
@@ -418,7 +491,7 @@ static int send_packet_to(Net_Crypto *c, int crypt_connection_id, const uint8_t 
 
         //TODO: a better way of sending packets directly to confirm the others ip.
         if (length < 96 || data[0] == NET_PACKET_COOKIE_REQUEST || data[0] == NET_PACKET_CRYPTO_HS) {
-            if ((uint32_t)sendpacket(c->dht->net, conn->ip_port, data, length) == length)
+            if ((uint32_t)sendpacket(c->dht->net, ip_port, data, length) == length)
                 direct_send_attempt = 1;
         }
     }
@@ -1474,15 +1547,15 @@ static int crypto_connection_add_source(Net_Crypto *c, int crypt_connection_id, 
         return -1;
 
     if (source.ip.family == AF_INET || source.ip.family == AF_INET6) {
-        if (!ipport_equal(&source, &conn->ip_port)) {
-            if (!bs_list_add(&c->ip_port_list, (uint8_t *)&source, crypt_connection_id))
-                return -1;
+        if (add_ip_port_connection(c, crypt_connection_id, source) != 0)
+            return -1;
 
-            bs_list_remove(&c->ip_port_list, (uint8_t *)&conn->ip_port, crypt_connection_id);
-            conn->ip_port = source;
+        if (source.ip.family == AF_INET) {
+            conn->direct_lastrecv_timev4 = unix_time();
+        } else {
+            conn->direct_lastrecv_timev6 = unix_time();
         }
 
-        conn->direct_lastrecv_time = unix_time();
         return 0;
     } else if (source.ip.family == TCP_FAMILY) {
         if (add_tcp_number_relay_connection(c->tcp_c, conn->connection_number_tcp, source.ip.ip6.uint32[0]) == 0)
@@ -1684,32 +1757,22 @@ int set_direct_ip_port(Net_Crypto *c, int crypt_connection_id, IP_Port ip_port, 
     if (conn == 0)
         return -1;
 
-    if (ip_port.ip.family != AF_INET && ip_port.ip.family != AF_INET6)
-        return -1;
-
-    if (!ipport_equal(&ip_port, &conn->ip_port)) {
-        if ((UDP_DIRECT_TIMEOUT + conn->direct_lastrecv_time) > unix_time()) {
-            /* We already know a LAN ip, no need to switch. */
-            if (LAN_ip(conn->ip_port.ip) == 0)
-                return -1;
-
-            /* Prefer ipv6. */
-            if (conn->ip_port.ip.family == AF_INET6 && ip_port.ip.family == AF_INET)
-                return -1;
-        }
-
-        if (bs_list_add(&c->ip_port_list, (uint8_t *)&ip_port, crypt_connection_id)) {
-            bs_list_remove(&c->ip_port_list, (uint8_t *)&conn->ip_port, crypt_connection_id);
-            conn->ip_port = ip_port;
-
-            if (connected) {
-                conn->direct_lastrecv_time = unix_time();
+    if (add_ip_port_connection(c, crypt_connection_id, ip_port) == 0) {
+        if (connected) {
+            if (ip_port.ip.family == AF_INET) {
+                conn->direct_lastrecv_timev4 = unix_time();
             } else {
-                conn->direct_lastrecv_time = 0;
+                conn->direct_lastrecv_timev6 = unix_time();
             }
-
-            return 0;
+        } else {
+            if (ip_port.ip.family == AF_INET) {
+                conn->direct_lastrecv_timev4 = 0;
+            } else {
+                conn->direct_lastrecv_timev6 = 0;
+            }
         }
+
+        return 0;
     }
 
     return -1;
@@ -2019,7 +2082,13 @@ static int udp_handle_packet(void *object, IP_Port source, const uint8_t *packet
         return -1;
 
     pthread_mutex_lock(&conn->mutex);
-    conn->direct_lastrecv_time = unix_time();
+
+    if (source.ip.family == AF_INET) {
+        conn->direct_lastrecv_timev4 = unix_time();
+    } else {
+        conn->direct_lastrecv_timev6 = unix_time();
+    }
+
     pthread_mutex_unlock(&conn->mutex);
     return 0;
 }
@@ -2037,7 +2106,7 @@ static int udp_handle_packet(void *object, IP_Port source, const uint8_t *packet
 #define PACKET_RESEND_MULTIPLIER 3.5
 
 /* Timeout for increasing speed after congestion event (in ms). */
-#define CONGESTION_EVENT_TIMEOUT 2000
+#define CONGESTION_EVENT_TIMEOUT 1000
 
 static void send_crypto_packets(Net_Crypto *c)
 {
@@ -2057,7 +2126,7 @@ static void send_crypto_packets(Net_Crypto *c)
         }
 
         if ((conn->status == CRYPTO_CONN_NOT_CONFIRMED || conn->status == CRYPTO_CONN_ESTABLISHED)
-                && (CRYPTO_SEND_PACKET_INTERVAL + conn->last_request_packet_sent) < temp_time) {
+                && ((CRYPTO_SEND_PACKET_INTERVAL / 4) + conn->last_request_packet_sent) < temp_time) {
             if (send_request_packet(c, i) == 0) {
                 conn->last_request_packet_sent = temp_time;
             }
@@ -2104,22 +2173,38 @@ static void send_crypto_packets(Net_Crypto *c)
                 sum = (long signed int)conn->last_sendqueue_size[(pos) % CONGESTION_QUEUE_ARRAY_SIZE] -
                       (long signed int)conn->last_sendqueue_size[(pos - (CONGESTION_QUEUE_ARRAY_SIZE - 1)) % CONGESTION_QUEUE_ARRAY_SIZE];
 
-                conn->last_num_packets_sent[pos] = packets_sent;
+                unsigned int n_p_pos = conn->last_sendqueue_counter % CONGESTION_LAST_SENT_ARRAY_SIZE;
+                conn->last_num_packets_sent[n_p_pos] = packets_sent;
                 long signed int total_sent = 0;
 
+                //TODO use real delay
+                unsigned int delay = (unsigned int)((conn->rtt_time / PACKET_COUNTER_AVERAGE_INTERVAL) + 0.5);
+                unsigned int packets_set_rem_array = (CONGESTION_LAST_SENT_ARRAY_SIZE - CONGESTION_QUEUE_ARRAY_SIZE);
+
+                if (delay > packets_set_rem_array) {
+                    delay = packets_set_rem_array;
+                }
+
                 for (j = 0; j < CONGESTION_QUEUE_ARRAY_SIZE; ++j) {
-                    total_sent += conn->last_num_packets_sent[j];
+                    total_sent += conn->last_num_packets_sent[(j + (packets_set_rem_array  - delay) + n_p_pos) %
+                                  CONGESTION_LAST_SENT_ARRAY_SIZE];
                 }
 
                 total_sent -= sum;
 
+                /* if queue is too big only allow resending packets. */
+                uint32_t npackets = num_packets_array(&conn->send_array);
                 double min_speed = 1000.0 * (((double)(total_sent)) / ((double)(CONGESTION_QUEUE_ARRAY_SIZE) *
                                              PACKET_COUNTER_AVERAGE_INTERVAL));
+                double send_array_ratio = (((double)npackets) / min_speed);
 
-                if (conn->last_congestion_event + CONGESTION_EVENT_TIMEOUT < temp_time) {
-                    conn->packet_send_rate = min_speed * 1.25;
+                //TODO: Improve formula?
+                if (send_array_ratio > 2.0 && CRYPTO_MIN_QUEUE_LENGTH < npackets) {
+                    conn->packet_send_rate = min_speed * (1.0 / (send_array_ratio / 2.0));
+                } else if (conn->last_congestion_event + CONGESTION_EVENT_TIMEOUT < temp_time) {
+                    conn->packet_send_rate = min_speed * 1.2;
                 } else {
-                    conn->packet_send_rate = min_speed;
+                    conn->packet_send_rate = min_speed * 0.9;
                 }
 
                 if (conn->packet_send_rate < CRYPTO_PACKET_MIN_RATE) {
@@ -2131,8 +2216,12 @@ static void send_crypto_packets(Net_Crypto *c)
             if (conn->last_packets_left_set == 0) {
                 conn->last_packets_left_set = temp_time;
                 conn->packets_left = CRYPTO_MIN_QUEUE_LENGTH;
-            } else if (((uint64_t)((1000.0 / conn->packet_send_rate) + 0.5) + conn->last_packets_left_set) < temp_time) {
-                uint32_t num_packets = conn->packet_send_rate * ((double)(temp_time - conn->last_packets_left_set) / 1000.0) + 0.5;
+            } else if (((uint64_t)((1000.0 / conn->packet_send_rate) + 0.5) + conn->last_packets_left_set) <= temp_time) {
+                double n_packets = conn->packet_send_rate * (((double)(temp_time - conn->last_packets_left_set)) / 1000.0);
+
+                uint32_t num_packets = n_packets;
+                double rem = n_packets - (double)num_packets;
+                uint64_t adj = (uint64_t)((rem * (1000.0 / conn->packet_send_rate)) + 0.5);
 
                 if (conn->packets_left > num_packets * 4 + CRYPTO_MIN_QUEUE_LENGTH) {
                     conn->packets_left = num_packets * 4 + CRYPTO_MIN_QUEUE_LENGTH;
@@ -2140,7 +2229,7 @@ static void send_crypto_packets(Net_Crypto *c)
                     conn->packets_left += num_packets;
                 }
 
-                conn->last_packets_left_set = temp_time;
+                conn->last_packets_left_set = temp_time - adj;
             }
 
             int ret = send_requested_packets(c, i, conn->packets_left * PACKET_RESEND_MULTIPLIER);
@@ -2344,7 +2433,8 @@ int crypto_kill(Net_Crypto *c, int crypt_connection_id)
         kill_tcp_connection_to(c->tcp_c, conn->connection_number_tcp);
         pthread_mutex_unlock(&c->tcp_mutex);
 
-        bs_list_remove(&c->ip_port_list, (uint8_t *)&conn->ip_port, crypt_connection_id);
+        bs_list_remove(&c->ip_port_list, (uint8_t *)&conn->ip_portv4, crypt_connection_id);
+        bs_list_remove(&c->ip_port_list, (uint8_t *)&conn->ip_portv6, crypt_connection_id);
         clear_temp_packet(c, crypt_connection_id);
         clear_buffer(&conn->send_array);
         clear_buffer(&conn->recv_array);
@@ -2372,7 +2462,12 @@ unsigned int crypto_connection_status(const Net_Crypto *c, int crypt_connection_
     if (direct_connected) {
         *direct_connected = 0;
 
-        if ((UDP_DIRECT_TIMEOUT + conn->direct_lastrecv_time) > unix_time())
+        uint64_t current_time = unix_time();
+
+        if ((UDP_DIRECT_TIMEOUT + conn->direct_lastrecv_timev4) > current_time)
+            *direct_connected = 1;
+
+        if ((UDP_DIRECT_TIMEOUT + conn->direct_lastrecv_timev6) > current_time)
             *direct_connected = 1;
     }
 
