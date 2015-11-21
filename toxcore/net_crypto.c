@@ -501,6 +501,14 @@ static int send_packet_to(Net_Crypto *c, int crypt_connection_id, const uint8_t 
     int ret = send_packet_tcp_connection(c->tcp_c, conn->connection_number_tcp, data, length);
     pthread_mutex_unlock(&c->tcp_mutex);
 
+    pthread_mutex_lock(&conn->mutex);
+
+    if (ret == 0) {
+        conn->last_tcp_sent = current_time_monotonic();
+    }
+
+    pthread_mutex_unlock(&conn->mutex);
+
     if (ret == 0 || direct_send_attempt) {
         return 0;
     }
@@ -1208,7 +1216,8 @@ static void connection_kill(Net_Crypto *c, int crypt_connection_id)
  * return -1 on failure.
  * return 0 on success.
  */
-static int handle_data_packet_helper(Net_Crypto *c, int crypt_connection_id, const uint8_t *packet, uint16_t length)
+static int handle_data_packet_helper(Net_Crypto *c, int crypt_connection_id, const uint8_t *packet, uint16_t length,
+                                     _Bool udp)
 {
     if (length > MAX_CRYPTO_PACKET_SIZE || length <= CRYPTO_DATA_PACKET_MIN_SIZE)
         return -1;
@@ -1269,7 +1278,15 @@ static int handle_data_packet_helper(Net_Crypto *c, int crypt_connection_id, con
     }
 
     if (real_data[0] == PACKET_ID_REQUEST) {
-        int requested = handle_request_packet(&conn->send_array, real_data, real_length, &rtt_calc_time, conn->rtt_time);
+        uint64_t rtt_time;
+
+        if (udp) {
+            rtt_time = conn->rtt_time;
+        } else {
+            rtt_time = DEFAULT_TCP_PING_CONNECTION;
+        }
+
+        int requested = handle_request_packet(&conn->send_array, real_data, real_length, &rtt_calc_time, rtt_time);
 
         if (requested == -1) {
             return -1;
@@ -1336,7 +1353,8 @@ static int handle_data_packet_helper(Net_Crypto *c, int crypt_connection_id, con
  * return -1 on failure.
  * return 0 on success.
  */
-static int handle_packet_connection(Net_Crypto *c, int crypt_connection_id, const uint8_t *packet, uint16_t length)
+static int handle_packet_connection(Net_Crypto *c, int crypt_connection_id, const uint8_t *packet, uint16_t length,
+                                    _Bool udp)
 {
     if (length == 0 || length > MAX_CRYPTO_PACKET_SIZE)
         return -1;
@@ -1401,7 +1419,7 @@ static int handle_packet_connection(Net_Crypto *c, int crypt_connection_id, cons
 
         case NET_PACKET_CRYPTO_DATA: {
             if (conn->status == CRYPTO_CONN_NOT_CONFIRMED || conn->status == CRYPTO_CONN_ESTABLISHED) {
-                return handle_data_packet_helper(c, crypt_connection_id, packet, length);
+                return handle_data_packet_helper(c, crypt_connection_id, packet, length, udp);
             } else {
                 return -1;
             }
@@ -1796,7 +1814,7 @@ static int tcp_data_callback(void *object, int id, const uint8_t *data, uint16_t
     }
 
     pthread_mutex_unlock(&c->tcp_mutex);
-    int ret = handle_packet_connection(c, id, data, length);
+    int ret = handle_packet_connection(c, id, data, length, 0);
     pthread_mutex_lock(&c->tcp_mutex);
 
     if (ret != 0)
@@ -2073,7 +2091,7 @@ static int udp_handle_packet(void *object, IP_Port source, const uint8_t *packet
         return 0;
     }
 
-    if (handle_packet_connection(c, crypt_connection_id, packet, length) != 0)
+    if (handle_packet_connection(c, crypt_connection_id, packet, length, 1) != 0)
         return 1;
 
     Crypto_Connection *conn = get_crypto_connection(c, crypt_connection_id);
@@ -2129,7 +2147,7 @@ static void send_crypto_packets(Net_Crypto *c)
         }
 
         if ((conn->status == CRYPTO_CONN_NOT_CONFIRMED || conn->status == CRYPTO_CONN_ESTABLISHED)
-                && ((CRYPTO_SEND_PACKET_INTERVAL / 4) + conn->last_request_packet_sent) < temp_time) {
+                && ((CRYPTO_SEND_PACKET_INTERVAL) + conn->last_request_packet_sent) < temp_time) {
             if (send_request_packet(c, i) == 0) {
                 conn->last_request_packet_sent = temp_time;
             }
@@ -2140,6 +2158,18 @@ static void send_crypto_packets(Net_Crypto *c)
             if (conn->packet_recv_rate > CRYPTO_PACKET_MIN_RATE) {
                 double request_packet_interval = (REQUEST_PACKETS_COMPARE_CONSTANT / (((double)num_packets_array(
                                                       &conn->recv_array) + 1.0) / (conn->packet_recv_rate + 1.0)));
+
+                double request_packet_interval2 = ((CRYPTO_PACKET_MIN_RATE / conn->packet_recv_rate) *
+                                                   (double)CRYPTO_SEND_PACKET_INTERVAL) + (double)PACKET_COUNTER_AVERAGE_INTERVAL;
+
+                if (request_packet_interval2 < request_packet_interval)
+                    request_packet_interval = request_packet_interval2;
+
+                if (request_packet_interval < PACKET_COUNTER_AVERAGE_INTERVAL)
+                    request_packet_interval = PACKET_COUNTER_AVERAGE_INTERVAL;
+
+                if (request_packet_interval > CRYPTO_SEND_PACKET_INTERVAL)
+                    request_packet_interval = CRYPTO_SEND_PACKET_INTERVAL;
 
                 if (temp_time - conn->last_request_packet_sent > (uint64_t)request_packet_interval) {
                     if (send_request_packet(c, i) == 0) {
@@ -2163,6 +2193,9 @@ static void send_crypto_packets(Net_Crypto *c)
                 uint32_t packets_sent = conn->packets_sent;
                 conn->packets_sent = 0;
 
+                uint32_t packets_resent = conn->packets_resent;
+                conn->packets_resent = 0;
+
                 /* conjestion control
                     calculate a new value of conn->packet_send_rate based on some data
                  */
@@ -2178,66 +2211,110 @@ static void send_crypto_packets(Net_Crypto *c)
 
                 unsigned int n_p_pos = conn->last_sendqueue_counter % CONGESTION_LAST_SENT_ARRAY_SIZE;
                 conn->last_num_packets_sent[n_p_pos] = packets_sent;
-                long signed int total_sent = 0;
+                conn->last_num_packets_resent[n_p_pos] = packets_resent;
 
-                //TODO use real delay
-                unsigned int delay = (unsigned int)((conn->rtt_time / PACKET_COUNTER_AVERAGE_INTERVAL) + 0.5);
-                unsigned int packets_set_rem_array = (CONGESTION_LAST_SENT_ARRAY_SIZE - CONGESTION_QUEUE_ARRAY_SIZE);
+                _Bool direct_connected = 0;
+                crypto_connection_status(c, i, &direct_connected, NULL);
 
-                if (delay > packets_set_rem_array) {
-                    delay = packets_set_rem_array;
-                }
-
-                for (j = 0; j < CONGESTION_QUEUE_ARRAY_SIZE; ++j) {
-                    total_sent += conn->last_num_packets_sent[(j + (packets_set_rem_array  - delay) + n_p_pos) %
-                                  CONGESTION_LAST_SENT_ARRAY_SIZE];
-                }
-
-                total_sent -= sum;
-
-                /* if queue is too big only allow resending packets. */
-                uint32_t npackets = num_packets_array(&conn->send_array);
-                double min_speed = 1000.0 * (((double)(total_sent)) / ((double)(CONGESTION_QUEUE_ARRAY_SIZE) *
-                                             PACKET_COUNTER_AVERAGE_INTERVAL));
-                double send_array_ratio = (((double)npackets) / min_speed);
-
-                //TODO: Improve formula?
-                if (send_array_ratio > SEND_QUEUE_RATIO && CRYPTO_MIN_QUEUE_LENGTH < npackets) {
-                    conn->packet_send_rate = min_speed * (1.0 / (send_array_ratio / SEND_QUEUE_RATIO));
-                } else if (conn->last_congestion_event + CONGESTION_EVENT_TIMEOUT < temp_time) {
-                    conn->packet_send_rate = min_speed * 1.2;
+                if (direct_connected && conn->last_tcp_sent + CONGESTION_EVENT_TIMEOUT > temp_time) {
+                    /* When switching from TCP to UDP, don't change the packet send rate for CONGESTION_EVENT_TIMEOUT ms. */
                 } else {
-                    conn->packet_send_rate = min_speed * 0.9;
-                }
+                    long signed int total_sent = 0, total_resent = 0;
 
-                if (conn->packet_send_rate < CRYPTO_PACKET_MIN_RATE) {
-                    conn->packet_send_rate = CRYPTO_PACKET_MIN_RATE;
+                    //TODO use real delay
+                    unsigned int delay = (unsigned int)((conn->rtt_time / PACKET_COUNTER_AVERAGE_INTERVAL) + 0.5);
+                    unsigned int packets_set_rem_array = (CONGESTION_LAST_SENT_ARRAY_SIZE - CONGESTION_QUEUE_ARRAY_SIZE);
+
+                    if (delay > packets_set_rem_array) {
+                        delay = packets_set_rem_array;
+                    }
+
+                    for (j = 0; j < CONGESTION_QUEUE_ARRAY_SIZE; ++j) {
+                        unsigned int ind = (j + (packets_set_rem_array  - delay) + n_p_pos) % CONGESTION_LAST_SENT_ARRAY_SIZE;
+                        total_sent += conn->last_num_packets_sent[ind];
+                        total_resent += conn->last_num_packets_resent[ind];
+                    }
+
+                    total_sent -= sum;
+
+                    /* if queue is too big only allow resending packets. */
+                    uint32_t npackets = num_packets_array(&conn->send_array);
+                    double min_speed = 1000.0 * (((double)(total_sent)) / ((double)(CONGESTION_QUEUE_ARRAY_SIZE) *
+                                                 PACKET_COUNTER_AVERAGE_INTERVAL));
+
+                    double min_speed_request = 1000.0 * (((double)(total_sent + total_resent)) / ((double)(
+                            CONGESTION_QUEUE_ARRAY_SIZE) * PACKET_COUNTER_AVERAGE_INTERVAL));
+
+                    if (min_speed < CRYPTO_PACKET_MIN_RATE)
+                        min_speed = CRYPTO_PACKET_MIN_RATE;
+
+                    double send_array_ratio = (((double)npackets) / min_speed);
+
+                    //TODO: Improve formula?
+                    if (send_array_ratio > SEND_QUEUE_RATIO && CRYPTO_MIN_QUEUE_LENGTH < npackets) {
+                        conn->packet_send_rate = min_speed * (1.0 / (send_array_ratio / SEND_QUEUE_RATIO));
+                    } else if (conn->last_congestion_event + CONGESTION_EVENT_TIMEOUT < temp_time) {
+                        conn->packet_send_rate = min_speed * 1.2;
+                    } else {
+                        conn->packet_send_rate = min_speed * 0.9;
+                    }
+
+                    conn->packet_send_rate_requested = min_speed_request * 1.2;
+
+                    if (conn->packet_send_rate < CRYPTO_PACKET_MIN_RATE) {
+                        conn->packet_send_rate = CRYPTO_PACKET_MIN_RATE;
+                    }
+
+                    if (conn->packet_send_rate_requested < conn->packet_send_rate) {
+                        conn->packet_send_rate_requested = conn->packet_send_rate;
+                    }
                 }
 
             }
 
-            if (conn->last_packets_left_set == 0) {
-                conn->last_packets_left_set = temp_time;
-                conn->packets_left = CRYPTO_MIN_QUEUE_LENGTH;
-            } else if (((uint64_t)((1000.0 / conn->packet_send_rate) + 0.5) + conn->last_packets_left_set) <= temp_time) {
-                double n_packets = conn->packet_send_rate * (((double)(temp_time - conn->last_packets_left_set)) / 1000.0);
+            if (conn->last_packets_left_set == 0 || conn->last_packets_left_requested_set == 0) {
+                conn->last_packets_left_requested_set = conn->last_packets_left_set = temp_time;
+                conn->packets_left_requested = conn->packets_left = CRYPTO_MIN_QUEUE_LENGTH;
+            } else {
+                if (((uint64_t)((1000.0 / conn->packet_send_rate) + 0.5) + conn->last_packets_left_set) <= temp_time) {
+                    double n_packets = conn->packet_send_rate * (((double)(temp_time - conn->last_packets_left_set)) / 1000.0);
 
-                uint32_t num_packets = n_packets;
-                double rem = n_packets - (double)num_packets;
-                uint64_t adj = (uint64_t)((rem * (1000.0 / conn->packet_send_rate)) + 0.5);
+                    uint32_t num_packets = n_packets;
+                    double rem = n_packets - (double)num_packets;
+                    uint64_t adj = (uint64_t)((rem * (1000.0 / conn->packet_send_rate)) + 0.5);
 
-                if (conn->packets_left > num_packets * 4 + CRYPTO_MIN_QUEUE_LENGTH) {
-                    conn->packets_left = num_packets * 4 + CRYPTO_MIN_QUEUE_LENGTH;
-                } else {
-                    conn->packets_left += num_packets;
+                    if (conn->packets_left > num_packets * 4 + CRYPTO_MIN_QUEUE_LENGTH) {
+                        conn->packets_left = num_packets * 4 + CRYPTO_MIN_QUEUE_LENGTH;
+                    } else {
+                        conn->packets_left += num_packets;
+                    }
+
+                    conn->last_packets_left_set = temp_time - adj;
                 }
 
-                conn->last_packets_left_set = temp_time - adj;
+                if (((uint64_t)((1000.0 / conn->packet_send_rate_requested) + 0.5) + conn->last_packets_left_requested_set) <=
+                        temp_time) {
+                    double n_packets = conn->packet_send_rate_requested * (((double)(temp_time - conn->last_packets_left_requested_set)) /
+                                       1000.0);
+
+                    uint32_t num_packets = n_packets;
+                    double rem = n_packets - (double)num_packets;
+                    uint64_t adj = (uint64_t)((rem * (1000.0 / conn->packet_send_rate_requested)) + 0.5);
+                    conn->packets_left_requested = num_packets;
+
+                    conn->last_packets_left_requested_set = temp_time - adj;
+                }
+
+                if (conn->packets_left > conn->packets_left_requested)
+                    conn->packets_left_requested = conn->packets_left;
             }
 
-            int ret = send_requested_packets(c, i, conn->packets_left);
+            int ret = send_requested_packets(c, i, conn->packets_left_requested);
 
             if (ret != -1) {
+                conn->packets_left_requested -= ret;
+                conn->packets_resent += ret;
+
                 if ((unsigned int)ret < conn->packets_left) {
                     conn->packets_left -= ret;
                 } else {
@@ -2338,6 +2415,7 @@ int64_t write_cryptpacket(Net_Crypto *c, int crypt_connection_id, const uint8_t 
 
     if (congestion_control) {
         --conn->packets_left;
+        --conn->packets_left_requested;
         conn->packets_sent++;
     }
 
