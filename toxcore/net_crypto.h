@@ -85,6 +85,7 @@
 
 /* Default connection ping in ms. */
 #define DEFAULT_PING_CONNECTION 1000
+#define DEFAULT_TCP_PING_CONNECTION 500
 
 typedef struct {
     uint64_t sent_time;
@@ -124,6 +125,8 @@ typedef struct {
     uint64_t direct_lastrecv_timev4; /* The Time at which we last received a direct packet in ms. */
     uint64_t direct_lastrecv_timev6;
 
+    uint64_t last_tcp_sent; /* Time the last TCP packet was sent. */
+
     Packets_Array send_array;
     Packets_Array recv_array;
 
@@ -149,9 +152,14 @@ typedef struct {
     uint32_t packets_left;
     uint64_t last_packets_left_set;
 
+    double packet_send_rate_requested;
+    uint32_t packets_left_requested;
+    uint64_t last_packets_left_requested_set;
+
     uint32_t last_sendqueue_size[CONGESTION_QUEUE_ARRAY_SIZE], last_sendqueue_counter;
-    long signed int last_num_packets_sent[CONGESTION_LAST_SENT_ARRAY_SIZE];
-    uint32_t packets_sent;
+    long signed int last_num_packets_sent[CONGESTION_LAST_SENT_ARRAY_SIZE],
+         last_num_packets_resent[CONGESTION_LAST_SENT_ARRAY_SIZE];
+    uint32_t packets_sent, packets_resent;
     uint64_t last_congestion_event;
     uint64_t rtt_time;
 
