@@ -1,3 +1,13 @@
+toxcore (0.0.0+20151202.r3667-1) unstable; urgency=medium
+
+  [ Eniz Vukovic ]
+  * Fix error reporting in toxav_call()
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Mon, 07 Dec 2015 22:04:28 +0000
+
 toxcore (0.0.0+20151201.r3665-1) unstable; urgency=medium
 
   [ irungentoo ]
