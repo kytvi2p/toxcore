@@ -1,3 +1,30 @@
+toxcore (0.0.0+20151212.r3687-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * If we receive a packet from a node we are searching for, ping it.
+  * Fixed DHT bug.
+  * Forgot to stage this before committing.
+  * uint32_t -> unsigned int.
+  * Improve likelyhood of the closest nodes being in our lists.
+  * DHT fix.
+  * Small fix.
+  * Check if node can be stored before sorting.
+  * DHT fixes.
+  * DHT fix.
+  * DHT improvements.
+  * DHT fix.
+  * More DHT fixes.
+  * Better DHT tests.
+  * Remove useless vars.
+  * Unused variable.
+  * Update so this works with the new distance function.
+  * Small onion search improvement.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Mon, 14 Dec 2015 17:52:49 +0000
+
 toxcore (0.0.0+20151202.r3667-1~deb8u+1) stable; urgency=medium
 
   * Backport to Jessie
