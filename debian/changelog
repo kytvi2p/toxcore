@@ -1,3 +1,59 @@
+toxcore (0.0.0+20151216.r3697-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * Send get nodes more to closer nodes than further nodes.
+  * Sort list if timed out nodes are in the middle of the list.
+  * More efficient DHT searching.
+  * Onion test fixed to work with faster DHT.
+  * Fixed use of it after free.
+  * Improved the to_ping list.
+  * Less packet spam.
+  * Slightly increase ping timeout.
+  * This is still useful.
+  * Send get nodes instead of ping to timing out nodes.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Thu, 17 Dec 2015 13:22:07 +0000
+
+toxcore (0.0.0+20151212.r3687-1) unstable; urgency=medium
+
+  [ irungentoo ]
+  * If we receive a packet from a node we are searching for, ping it.
+  * Fixed DHT bug.
+  * Forgot to stage this before committing.
+  * uint32_t -> unsigned int.
+  * Improve likelyhood of the closest nodes being in our lists.
+  * DHT fix.
+  * Small fix.
+  * Check if node can be stored before sorting.
+  * DHT fixes.
+  * DHT fix.
+  * DHT improvements.
+  * DHT fix.
+  * More DHT fixes.
+  * Better DHT tests.
+  * Remove useless vars.
+  * Unused variable.
+  * Update so this works with the new distance function.
+  * Small onion search improvement.
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Mon, 14 Dec 2015 17:52:49 +0000
+
+toxcore (0.0.0+20151202.r3667-1) unstable; urgency=medium
+
+  [ Eniz Vukovic ]
+  * Fix error reporting in toxav_call()
+
+  [ Kill Your TV ]
+  * New upstream git snapshot
+
+ -- Kill Your TV <killyourtv@i2pmail.org>  Mon, 07 Dec 2015 22:04:28 +0000
+
 toxcore (0.0.0+20151201.r3665-1~precise+1) precise; urgency=medium
 
   * Backport to Precise
